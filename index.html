@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Assessment - Alexandre</title>
+    <style>
+        :root { --primary: #2563eb; --secondary: #f59e0b; --bg: #f8fafc; --text: #1e293b; --success: #22c55e; --error: #ef4444; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; max-width: 850px; margin: 0 auto; padding: 0 0 20px 0; }
+        nav { background: var(--primary); padding: 15px; text-align: center; margin-bottom: 20px; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #cbd5e1; font-weight: bold; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
+        nav a.active { color: white; border-bottom: 2px solid white; }
+        .content { padding: 0 20px; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .dialogue-box { background: #f1f5f9; border-left: 4px solid var(--primary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0 8px 8px 0; font-size: 1.05rem; }
+        .category-header { display: inline-block; background: var(--secondary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; }
+        .question-container { display: none; min-height: 300px; }
+        .question-container.active { display: block; }
+        .option-btn { width: 100%; text-align: left; padding: 14px; margin-bottom: 10px; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; transition: 0.2s; background: white; font-size: 1rem; }
+        .option-btn:hover { background: #f0f7ff; }
+        .correct { background: #dcfce7 !important; border-color: var(--success) !important; color: #166534; font-weight: bold; }
+        .wrong { background: #fee2e2 !important; border-color: var(--error) !important; color: #991b1b; }
+        .footer { margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 1rem; }
+        #next-btn { background: var(--primary); color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; display: none; font-weight: bold; }
+    </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="active">1. Assessment</a>
+        <a href="monday-2026-01-19.html">2. Review Notes</a>
+    </nav>
+
+    <div class="content">
+        <div class="card">
+            <h1>Technical English Diagnostic</h1>
+            
+            <div class="dialogue-box">
+                <strong>Sarah:</strong> "Hi Alexandre, I'm calling because the deadline for the turbine project is approaching. Are you working on the final specs?"<br><br>
+                <strong>Alexandre:</strong> "Yes, I am analyzing the data right now. But I have a doubt. The cooling system is making a strange noise."<br><br>
+                <strong>Sarah:</strong> "That's not good. We upgraded the sensors last month to avoid this."<br><br>
+                <strong>Alexandre:</strong> "I know, but the temperature increases too fast during the stress tests. If we don't fix it, the engine will overheat. I think we need a meeting tomorrow."
+            </div>
+
+            <div id="quiz-flow">
+                <div class="question-container active">
+                    <div class="category-header">Compréhension 1/20</div>
+                    <p>What is the main reason for Sarah's call?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">The project deadline is close.</button>
+                        <button class="option-btn" data-correct="false">The turbine is already broken.</button>
+                        <button class="option-btn" data-correct="false">She wants to hire a new engineer.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Compréhension 2/20</div>
+                    <p>What is Alexandre doing at the moment of the call?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">Fixing the cooling system.</button>
+                        <button class="option-btn" data-correct="true">Analyzing technical data.</button>
+                        <button class="option-btn" data-correct="false">Preparing a meeting.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Compréhension 3/20</div>
+                    <p>What happened to the sensors last month?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">They were removed.</button>
+                        <button class="option-btn" data-correct="true">They were improved/modernized.</button>
+                        <button class="option-btn" data-correct="false">They stopped working.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Compréhension 4/20</div>
+                    <p>What is the specific problem with the temperature?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">It is too low during tests.</button>
+                        <button class="option-btn" data-correct="true">It rises too quickly during stress tests.</button>
+                        <button class="option-btn" data-correct="false">The sensors don't show the temperature.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Compréhension 5/20</div>
+                    <p>What does Alexandre suggest to resolve the situation?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">A meeting to discuss the problem.</button>
+                        <button class="option-btn" data-correct="false">Changing the engine immediately.</button>
+                        <button class="option-btn" data-correct="false">Working on it next month.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Vocabulaire 6/20</div>
+                    <p>What are "Specs"?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">Spectacles for reading.</button>
+                        <button class="option-btn" data-correct="true">Technical specifications.</button>
+                        <button class="option-btn" data-correct="false">Financial reports.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Vocabulaire 7/20</div>
+                    <p>In English, "A doubt" means:</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">An uncertainty / A question.</button>
+                        <button class="option-btn" data-correct="false">A certainty.</button>
+                        <button class="option-btn" data-correct="false">A technical tool.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Vocabulaire 8/20</div>
+                    <p>What is a "Stress test"?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">A medical exam for Sarah.</button>
+                        <button class="option-btn" data-correct="true">Testing a system under extreme conditions.</button>
+                        <button class="option-btn" data-correct="false">A test that failed.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Vocabulaire 9/20</div>
+                    <p>"To upgrade" is the opposite of:</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">To improve.</button>
+                        <button class="option-btn" data-correct="true">To downgrade.</button>
+                        <button class="option-btn" data-correct="false">To install.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Vocabulaire 10/20</div>
+                    <p>Which word refers to a part that detects heat or light?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">A screw.</button>
+                        <button class="option-btn" data-correct="true">A sensor.</button>
+                        <button class="option-btn" data-correct="false">An engine.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Grammaire 11/20</div>
+                    <p>Where do we put the adjective: "Un bruit étrange"?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">A strange noise.</button>
+                        <button class="option-btn" data-correct="false">A noise strange.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Grammaire 12/20</div>
+                    <p>Which is correct for a frequency?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">I always check the data.</button>
+                        <button class="option-btn" data-correct="false">I check always the data.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Grammaire 13/20</div>
+                    <p>Choose the correct question form:</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">Do you work on the project?</button>
+                        <button class="option-btn" data-correct="false">Work you on the project?</button>
+                        <button class="option-btn" data-correct="false">Does you work on the project?</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Grammaire 14/20</div>
+                    <p>Which word is a correct adverb?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">The engine runs good.</button>
+                        <button class="option-btn" data-correct="true">The engine runs well.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Grammaire 15/20</div>
+                    <p>If + Present -> Future. Which is correct?</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">If we fix it, it will work.</button>
+                        <button class="option-btn" data-correct="false">If we will fix it, it works.</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Conjugaison 16/20</div>
+                    <p>Right now: "The temperature _______ (increase)."</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">increases</button>
+                        <button class="option-btn" data-correct="true">is increasing</button>
+                        <button class="option-btn" data-correct="false">increasing</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Conjugaison 17/20</div>
+                    <p>Yesterday: "I _______ (talk) to Sarah."</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">talked</button>
+                        <button class="option-btn" data-correct="false">was talk</button>
+                        <button class="option-btn" data-correct="false">have talk</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Conjugaison 18/20</div>
+                    <p>Habit: "Every morning, I _______ (check) my emails."</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">check</button>
+                        <button class="option-btn" data-correct="false">am checking</button>
+                        <button class="option-btn" data-correct="false">checks</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Conjugaison 19/20</div>
+                    <p>Planned future: "We _______ (have) a meeting tomorrow."</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="true">are having</button>
+                        <button class="option-btn" data-correct="false">having</button>
+                        <button class="option-btn" data-correct="false">is having</button>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div class="category-header">Conjugaison 20/20</div>
+                    <p>The passive form: "The turbine _______ (build) in 2024."</p>
+                    <div class="options">
+                        <button class="option-btn" data-correct="false">was build</button>
+                        <button class="option-btn" data-correct="true">was built</button>
+                        <button class="option-btn" data-correct="false">is built</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div id="progress">Question 1 / 20</div>
+                <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // INITIALISATION TELEGRAM
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+
+        // Application des couleurs du thème Telegram
+        if (tg.themeParams.bg_color) {
+            document.body.style.backgroundColor = tg.themeParams.bg_color;
+            document.body.style.color = tg.themeParams.text_color;
+        }
+
+        // LOGIQUE DU QUIZ
+        let current = 0;
+        let score = 0;
+        const questions = document.querySelectorAll('.question-container');
+        const nextBtn = document.getElementById('next-btn');
+
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.onclick = function() {
+                const container = questions[current];
+                const buttons = container.querySelectorAll('.option-btn');
+                const isCorrect = this.getAttribute('data-correct') === 'true';
+
+                buttons.forEach(b => {
+                    b.style.pointerEvents = 'none';
+                    if(b.getAttribute('data-correct') === 'true') b.classList.add('correct');
+                });
+
+                if(!isCorrect) this.classList.add('wrong');
+                else score++;
+
+                nextBtn.style.display = 'block';
+            };
+        });
+
+        function nextQuestion() {
+            questions[current].classList.remove('active');
+            current++;
+            if(current < questions.length) {
+                questions[current].classList.add('active');
+                document.getElementById('progress').innerText = `Question ${current + 1} / 20`;
+                nextBtn.style.display = 'none';
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const finalScore = score;
+            document.getElementById('quiz-flow').innerHTML = `
+                <div style="text-align:center; padding: 2rem;">
+                    <h2>Assessment Complete!</h2>
+                    <p style="font-size: 3rem; color: var(--primary);">${finalScore} / 20</p>
+                    <p><strong>Feedback :</strong> Alexandre, focus on the 'BE' auxiliary for your present continuous forms!</p>
+                    <button onclick="sendScoreToBot(${finalScore})" style="margin-top:20px; padding:10px; background:var(--success); color:white; border:none; border-radius:5px; cursor:pointer;">Send score to Teacher</button>
+                </div>`;
+            document.querySelector('.footer').style.display = 'none';
+        }
+
+        function sendScoreToBot(score) {
+            tg.sendData(JSON.stringify({score: score, user: "Alexandre"}));
+            tg.close();
+        }
+    </script>
+</body>
+</html>

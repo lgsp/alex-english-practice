@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision Feb 09 - Global Analysis</title>
+    <link rel="stylesheet" href="../style-session.css">
+    <style>
+        .grammar-focus { background: #eef2ff; border-left: 5px solid #4f46e5; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .vocab-item { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .vocab-item strong { color: #e74c3c; display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">← Menu</a>
+        <a href="../lessons/monday-2026-02-02.html">Previous Lesson</a>
+        <a href="#" class="active">Revision Feb 09</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Revision Session: February 9, 2026</h1>
+            <p>Focus: Cyber-security, Vocabulary nuances & Grammar</p>
+        </header>
+
+        <section class="grammar-focus">
+            <h2>1. Time Markers: For vs Since</h2>
+            <p><strong>FOR + Duration :</strong> <em>"I have been working here <strong>for</strong> 2 years."</em> (Depuis 2 ans - durée)</p>
+            <p><strong>SINCE + Point in time :</strong> <em>"I have been here <strong>since</strong> 2023."</em> (Depuis 2023 - date précise)</p>
+        </section>
+
+        <section>
+            <h2>2. Key Vocabulary</h2>
+            <div class="vocab-grid">
+                <div class="vocab-item"><strong>Evidence</strong> Material proof / Preuve matérielle.</div>
+                <div class="vocab-item"><strong>Take-aways</strong> Key points to remember / Points clés.</div>
+                <div class="vocab-item"><strong>Acknowledge</strong> To recognize / Reconnaître ou accuser réception.</div>
+                <div class="vocab-item"><strong>In disguise</strong> Hidden / Déguisé.</div>
+                <div class="vocab-item"><strong>Exchange</strong> Market place / Bourse d'échange.</div>
+                <div class="vocab-item"><strong>Treason</strong> Betrayal / Trahison.</div>
+            </div>
+        </section>
+
+        <section class="summary-box">
+            <h2>3. Common Confusion: Person, People & Peoples</h2>
+            <ul>
+                <li><strong>One person:</strong> Une personne.</li>
+                <li><strong>Two people:</strong> Deux personnes.</li>
+                <li><strong>Two peoples:</strong> Deux <u>peuples</u> (ex: The French and the Germans).</li>
+            </ul>
+        </section>
+
+        <section class="quiz-section">
+            <h2>4. Quick Check Quiz</h2>
+            
+            <div class="question-block">
+                <p class="question">1. Complete: "We have faced many cyber-attacks ________ last year."</p>
+                <div class="options" data-correct="1">
+                    <button class="option-item">for</button>
+                    <button class="option-item">since</button>
+                    <button class="option-item">during</button>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question">2. What are "Take-aways" in a meeting?</p>
+                <div class="options" data-correct="0">
+                    <button class="option-item">The main points to remember.</button>
+                    <button class="option-item">The food we order for lunch.</button>
+                    <button class="option-item">The people who leave early.</button>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question">3. How do you say "deux peuples de deux pays différents" ?</p>
+                <div class="options" data-correct="2">
+                    <button class="option-item">Two people from two countries.</button>
+                    <button class="option-item">Two person from two countries.</button>
+                    <button class="option-item">Two peoples from two countries.</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = document.querySelectorAll('.option-item');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const parent = this.closest('.options');
+                    const correctIndex = parseInt(parent.getAttribute('data-correct'));
+                    const siblings = parent.querySelectorAll('.option-item');
+                    
+                    siblings.forEach(s => s.style.pointerEvents = 'none');
+                    
+                    const currentIndex = Array.from(siblings).indexOf(this);
+                    if (currentIndex === correctIndex) {
+                        this.style.background = "#27ae60";
+                        this.style.color = "white";
+                    } else {
+                        this.style.background = "#e74c3c";
+                        this.style.color = "white";
+                        siblings[correctIndex].style.background = "#27ae60";
+                        siblings[correctIndex].style.color = "white";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

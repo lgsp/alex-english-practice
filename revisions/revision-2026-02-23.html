@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision Feb 23 - Vocabulary & Business English</title>
+    <link rel="stylesheet" href="../style-session.css">
+    <style>
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        .comparison-table th { background-color: #f4f7f6; }
+        .pronunciation { font-family: monospace; color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">← Menu</a>
+        <a href="revision-2026-02-18.html">Previous Review</a>
+        <a href="#" class="active">Revision Feb 23</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Revision Session: February 23, 2026</h1>
+            <p>Vocabulary focus: Professional terms & Phonetics</p>
+        </header>
+
+        <section>
+            <h2>1. Money & Business</h2>
+            <p>We discussed the different ways to talk about money coming in and the results of actions.</p>
+            <table class="comparison-table">
+                <tr>
+                    <th>Term</th>
+                    <th>Synonym / Meaning</th>
+                    <th>French Translation</th>
+                </tr>
+                <tr>
+                    <td><strong>Income</strong></td>
+                    <td>Revenue</td>
+                    <td>Revenus (ce qui rentre)</td>
+                </tr>
+                <tr>
+                    <td><strong>Salary / Wage</strong></td>
+                    <td>Pay / Earnings</td>
+                    <td>Salaire (mensuel / horaire)</td>
+                </tr>
+                <tr>
+                    <td><strong>Outcome</strong></td>
+                    <td>Result / Consequence</td>
+                    <td>Résultat / Aboutissement</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="summary-box">
+            <h2>2. Pronunciation Alert! ⚠️</h2>
+            <p>Don't confuse these two words, they sound very different:</p>
+            <ul>
+                <li><strong>Sweet</strong> <span class="pronunciation">/swiːt/</span> : Douceur, sucré.</li>
+                <li><strong>Sweat</strong> <span class="pronunciation">/swɛt/</span> : Transpirer. 
+                    <br><small><i>Example: "When I do sport, my sweatshirt becomes wet."</i></small>
+                </li>
+            </ul>
+        </section>
+
+        <section style="background: #eef2ff; padding: 20px; border-radius: 8px; border-left: 5px solid #3498db;">
+            <h2>3. Presentation Skills</h2>
+            <p><strong>The Hook:</strong> L'accroche. C'est l'élément crucial au début d'un discours pour captiver l'audience immédiatement.</p>
+        </section>
+
+        <section class="quiz-section">
+            <h2>4. Quick Review Quiz</h2>
+            
+            <div class="question-block">
+                <p class="question">1. Which word refers to the "Result" of a situation?</p>
+                <div class="options" data-correct="2">
+                    <button class="option-item">Income</button>
+                    <button class="option-item">The Hook</button>
+                    <button class="option-item">Outcome</button>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question">2. If you are talking about your annual fixed pay, you use:</p>
+                <div class="options" data-correct="0">
+                    <button class="option-item">Salary</button>
+                    <button class="option-item">Sweat</button>
+                    <button class="option-item">Outcome</button>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question">3. How do you pronounce "Sweat" (to perspire)?</p>
+                <div class="options" data-correct="1">
+                    <button class="option-item">Like "Sweet" (swi:t)</button>
+                    <button class="option-item">Like "Set" (swet)</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = document.querySelectorAll('.option-item');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const parent = this.closest('.options');
+                    const correctIndex = parseInt(parent.getAttribute('data-correct'));
+                    const siblings = parent.querySelectorAll('.option-item');
+                    
+                    siblings.forEach(s => s.style.pointerEvents = 'none');
+                    
+                    const currentIndex = Array.from(siblings).indexOf(this);
+                    if (currentIndex === correctIndex) {
+                        this.style.background = "#27ae60";
+                        this.style.color = "white";
+                    } else {
+                        this.style.background = "#e74c3c";
+                        this.style.color = "white";
+                        siblings[correctIndex].style.background = "#27ae60";
+                        siblings[correctIndex].style.color = "white";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.summary-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
+}
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.vocab-item {
+    background: #f8fafc;
+    padding: 12px;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
+
+.vocab-item strong { color: #2c3e50; display: block; }
+.vocab-item span { color: #666; font-size: 0.9rem; }
+
+.quiz-block {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.question-box {
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: #f0f7ff;
+    border-color: #3498db;
+}

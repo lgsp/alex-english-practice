@@ -6,6 +6,16 @@
     <title>Lesson April 06 - Epic Lyrics Analysis</title>
     <link rel="stylesheet" href="../style-session.css">
     <link rel="stylesheet" href="./css/style-monday-2026-04-06.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .explanation { display: none; margin-top: 10px; font-size: 0.85rem; color: #475569; padding: 12px; border-left: 4px solid #3b82f6; background: #f8fafc; }
+        .option-hover:hover { background-color: #f1f5f9; cursor: pointer; }
+        
+        /* Validation Styles */
+        .opt-correct { background-color: #dcfce7 !important; border-color: #22c55e !important; color: #166534 !important; }
+        .opt-wrong { background-color: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b !important; }
+    </style>
+    
 </head>
 <body>
     <nav>
@@ -20,40 +30,201 @@
             <p class="subtitle">Monday, April 06, 2026</p>
         </header>
 
-        <section class="video-section centered-video">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/DL2u8-8TyAo" frameborder="0" allowfullscreen></iframe>
+        <section class="mb-16 flex justify-center">
+            <div class="w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-black">
+                <iframe 
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/DL2u8-8TyAo" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 
-        <section class="lyrics-section">
-            <button class="main-btn toggle-btn" id="toggle-lyrics">Show Lyrics & Translation</button>
-            <div class="lyrics-content hide" id="lyrics-area">
-                <div class="lyrics-grid">
-                    <div class="lyrics-en">
-                        <h3>English Lyrics</h3>
-                        <p>In the darkness we stand,<br>Waiting for the steps to return.<br>Undaunted, even though the storm comes,<br>We stand tall in defiance.</p>
-                        <p>Our determination will not waver.<br>Until the last drop of blood.<br>The dark sky is our witness,<br>Our steps will not stop.</p>
-                    </div>
-                    <div class="lyrics-fr">
-                        <h3>Traduction Française</h3>
-                        <p>Dans l'obscurité nous nous tenons,<br>Attendant que les pas reviennent.<br>Impassibles, même si la tempête vient,<br>Nous nous tenons fiers dans la défiance.</p>
-                        <p>Notre détermination ne faiblira pas.<br>Jusqu'à la dernière goutte de sang.<br>Le ciel sombre est notre témoin,<br>Nos pas ne s'arrêteront pas.</p>
-                    </div>
+        <section class="bg-white p-8 rounded-3xl shadow-sm mb-12 border border-slate-200">
+            <h2 class="text-2xl font-bold mb-8 text-slate-800 border-b pb-4 text-center">Interactive Mastery Challenge</h2>
+            
+            <div id="quiz-container" class="space-y-8">
                 </div>
+
+            <div class="mt-12 text-center">
+                <button id="submit-btn" onclick="checkAnswers()" class="bg-slate-900 hover:bg-indigo-600 text-white font-bold py-4 px-12 rounded-2xl transition-all shadow-xl uppercase tracking-widest">
+                    Submit & Evaluate
+                </button>
+            </div>
+
+            <div id="resultBox" class="hidden mt-10 p-8 rounded-3xl text-center bg-slate-50 border-2 border-dashed border-slate-200">
+                <h2 class="text-2xl font-bold mb-1">FINAL SCORE</h2>
+                <p id="scoreDisplay" class="text-6xl font-black text-indigo-600">0 / 20</p>
+                <p class="text-slate-400 mt-4 italic text-sm">Analysis complete. Correct answers are in green, errors in red.</p>
             </div>
         </section>
 
-        <section class="quiz-section" id="quiz-container">
-            <h2>Deep Analysis Quiz (20 Questions - English Only)</h2>
-            <div class="score-board result-hide" id="score-area">
-                <h3>Your Score: <span id="current-score">0</span> / 20</h3>
-            </div>
-            <div id="quiz-content">
+        <section class="bg-slate-900 text-white p-8 md:p-12 rounded-3xl shadow-2xl">
+            <h2 class="text-3xl font-bold mb-10 text-center border-b border-slate-700 pb-4">Study Material: Lyrics</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-indigo-400 font-bold mb-6 uppercase tracking-widest text-sm border-l-2 border-indigo-400 pl-3">Source Text (English)</h3>
+                    <pre class="whitespace-pre-wrap font-serif text-lg leading-relaxed italic opacity-90">
+In the darkness we stand waiting
+For the steps to return
+Undaunted even though the storm comes
+We stand tall in defiance
+
+Even one against two will not waver
+In the determination that falls against
+The last drop of blood
+
+The dark sky is our witness
+Our steps will not stop
+Even though the storm continues to hit
+This soul remains burning sharply
+
+There is no fear in our chest
+Only smoldering embers
+If we must fall today
+We fell at price our soul
+
+We here will surrender all alone
+We face one against two
+Until the last drop of blood
+
+Let the earth tremble
+Let the night spin
+As long as we breathe
+We won't surrender
+                    </pre>
                 </div>
+
+                <div>
+                    <h3 class="text-rose-400 font-bold mb-6 uppercase tracking-widest text-sm border-l-2 border-rose-400 pl-3">Traduction (Français)</h3>
+                    <pre class="whitespace-pre-wrap font-serif text-lg leading-relaxed opacity-80">
+Dans l'obscurité nous attendons debout
+Que les pas reviennent
+Impassibles même si la tempête arrive
+Nous nous tenons droits dans le défi
+
+Même à un contre deux, nul ne faiblira
+Dans la détermination qui s'abat
+Jusqu'à la dernière goutte de sang
+
+Le ciel sombre est notre témoin
+Nos pas ne s'arrêteront pas
+Même si la tempête continue de frapper
+Cette âme reste brûlante et vive
+
+Il n'y a pas de peur dans nos poitrines
+Seulement des braises ardentes
+Si nous devons tomber aujourd'hui
+Nous serons tombés au prix de notre âme
+
+Ici, seuls, nous nous rendrons
+Nous faisons face à un contre deux
+Jusqu'à la dernière goutte de sang
+
+Laisse la terre trembler
+Laisse la nuit tourbillonner
+Tant que nous respirerons
+Nous ne nous rendrons pas
+                    </pre>
+                </div>
+            </div>
         </section>
     </div>
 
-    <script src="./js/script-monday-2026-04-06.js"></script>
+    <script>
+        const quizData = [
+            // PRONUNCIATION (1-5)
+            { q: "How is the word 'Blood' pronounced?", options: ["Like 'Food' (/uː/)", "Like 'Mud' (/ʌ/)", "Like 'Good' (/ʊ/)", "Like 'Road' (/oʊ/)"], correct: 1, exp: "Phonetic exception: 'Blood' uses the short /ʌ/ sound, unlike most double-O words." },
+            { q: "Where is the primary stress in 'Defiance'?", options: ["DE-fi-ance", "de-FI-ance", "de-fi-ANCE", "Equal stress"], correct: 1, exp: "Stress falls on the second syllable (/dɪˈfaɪ.əns/), following the root 'defy'." },
+            { q: "The 'a' in 'Waver' (to hesitate) sounds like:", options: ["'Cat' (/æ/)", "'Father' (/ɑː/)", "'Paper' (/eɪ/)", "'Call' (/ɔː/)"], correct: 2, exp: "Waver uses a long 'a' sound (/ˈweɪ.və/), similar to 'Favor'." },
+            { q: "How is the suffix '-ness' in 'Darkness' pronounced?", options: ["Like 'Less'", "With a neutral schwa (/nəs/)", "Like 'Nice'", "Like 'Nessy'"], correct: 1, exp: "Suffixes like -ness are unstressed and neutral in English." },
+            { q: "The final 'e' in 'Breathe' (verb):", options: ["Is fully pronounced", "Is silent but makes the vowel short", "Is silent but makes the vowel long", "Is pronounced like 'ee'"], correct: 2, exp: "Silent 'e' makes the previous vowel long (/iː/) and the 'th' voiced." },
+
+            // VOCABULARY (6-10)
+            { q: "What does 'Undaunted' mean?", options: ["Extremely tired", "Fearless and determined", "Highly confused", "Already defeated"], correct: 1, exp: "To be undaunted is to remain courageous despite setbacks." },
+            { q: "What are 'Embers'?", options: ["Small arrows", "Glowing remains of a fire", "Heavy raindrops", "Broken glass"], correct: 1, exp: "Embers symbolize a lingering, burning will." },
+            { q: "To 'Surrender' means to:", options: ["Keep fighting", "Attack first", "Give up resistance", "Win a battle"], correct: 2, exp: "'We won't surrender' means they refuse to give up." },
+            { q: "When does 'Dawn' break?", options: ["At midnight", "At sunset", "In the afternoon", "At sunrise"], correct: 3, exp: "Dawn is the appearance of light before sunrise." },
+            { q: "A 'Witness' is someone who:", options: ["Causes an accident", "Sees an event happen", "Forgets everything", "Stops a fight"], correct: 1, exp: "The dark sky 'sees' their defiance, acting as a witness." },
+
+            // GRAMMAR (11-15)
+            { q: "What is the function of 'Even though'?", options: ["To show a cause", "To show a result", "To show a contrast", "To show a sequence"], correct: 2, exp: "It introduces a fact that contrasts with the main idea." },
+            { q: "In 'Will not waver', 'will' expresses:", options: ["Future prediction", "Refusal / Determination", "Past habit", "Lack of ability"], correct: 1, exp: "Here, 'will' shows a firm mental commitment." },
+            { q: "Structure: 'If we must fall today...'", options: ["Zero Conditional", "First Conditional", "Second Conditional", "Third Conditional"], correct: 1, exp: "If + Present = First Conditional (real possibility)." },
+            { q: "In 'Let the night spin', 'Let' is used for:", options: ["Commanding a person", "Asking for permission", "Expressing a defiant wish", "A suggestion"], correct: 2, exp: "Poetic use of 'let' to invite a challenge." },
+            { q: "In 'Remaining unchanged', 'remaining' is a:", options: ["Gerund", "Past Participle", "Present Participle", "Main verb"], correct: 2, exp: "It describes the state of the subject ('our names')." },
+
+            // COMPREHENSION (16-20)
+            { q: "What is the tone of the lyrics?", options: ["Nostalgic", "Romantic", "Epic and defiant", "Scientific"], correct: 2, exp: "The imagery of storms and blood creates an epic tone." },
+            { q: "Why mention 'one against two'?", options: ["They are losing", "To highlight bravery despite disadvantage", "Math practice", "Sports news"], correct: 1, exp: "Fighting while outnumbered emphasizes determination." },
+            { q: "What does the 'Storm' symbolize?", options: ["Weather", "External pressure / Enemies", "A holiday", "A new start"], correct: 1, exp: "The storm represents the difficulties they face." },
+            { q: "Until the last drop of blood' implies:", options: ["Temporary effort", "Medical issue", "Total commitment", "A mistake"], correct: 2, exp: "It means they will fight until the very end." },
+            { q: "When 'Dawn breaks', they are:", options: ["Surrendering", "Still standing tall", "Sleeping", "Forgetting"], correct: 1, exp: "Their names remain 'unchanged' and they stay standing." }
+        ];
+
+        const container = document.getElementById('quiz-container');
+        quizData.forEach((data, index) => {
+            const block = document.createElement('div');
+            block.className = 'question-block p-6 rounded-2xl border border-slate-100 bg-slate-50';
+            block.setAttribute('data-correct', data.correct);
+            block.innerHTML = `
+                <p class="text-xs font-bold text-indigo-500 mb-1 uppercase tracking-widest">Question ${index + 1}</p>
+                <p class="text-lg font-bold text-slate-800 mb-4">${data.q}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 options-list">
+                    ${data.options.map((opt, i) => `
+                        <label class="flex items-center p-3 rounded-xl border border-slate-200 bg-white option-hover transition-all">
+                            <input type="radio" name="q${index}" value="${i}" class="w-4 h-4 text-indigo-600">
+                            <span class="ml-3 text-sm font-medium text-slate-700">${opt}</span>
+                        </label>
+                    `).join('')}
+                </div>
+                <div class="explanation mt-4"><strong>Logic:</strong> ${data.exp}</div>
+            `;
+            container.appendChild(block);
+        });
+
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question-block');
+            let score = 0;
+
+            questions.forEach(q => {
+                const selected = q.querySelector('input[type="radio"]:checked');
+                const correctAnswerIdx = parseInt(q.getAttribute('data-correct'));
+                const labels = q.querySelectorAll('label');
+                const explanation = q.querySelector('.explanation');
+                
+                explanation.style.display = 'block';
+
+                labels.forEach((label, i) => {
+                    // Reset classes
+                    label.classList.remove('opt-correct', 'opt-wrong', 'option-hover');
+                    
+                    // Highlight correct answer in green
+                    if (i === correctAnswerIdx) {
+                        label.classList.add('opt-correct');
+                    }
+                    
+                    // If user picked a wrong answer, highlight it in red
+                    if (selected && parseInt(selected.value) === i && i !== correctAnswerIdx) {
+                        label.classList.add('opt-wrong');
+                    }
+                });
+
+                if (selected && parseInt(selected.value) === correctAnswerIdx) {
+                    score++;
+                }
+            });
+
+            const resultBox = document.getElementById('resultBox');
+            document.getElementById('scoreDisplay').innerText = score + " / " + questions.length;
+            resultBox.classList.remove('hidden');
+            
+            window.scrollTo({ top: resultBox.offsetTop - 50, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>

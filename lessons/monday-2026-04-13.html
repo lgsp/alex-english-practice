@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Learn English with Songs • 5 Official Videos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .video-container { position: relative; padding-top: 56.25%; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .question-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .question-card:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+        .correct { background-color: #10b981; color: white; }
+        .wrong { background-color: #ef4444; color: white; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- HEADER -->
+    <header class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex items-center justify-center text-2xl">🎤</div>
+                <h1 class="title-font text-3xl tracking-tight">Learn English with Songs</h1>
+            </div>
+            <nav class="flex gap-8 text-sm font-medium">
+                <a href="#video1" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i class="fas fa-play-circle"></i> Video 1</a>
+                <a href="#video2" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i class="fas fa-play-circle"></i> Video 2</a>
+                <a href="#video3" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i class="fas fa-play-circle"></i> Video 3</a>
+                <a href="#video4" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i class="fas fa-play-circle"></i> Video 4</a>
+                <a href="#video5" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i class="fas fa-play-circle"></i> Video 5</a>
+                <a href="#lyrics" class="hover:text-violet-400 transition-colors flex items-center gap-1"><i class="fas fa-scroll"></i> Lyrics & Translation</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <div class="px-4 py-2 bg-white/10 rounded-3xl text-sm flex items-center gap-2">
+                    <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                    5 videos • 20 questions
+                </div>
+                <button onclick="resetAllQuizzes()" 
+                        class="px-5 py-2 bg-white text-black rounded-3xl font-semibold flex items-center gap-2 hover:bg-amber-300 transition-colors">
+                    <i class="fas fa-redo"></i>
+                    Reset All
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-10">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl title-font tracking-tighter mb-3">Improve your English by singing!</h2>
+            <p class="text-xl text-zinc-400 max-w-2xl mx-auto">Watch 5 official music videos + answer pronunciation, vocabulary, grammar and listening questions</p>
+            <div class="flex justify-center gap-8 mt-8 text-sm">
+                <div class="flex items-center gap-2"><i class="fas fa-headphones text-violet-400"></i> Watch & Listen</div>
+                <div class="flex items-center gap-2"><i class="fas fa-question-circle text-violet-400"></i> Answer 4 questions per video</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Instant feedback</div>
+            </div>
+        </div>
+
+        <!-- VIDEO 1 -->
+        <section id="video1" class="mb-20 scroll-mt-20">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="px-4 py-1 bg-violet-500 text-white text-xs font-bold rounded-3xl">VIDEO 1</span>
+                <h2 class="text-3xl title-font">NUMBER ONE LIAR – NadaNita</h2>
+            </div>
+            <div class="video-container bg-black rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/MP6GoxJq34c" title="NUMBER ONE LIAR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-volume-up text-violet-400"></i><h3 class="font-semibold text-lg">1. Pronunciation</h3></div>
+                    <p class="mb-4">How do you pronounce the word <strong>"liar"</strong> in the chorus?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v1" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">/ˈlaɪ.ər/ (like "liar")</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v1" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Like the French "li-ar"</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v1" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">lee-ar</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v1" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">lye-ar</span></label>
+                    </div>
+                    <div id="feedback-q1-v1" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-book text-amber-400"></i><h3 class="font-semibold text-lg">2. Vocabulary</h3></div>
+                    <p class="mb-4">What does the verb <strong>"deny"</strong> mean in “You make promises, then deny them”?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v1" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">To accept or keep</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v1" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">To deny or refuse to admit</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v1" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">To create</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v1" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">To forget</span></label>
+                    </div>
+                    <div id="feedback-q2-v1" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-grammar text-sky-400"></i><h3 class="font-semibold text-lg">3. Grammar</h3></div>
+                    <p class="mb-4">In “You speak of peace, but keep attacking”, the structure <strong>"keep + V-ing"</strong> expresses:</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v1" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">A future action</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v1" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">A repeated or continuous action</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v1" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">A past action</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v1" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Permission</span></label>
+                    </div>
+                    <div id="feedback-q3-v1" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-lightbulb text-emerald-400"></i><h3 class="font-semibold text-lg">4. Listening Comprehension</h3></div>
+                    <p class="mb-4">According to the chorus, what does the “number one liar” do after making promises?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v1" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">He always keeps them</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v1" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">He denies them afterwards</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v1" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">He forgets them</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v1" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">He makes new ones</span></label>
+                    </div>
+                    <div id="feedback-q4-v1" class="mt-4 hidden text-sm"></div>
+                </div>
+            </div>
+            <button onclick="checkQuiz(1)" class="mt-8 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 py-5 rounded-3xl font-semibold text-lg flex items-center justify-center gap-3"><i class="fas fa-check"></i> Check Answers – Video 1</button>
+            <div id="result-v1" class="mt-6 hidden p-6 bg-zinc-900 rounded-3xl text-center"></div>
+        </section>
+
+        <!-- VIDEO 2 -->
+        <section id="video2" class="mb-20 scroll-mt-20">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="px-4 py-1 bg-violet-500 text-white text-xs font-bold rounded-3xl">VIDEO 2</span>
+                <h2 class="text-3xl title-font">Alliance of Crazy People – Rock ID Official</h2>
+            </div>
+            <div class="video-container bg-black rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3FQwlbbh8GI" title="Alliance of Crazy People" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-volume-up text-violet-400"></i><h3 class="font-semibold text-lg">1. Pronunciation</h3></div>
+                    <p class="mb-4">How do you pronounce <strong>"madmen"</strong> in the chorus?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v2" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">/ˈmæd.men/</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v2" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Like the French "mad-mène"</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v2" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">meid-men</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v2" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">mad-mên</span></label>
+                    </div>
+                    <div id="feedback-q1-v2" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-book text-amber-400"></i><h3 class="font-semibold text-lg">2. Vocabulary</h3></div>
+                    <p class="mb-4">What does <strong>"alliance of madmen"</strong> mean?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v2" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">An alliance of crazy / insane people</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v2" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">An alliance of geniuses</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v2" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">A military alliance</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v2" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">An alliance of dreamers</span></label>
+                    </div>
+                    <div id="feedback-q2-v2" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-grammar text-sky-400"></i><h3 class="font-semibold text-lg">3. Grammar</h3></div>
+                    <p class="mb-4">In “We are an alliance of madmen <strong>who</strong> think they are the most powerful”, the pronoun <strong>"who"</strong> refers to:</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v2" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">We</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v2" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">madmen</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v2" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">alliance</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v2" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">powerful</span></label>
+                    </div>
+                    <div id="feedback-q3-v2" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-lightbulb text-emerald-400"></i><h3 class="font-semibold text-lg">4. Listening Comprehension</h3></div>
+                    <p class="mb-4">According to the chorus, how do the members of the “alliance of madmen” feel?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v2" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">They are afraid of the world</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v2" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">They feel invincible and above everything</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v2" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">They regret their actions</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v2" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">They feel weak</span></label>
+                    </div>
+                    <div id="feedback-q4-v2" class="mt-4 hidden text-sm"></div>
+                </div>
+            </div>
+            <button onclick="checkQuiz(2)" class="mt-8 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 py-5 rounded-3xl font-semibold text-lg flex items-center justify-center gap-3"><i class="fas fa-check"></i> Check Answers – Video 2</button>
+            <div id="result-v2" class="mt-6 hidden p-6 bg-zinc-900 rounded-3xl text-center"></div>
+        </section>
+
+        <!-- VIDEO 3 -->
+        <section id="video3" class="mb-20 scroll-mt-20">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="px-4 py-1 bg-violet-500 text-white text-xs font-bold rounded-3xl">VIDEO 3</span>
+                <h2 class="text-3xl title-font">Iranian Rhapsody – Dr Phoxotic</h2>
+            </div>
+            <div class="video-container bg-black rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FbhPWmzYsms" title="Iranian Rhapsody" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-volume-up text-violet-400"></i><h3 class="font-semibold text-lg">1. Pronunciation</h3></div>
+                    <p class="mb-4">How do you pronounce the word <strong>"rhapsody"</strong> in the title?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v3" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">/ˈræp.sə.di/</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v3" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">ra-psody</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v3" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">raps-odi</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v3" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">ra-psi-di</span></label>
+                    </div>
+                    <div id="feedback-q1-v3" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-book text-amber-400"></i><h3 class="font-semibold text-lg">2. Vocabulary</h3></div>
+                    <p class="mb-4">What does <strong>"drone strike"</strong> mean in the song?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v3" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">An attack by drone</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v3" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">A workers' strike</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v3" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">A manual missile attack</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v3" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Sending a package</span></label>
+                    </div>
+                    <div id="feedback-q2-v3" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-grammar text-sky-400"></i><h3 class="font-semibold text-lg">3. Grammar</h3></div>
+                    <p class="mb-4">In “Whoever the drones strike doesn’t really matter to me”, the word <strong>"whoever"</strong> is:</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v3" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">An indefinite relative pronoun (no matter who)</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v3" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">A time conjunction</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v3" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">An adverb</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v3" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">An adjective</span></label>
+                    </div>
+                    <div id="feedback-q3-v3" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-lightbulb text-emerald-400"></i><h3 class="font-semibold text-lg">4. Listening Comprehension</h3></div>
+                    <p class="mb-4">In the bridge, what does the singer say to “Bibi”?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v3" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">You can sanction and drone-strike me</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v3" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Do you really think you can sanction and drone-strike the Ayatollah?</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v3" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">Give me some oil</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v3" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">You are my friend</span></label>
+                    </div>
+                    <div id="feedback-q4-v3" class="mt-4 hidden text-sm"></div>
+                </div>
+            </div>
+            <button onclick="checkQuiz(3)" class="mt-8 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 py-5 rounded-3xl font-semibold text-lg flex items-center justify-center gap-3"><i class="fas fa-check"></i> Check Answers – Video 3</button>
+            <div id="result-v3" class="mt-6 hidden p-6 bg-zinc-900 rounded-3xl text-center"></div>
+        </section>
+
+        <!-- VIDEO 4 -->
+        <section id="video4" class="mb-20 scroll-mt-20">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="px-4 py-1 bg-violet-500 text-white text-xs font-bold rounded-3xl">VIDEO 4</span>
+                <h2 class="text-3xl title-font">Class Dismissed – Rock ID Official</h2>
+            </div>
+            <div class="video-container bg-black rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/q0b2VJ0Z_Cw" title="Class Dismissed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-volume-up text-violet-400"></i><h3 class="font-semibold text-lg">1. Pronunciation</h3></div>
+                    <p class="mb-4">How do you pronounce <strong>"valedictorian"</strong> in Verse 2?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v4" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">/ˌvæl.ɪ.dɪkˈtɔː.ri.ən/</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v4" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">vale-dic-torian (French style)</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v4" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">val-ed-ic-tor-ian</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v4" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">valedict-orian</span></label>
+                    </div>
+                    <div id="feedback-q1-v4" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-book text-amber-400"></i><h3 class="font-semibold text-lg">2. Vocabulary</h3></div>
+                    <p class="mb-4">What does “seals your fate” mean in the chorus?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v4" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">Decides / closes your destiny</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v4" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Opens your future</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v4" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">Changes your plan</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v4" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Ignores your mistakes</span></label>
+                    </div>
+                    <div id="feedback-q2-v4" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-grammar text-sky-400"></i><h3 class="font-semibold text-lg">3. Grammar</h3></div>
+                    <p class="mb-4">In “Warnings were written, the signs were clear”, the passive voice emphasizes:</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v4" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">Who wrote the warnings</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v4" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">The action itself (without naming the doer)</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v4" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">Future events</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v4" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Commands</span></label>
+                    </div>
+                    <div id="feedback-q3-v4" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-lightbulb text-emerald-400"></i><h3 class="font-semibold text-lg">4. Listening Comprehension</h3></div>
+                    <p class="mb-4">What is the main metaphor of the song?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v4" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">Checkers is strategic, chess is simple</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v4" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Checkers = impulsive thinking / Chess = long-term strategy</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v4" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">Both games are the same</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v4" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Chess is for losers</span></label>
+                    </div>
+                    <div id="feedback-q4-v4" class="mt-4 hidden text-sm"></div>
+                </div>
+            </div>
+            <button onclick="checkQuiz(4)" class="mt-8 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 py-5 rounded-3xl font-semibold text-lg flex items-center justify-center gap-3"><i class="fas fa-check"></i> Check Answers – Video 4</button>
+            <div id="result-v4" class="mt-6 hidden p-6 bg-zinc-900 rounded-3xl text-center"></div>
+        </section>
+
+        <!-- VIDEO 5 -->
+        <section id="video5" class="mb-20 scroll-mt-20">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="px-4 py-1 bg-violet-500 text-white text-xs font-bold rounded-3xl">VIDEO 5</span>
+                <h2 class="text-3xl title-font">It's Cause the Midterms – Mr. Newberger's AI Funnies</h2>
+            </div>
+            <div class="video-container bg-black rounded-3xl overflow-hidden shadow-2xl mb-8">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fMAzoRFcztQ" title="It's Cause the Midterms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-volume-up text-violet-400"></i><h3 class="font-semibold text-lg">1. Pronunciation</h3></div>
+                    <p class="mb-4">How do you pronounce <strong>"mullahs"</strong> in the song?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v5" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">/ˈmʌl.əz/</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v5" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Like the French "mu-lahs"</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v5" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">mull-ahs</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q1-v5" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">moo-lahs</span></label>
+                    </div>
+                    <div id="feedback-q1-v5" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-book text-amber-400"></i><h3 class="font-semibold text-lg">2. Vocabulary</h3></div>
+                    <p class="mb-4">What does <strong>"midterms"</strong> refer to?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v5" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">Middle of the school year</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v5" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">U.S. congressional elections midway through a president's term</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v5" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">Half-time in a game</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q2-v5" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Mid-year exams</span></label>
+                    </div>
+                    <div id="feedback-q2-v5" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-grammar text-sky-400"></i><h3 class="font-semibold text-lg">3. Grammar</h3></div>
+                    <p class="mb-4">The repeated structure “It’s cause the midterms” is an example of:</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v5" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">Anaphora (repetition for emphasis)</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v5" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">Alliteration</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v5" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">Metaphor</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q3-v5" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">Simile</span></label>
+                    </div>
+                    <div id="feedback-q3-v5" class="mt-4 hidden text-sm"></div>
+                </div>
+                <div class="question-card bg-zinc-900 rounded-3xl p-6">
+                    <div class="flex items-center gap-2 mb-4"><i class="fas fa-lightbulb text-emerald-400"></i><h3 class="font-semibold text-lg">4. Listening Comprehension</h3></div>
+                    <p class="mb-4">According to the song, why is the war with Iran happening?</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v5" value="a" class="w-5 h-5 accent-violet-500"><span class="flex-1">To defend the country</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v5" value="b" class="w-5 h-5 accent-violet-500"><span class="flex-1">As a distraction from the Epstein files and to win the midterms</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v5" value="c" class="w-5 h-5 accent-violet-500"><span class="flex-1">For oil</span></label>
+                        <label class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-4 rounded-2xl cursor-pointer"><input type="radio" name="q4-v5" value="d" class="w-5 h-5 accent-violet-500"><span class="flex-1">By accident</span></label>
+                    </div>
+                    <div id="feedback-q4-v5" class="mt-4 hidden text-sm"></div>
+                </div>
+            </div>
+            <button onclick="checkQuiz(5)" class="mt-8 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 py-5 rounded-3xl font-semibold text-lg flex items-center justify-center gap-3"><i class="fas fa-check"></i> Check Answers – Video 5</button>
+            <div id="result-v5" class="mt-6 hidden p-6 bg-zinc-900 rounded-3xl text-center"></div>
+        </section>
+
+        <!-- GLOBAL SCORE -->
+        <div class="bg-gradient-to-br from-zinc-900 to-black rounded-3xl p-8 mb-20 text-center border border-white/10">
+            <h3 class="text-2xl mb-4 font-semibold">Your Total Score</h3>
+            <div id="global-score" class="text-7xl font-bold title-font text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">0 / 20</div>
+            <p class="text-zinc-400 mt-2">Complete all 5 quizzes to see your progress!</p>
+        </div>
+
+        <!-- LYRICS & TRANSLATION -->
+        <section id="lyrics" class="scroll-mt-20">
+            <h2 class="text-4xl title-font mb-8 flex items-center gap-4">
+                <i class="fas fa-scroll text-amber-400"></i>
+                Full Lyrics with French Translation
+            </h2>
+
+            <!-- Video 1 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3"><span class="text-violet-400">1.</span> NUMBER ONE LIAR – NadaNita</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">ENGLISH LYRICS</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium">You’re the number one liar
+You make promises, then deny them
+You’re the number one liar
+You speak of peace, but keep attacking
+
+You said there was a ceasefire
+But the attacks never stopped
+Homes destroyed, cities shattered
+That’s the truth, not a story
+You say everything’s under control
+But the victims keep falling
+Every day they keep falling
+Yet you call it “retaliation”</pre>
+                    </div>
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">FRENCH TRANSLATION</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium text-amber-100">Tu es le plus grand menteur
+Tu fais des promesses, puis tu les nies
+Tu es le plus grand menteur
+Tu parles de paix, mais tu continues d’attaquer
+
+Tu as dit qu’il y avait un cessez-le-feu
+Mais les attaques n’ont jamais cessé
+Maisons détruites, villes en ruines
+C’est la vérité, pas une histoire
+Tu dis que tout est sous contrôle
+Mais les victimes continuent de tomber
+Chaque jour elles continuent de tomber
+Pourtant tu appelles ça des « représailles »</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3"><span class="text-violet-400">2.</span> Alliance of Crazy People – Rock ID Official</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">ENGLISH LYRICS</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium">We are an alliance of madmen
+Those who think they are the most powerful
+Walking without fear
+As if nothing can bring us down
+
+We destroy without hesitation
+Then say it's necessary
+We step on without feeling
+Then call it normal
+
+We thought we had won…
+Turns out we were just… lost…</pre>
+                    </div>
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">FRENCH TRANSLATION</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium text-amber-100">Nous sommes une alliance de fous
+Ceux qui pensent être les plus puissants
+Marchant sans peur
+Comme si rien ne pouvait nous abattre
+
+Nous détruisons sans hésitation
+Puis nous disons que c’est nécessaire
+Nous piétinons sans ressentir
+Puis nous appelons ça normal
+
+Nous pensions avoir gagné…
+Il s’avère que nous étions juste… perdus…</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3"><span class="text-violet-400">3.</span> Iranian Rhapsody – Dr Phoxotic</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">ENGLISH LYRICS (main excerpt)</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium">Is this like Iraq? Or is this World War 3?
+War with Iran just one more in the Middle East
+Open your eyes, look up to the skies and see
+Whoever the drones strike doesn’t really matter to me
+To me
+
+Just a poor boy, nobody loves me
+He’s just a poor boy from a poor country
+Spare him his life from this catastrophe
+Jews will come, Jews will go… We are indigenous 3000 years ago
+We’ll never never never never let it go!
+
+So you think you can sanction and drone strike the Ayatollah?
+Just gotta get a nuke for real…</pre>
+                    </div>
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">FRENCH TRANSLATION (main excerpt)</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium text-amber-100">Est-ce comme l’Irak ? Ou est-ce la 3e Guerre mondiale ?
+La guerre avec l’Iran, juste une de plus au Moyen-Orient
+Ouvre les yeux, regarde le ciel et vois
+Peu importe qui les drones frappent, ça ne compte vraiment pas pour moi
+Pour moi
+
+Juste un pauvre garçon, personne ne m’aime
+Il est juste un pauvre garçon d’un pays pauvre
+Épargnez-lui la vie de cette catastrophe
+Les Juifs viendront, les Juifs partiront… Nous sommes indigènes il y a 3000 ans
+Nous ne lâcherons jamais jamais jamais jamais prise !
+
+Tu penses vraiment pouvoir sanctionner et frapper l’Ayatollah avec des drones ?
+Il faut juste se procurer une vraie arme nucléaire…</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3"><span class="text-violet-400">4.</span> Class Dismissed – Rock ID Official</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">ENGLISH LYRICS (excerpt)</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium">Class is in session, lesson one!
+Sit down, Donald, you’re failing.
+He’s playing checkers, they’re playing chess,
+turning your chaos into a test.
+You offer peace while loading the gun,
+but the shadows move before you run.
+Class dismissed.</pre>
+                    </div>
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">FRENCH TRANSLATION (excerpt)</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium text-amber-100">La classe est ouverte, leçon numéro un !
+Assieds-toi, Donald, tu échoues.
+Il joue aux dames, ils jouent aux échecs,
+transformant ton chaos en un test.
+Tu offres la paix tout en chargeant le pistolet,
+mais les ombres bougent avant que tu ne fuies.
+Classe renvoyée.</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 flex items-center gap-3"><span class="text-violet-400">5.</span> It's Cause the Midterms – Mr. Newberger's AI Funnies</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">ENGLISH LYRICS (excerpt)</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium">It's cause the midterms, (we must win)
+We’re bombing Iran (stay inside)
+We’re crushing Tehran (ya better hide)
+We’re hunting mullahs, in a war like none have seen
+It's cause the midterms…</pre>
+                    </div>
+                    <div class="bg-zinc-900 rounded-3xl p-8">
+                        <h4 class="text-emerald-400 mb-4 text-sm font-medium">FRENCH TRANSLATION (excerpt)</h4>
+                        <pre class="whitespace-pre-wrap text-sm leading-relaxed font-medium text-amber-100">C’est à cause des midterms, (il faut qu’on gagne)
+On bombarde l’Iran (restez à l’intérieur)
+On écrase Téhéran (vous feriez mieux de vous cacher)
+On chasse les mollahs, dans une guerre comme personne n’en a vu
+C’est à cause des midterms…</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+    <footer class="bg-black py-8 text-center text-xs text-zinc-500 border-t border-zinc-800">
+    
+    -->
+    <footer class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+        <nav class="flex gap-8 text-sm font-medium">
+            <a href="../index.html" class="hover:text-violet-400 transition-colors flex items-center gap-1">← Menu</a>
+            <a href="./monday-2026-04-06.html" class="hover:text-violet-400 transition-colors flex items-center gap-1">Previous Session</a>
+        </nav>
+    </footer>
+
+    <script>
+        const correctAnswers = {
+            1: { q1: 'a', q2: 'b', q3: 'b', q4: 'b' },
+            2: { q1: 'a', q2: 'a', q3: 'b', q4: 'b' },
+            3: { q1: 'a', q2: 'a', q3: 'a', q4: 'b' },
+            4: { q1: 'a', q2: 'a', q3: 'b', q4: 'b' },
+            5: { q1: 'a', q2: 'b', q3: 'a', q4: 'b' }
+        }
+
+        let globalScore = 0
+
+        function checkQuiz(videoNum) {
+            const answers = correctAnswers[videoNum]
+            let score = 0
+            let total = 4
+
+            for (let i = 1; i <= 4; i++) {
+                const selected = document.querySelector(`input[name="q${i}-v${videoNum}"]:checked`)
+                const feedbackEl = document.getElementById(`feedback-q${i}-v${videoNum}`)
+                
+                if (selected) {
+                    if (selected.value === answers[`q${i}`]) {
+                        score++
+                        feedbackEl.innerHTML = `<span class="correct px-3 py-1 rounded-2xl text-xs font-bold">✅ Correct!</span>`
+                    } else {
+                        feedbackEl.innerHTML = `<span class="wrong px-3 py-1 rounded-2xl text-xs font-bold">❌ Wrong. The correct answer was: ${answers[`q${i}`].toUpperCase()}</span>`
+                    }
+                    feedbackEl.classList.remove('hidden')
+                } else {
+                    feedbackEl.innerHTML = `<span class="text-amber-400 px-3 py-1 rounded-2xl text-xs font-bold">⚠️ No answer selected</span>`
+                    feedbackEl.classList.remove('hidden')
+                }
+            }
+
+            const resultEl = document.getElementById(`result-v${videoNum}`)
+            const percent = Math.round((score / total) * 100)
+            
+            resultEl.innerHTML = `
+                <div class="flex justify-center items-center gap-8">
+                    <div>
+                        <div class="text-5xl font-bold text-emerald-400">${score}/${total}</div>
+                        <div class="text-sm text-emerald-400/70">Video ${videoNum}</div>
+                    </div>
+                    <div class="text-6xl">${percent >= 75 ? '🏆' : percent >= 50 ? '👍' : '📚'}</div>
+                    <div class="text-left">
+                        <p class="font-medium">${percent >= 75 ? 'Excellent! You really understood this song.' : percent >= 50 ? 'Good job! A bit more practice and you’ll be perfect.' : 'Watch the video again and try once more!'}</p>
+                    </div>
+                </div>
+            `
+            resultEl.classList.remove('hidden')
+
+            globalScore += score
+            document.getElementById('global-score').textContent = `${globalScore} / 20`
+        }
+
+        function resetQuiz(videoNum) {
+            document.querySelectorAll(`input[name^="q"][name$="-v${videoNum}"]`).forEach(radio => radio.checked = false)
+            for (let i = 1; i <= 4; i++) {
+                const fb = document.getElementById(`feedback-q${i}-v${videoNum}`)
+                if (fb) fb.classList.add('hidden')
+            }
+            const resultEl = document.getElementById(`result-v${videoNum}`)
+            if (resultEl) resultEl.classList.add('hidden')
+        }
+
+        function resetAllQuizzes() {
+            globalScore = 0
+            document.getElementById('global-score').textContent = `0 / 20`
+            for (let i = 1; i <= 5; i++) resetQuiz(i)
+            alert('✅ Everything has been reset! Keep practicing 🎉')
+        }
+
+        window.onload = () => {
+            console.log('%c✅ English Learning App with 5 Videos Ready!', 'color:#a78bfa; font-family:monospace')
+        }
+    </script>
+</body>
+</html>

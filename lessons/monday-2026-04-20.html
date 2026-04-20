@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily English Lesson - Instant Feedback Quiz</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; background:#f4f7f9; color:#333; line-height:1.6; }
+        header { background: linear-gradient(135deg, #2c3e50, #3498db); color:white; padding:2.5rem 1rem; text-align:center; }
+        .container { max-width:1100px; margin:2rem auto; padding:0 1rem; }
+        .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
+        .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
+        h1 { margin:0 0 0.5rem 0; }
+        h2 { color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:0.5rem; }
+        section { background:white; margin-bottom:2.5rem; padding:2rem; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.08); }
+        .question { margin-bottom:2rem; padding:1.5rem; background:#f9f9f9; border-left:6px solid #3498db; border-radius:8px; }
+        .question p { font-weight:600; margin-bottom:1rem; }
+        .options label { display:block; padding:12px 15px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:all 0.3s; }
+        .options label:hover { border-color:#3498db; background:#f0f8ff; }
+        .feedback { margin-top:12px; padding:12px; border-radius:8px; font-weight:500; display:none; }
+        .correct { background:#d4edda; color:#155724; border:1px solid #c3e6cb; }
+        .incorrect { background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; }
+        button { background:#3498db; color:white; border:none; padding:14px 32px; margin:2rem 0; border-radius:8px; cursor:pointer; font-size:1.1rem; font-weight:600; }
+        button:hover { background:#2980b9; }
+        #final-score { margin-top:30px; padding:20px; background:#e8f4fd; border-radius:12px; font-size:1.3rem; display:none; }
+        footer { text-align:center; padding:2rem; color:#777; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Daily English Lesson</h1>
+        <p>Watch the video • Answer the questions • Get instant feedback</p>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>📹 Video of the Day: It's a DISTRACTION: 3 Stories You're Missing!</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/_WAHIGba0tc" 
+                        title="It's a DISTRACTION: 3 Stories You're Missing!" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <p style="text-align:center; margin-top:15px; color:#555;">
+                Watch the full video first. Click any option to see immediate feedback and explanation.
+            </p>
+        </section>
+
+        <!-- 1. Pronunciation -->
+        <section>
+            <h2>1. Pronunciation (5 Questions)</h2>
+            <div class="question">
+                <p>1. How does the speaker pronounce the word "distraction"?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a" onchange="checkAnswer(this)"> a) dis-TRAC-shun</label>
+                    <label><input type="radio" name="q1" value="b" onchange="checkAnswer(this)"> b) DIS-trak-shun</label>
+                    <label><input type="radio" name="q1" value="c" onchange="checkAnswer(this)"> c) dis-trak-SHUN</label>
+                    <label><input type="radio" name="q1" value="d" onchange="checkAnswer(this)"> d) dis-TRAK-shun</label>
+                </div>
+                <div id="fb1" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>2. How is "foreclosure" pronounced in the video?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a" onchange="checkAnswer(this)"> a) for-KLOH-zher</label>
+                    <label><input type="radio" name="q2" value="b" onchange="checkAnswer(this)"> b) FORE-kloh-zher</label>
+                    <label><input type="radio" name="q2" value="c" onchange="checkAnswer(this)"> c) for-KLOO-zher</label>
+                    <label><input type="radio" name="q2" value="d" onchange="checkAnswer(this)"> d) fore-CLOS-ure</label>
+                </div>
+                <div id="fb2" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>3. How does the speaker pronounce "vulnerabilities"?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a" onchange="checkAnswer(this)"> a) vul-ner-a-BIL-i-ties</label>
+                    <label><input type="radio" name="q3" value="b" onchange="checkAnswer(this)"> b) VUL-ner-a-bil-i-ties</label>
+                    <label><input type="radio" name="q3" value="c" onchange="checkAnswer(this)"> c) vul-ner-a-bil-I-ties</label>
+                    <label><input type="radio" name="q3" value="d" onchange="checkAnswer(this)"> d) vul-NER-a-bil-i-ties</label>
+                </div>
+                <div id="fb3" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>4. What is the stress pattern in "critical" (as in "critical minerals")?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a" onchange="checkAnswer(this)"> a) CRI-ti-cal</label>
+                    <label><input type="radio" name="q4" value="b" onchange="checkAnswer(this)"> b) cri-TI-cal</label>
+                    <label><input type="radio" name="q4" value="c" onchange="checkAnswer(this)"> c) cri-ti-CAL</label>
+                    <label><input type="radio" name="q4" value="d" onchange="checkAnswer(this)"> d) CRIT-i-cal</label>
+                </div>
+                <div id="fb4" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>5. How is the word "erosion" (of trust) pronounced?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a" onchange="checkAnswer(this)"> a) e-ROH-zhun</label>
+                    <label><input type="radio" name="q5" value="b" onchange="checkAnswer(this)"> b) EE-roh-zhun</label>
+                    <label><input type="radio" name="q5" value="c" onchange="checkAnswer(this)"> c) er-OH-zhun</label>
+                    <label><input type="radio" name="q5" value="d" onchange="checkAnswer(this)"> d) e-ro-SION</label>
+                </div>
+                <div id="fb5" class="feedback"></div>
+            </div>
+        </section>
+
+        <!-- 2. Vocabulary -->
+        <section>
+            <h2>2. Vocabulary (5 Questions)</h2>
+            <div class="question">
+                <p>1. In the video, what does "foreclosure" mean?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a" onchange="checkAnswer(this)"> a) A new government housing program</label>
+                    <label><input type="radio" name="q6" value="b" onchange="checkAnswer(this)"> b) When a bank takes back a house because the owner cannot repay the mortgage</label>
+                    <label><input type="radio" name="q6" value="c" onchange="checkAnswer(this)"> c) Rising house prices</label>
+                    <label><input type="radio" name="q6" value="d" onchange="checkAnswer(this)"> d) Building more homes</label>
+                </div>
+                <div id="fb6" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>2. "Critical minerals" refers to:</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a" onchange="checkAnswer(this)"> a) Gold and diamonds only</label>
+                    <label><input type="radio" name="q7" value="b" onchange="checkAnswer(this)"> b) Minerals like copper that are essential for electronics, electric vehicles, and renewable energy</label>
+                    <label><input type="radio" name="q7" value="c" onchange="checkAnswer(this)"> c) Minerals used only in medicine</label>
+                    <label><input type="radio" name="q7" value="d" onchange="checkAnswer(this)"> d) Fossil fuels</label>
+                </div>
+                <div id="fb7" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>3. What does "erosion of trust" mean in this context?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a" onchange="checkAnswer(this)"> a) Building stronger confidence in technology</label>
+                    <label><input type="radio" name="q8" value="b" onchange="checkAnswer(this)"> b) A gradual loss or wearing away of people's confidence in systems</label>
+                    <label><input type="radio" name="q8" value="c" onchange="checkAnswer(this)"> c) A sudden increase in trust</label>
+                    <label><input type="radio" name="q8" value="d" onchange="checkAnswer(this)"> d) A legal contract term</label>
+                </div>
+                <div id="fb8" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>4. "Supply chains" means:</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a" onchange="checkAnswer(this)"> a) Chains used to lift heavy objects in factories</label>
+                    <label><input type="radio" name="q9" value="b" onchange="checkAnswer(this)"> b) The network of companies and processes that move goods from production to the consumer</label>
+                    <label><input type="radio" name="q9" value="c" onchange="checkAnswer(this)"> c) A new type of cryptocurrency</label>
+                    <label><input type="radio" name="q9" value="d" onchange="checkAnswer(this)"> d) Military transportation routes</label>
+                </div>
+                <div id="fb9" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>5. A "cyber arms race" refers to:</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a" onchange="checkAnswer(this)"> a) Competition to build faster computers</label>
+                    <label><input type="radio" name="q10" value="b" onchange="checkAnswer(this)"> b) Countries and companies racing to develop better cyberattack and defense tools</label>
+                    <label><input type="radio" name="q10" value="c" onchange="checkAnswer(this)"> c) A race in space technology</label>
+                    <label><input type="radio" name="q10" value="d" onchange="checkAnswer(this)"> d) Racing to fix old software bugs</label>
+                </div>
+                <div id="fb10" class="feedback"></div>
+            </div>
+        </section>
+
+        <!-- 3. Grammar -->
+        <section>
+            <h2>3. Grammar (5 Questions)</h2>
+            <div class="question">
+                <p>1. The speaker says these stories "could have a much bigger long-term impact". The modal "could" expresses:</p>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a" onchange="checkAnswer(this)"> a) Past ability</label>
+                    <label><input type="radio" name="q11" value="b" onchange="checkAnswer(this)"> b) Present or future possibility</label>
+                    <label><input type="radio" name="q11" value="c" onchange="checkAnswer(this)"> c) Obligation</label>
+                    <label><input type="radio" name="q11" value="d" onchange="checkAnswer(this)"> d) Permission</label>
+                </div>
+                <div id="fb11" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>2. "These aren’t flashy headlines, but they represent slow-moving changes that could affect..." This structure shows:</p>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a" onchange="checkAnswer(this)"> a) A fact that has already happened</label>
+                    <label><input type="radio" name="q12" value="b" onchange="checkAnswer(this)"> b) Possible future consequences</label>
+                    <label><input type="radio" name="q12" value="c" onchange="checkAnswer(this)"> c) Past perfect tense</label>
+                    <label><input type="radio" name="q12" value="d" onchange="checkAnswer(this)"> d) Future continuous</label>
+                </div>
+                <div id="fb12" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>3. When the speaker uses "will" (e.g., "that will continue to erode trust"), it is mainly used for:</p>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="a" onchange="checkAnswer(this)"> a) Making predictions about the future</label>
+                    <label><input type="radio" name="q13" value="b" onchange="checkAnswer(this)"> b) Describing past habits</label>
+                    <label><input type="radio" name="q13" value="c" onchange="checkAnswer(this)"> c) Making polite requests</label>
+                    <label><input type="radio" name="q13" value="d" onchange="checkAnswer(this)"> d) Expressing wishes</label>
+                </div>
+                <div id="fb13" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>4. "This led to a closed-door meeting" – "led" is the past tense of "lead" meaning:</p>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="a" onchange="checkAnswer(this)"> a) Resulted in or caused</label>
+                    <label><input type="radio" name="q14" value="b" onchange="checkAnswer(this)"> b) The metal "lead"</label>
+                    <label><input type="radio" name="q14" value="c" onchange="checkAnswer(this)"> c) Left something behind</label>
+                    <label><input type="radio" name="q14" value="d" onchange="checkAnswer(this)"> d) Allowed</label>
+                </div>
+                <div id="fb14" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>5. "Declining birth rates leading to a stagnant population" – "leading to" is a:</p>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="a" onchange="checkAnswer(this)"> a) Present participle showing result or consequence</label>
+                    <label><input type="radio" name="q15" value="b" onchange="checkAnswer(this)"> b) Infinitive of purpose</label>
+                    <label><input type="radio" name="q15" value="c" onchange="checkAnswer(this)"> c) Simple past tense</label>
+                    <label><input type="radio" name="q15" value="d" onchange="checkAnswer(this)"> d) Gerund as subject</label>
+                </div>
+                <div id="fb15" class="feedback"></div>
+            </div>
+        </section>
+
+        <!-- 4. Comprehension -->
+        <section>
+            <h2>4. Comprehension (5 Questions)</h2>
+            <div class="question">
+                <p>1. What is the main message of the video?</p>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="a" onchange="checkAnswer(this)"> a) The Iran conflict is the only important news right now</label>
+                    <label><input type="radio" name="q16" value="b" onchange="checkAnswer(this)"> b) While the world focuses on the Iran conflict, three other important stories are developing quietly</label>
+                    <label><input type="radio" name="q16" value="c" onchange="checkAnswer(this)"> c) Oil prices will drop immediately</label>
+                    <label><input type="radio" name="q16" value="d" onchange="checkAnswer(this)"> d) AI is not a serious concern</label>
+                </div>
+                <div id="fb16" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>2. What is the first hidden story?</p>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="a" onchange="checkAnswer(this)"> a) Rising oil prices in the Middle East</label>
+                    <label><input type="radio" name="q17" value="b" onchange="checkAnswer(this)"> b) New powerful AI capabilities that could lead to more cyberattacks and loss of trust</label>
+                    <label><input type="radio" name="q17" value="c" onchange="checkAnswer(this)"> c) A new war starting in Europe</label>
+                    <label><input type="radio" name="q17" value="d" onchange="checkAnswer(this)"> d) Climate change affecting Peru</label>
+                </div>
+                <div id="fb17" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>3. Why is the situation in Peru important?</p>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="a" onchange="checkAnswer(this)"> a) It has beautiful beaches</label>
+                    <label><input type="radio" name="q18" value="b" onchange="checkAnswer(this)"> b) Political instability could disrupt the global supply of critical minerals like copper</label>
+                    <label><input type="radio" name="q18" value="c" onchange="checkAnswer(this)"> c) It is joining a new trade alliance</label>
+                    <label><input type="radio" name="q18" value="d" onchange="checkAnswer(this)"> d) It is building large AI data centers</label>
+                </div>
+                <div id="fb18" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>4. What domestic issue in the United States is highlighted?</p>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="a" onchange="checkAnswer(this)"> a) Too many new houses being built</label>
+                    <label><input type="radio" name="q19" value="b" onchange="checkAnswer(this)"> b) Rising foreclosure filings and population decline due to low birth rates</label>
+                    <label><input type="radio" name="q19" value="c" onchange="checkAnswer(this)"> c) Very low unemployment rates</label>
+                    <label><input type="radio" name="q19" value="d" onchange="checkAnswer(this)"> d) Free healthcare for all citizens</label>
+                </div>
+                <div id="fb19" class="feedback"></div>
+            </div>
+            <div class="question">
+                <p>5. Why does the speaker say these three stories are more important in the long term?</p>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="a" onchange="checkAnswer(this)"> a) They are more exciting than the Iran news</label>
+                    <label><input type="radio" name="q20" value="b" onchange="checkAnswer(this)"> b) They will affect the economy, supply chains, housing, energy security, and global stability over many years</label>
+                    <label><input type="radio" name="q20" value="c" onchange="checkAnswer(this)"> c) They are easier to solve quickly</label>
+                    <label><input type="radio" name="q20" value="d" onchange="checkAnswer(this)"> d) They only affect one country</label>
+                </div>
+                <div id="fb20" class="feedback"></div>
+            </div>
+        </section>
+
+        <button onclick="showFinalScore()">Submit Quiz & See Total Score</button>
+        <div id="final-score"></div>
+
+    </div>
+
+    <footer>
+        More contents:
+        <ul>
+            <li>
+                <a href="https://aeon.co/essays/why-is-english-so-weirdly-different-from-other-languages" target="_blank" rel="noopener noreferrer">English is not normal</a>
+            </li>
+            <li>
+                <a href="https://youtu.be/VktDRTqeJtQ?si=UAfceWArvyrfS0tV" target="_blank" rel="noopener noreferrer">Trump and JD Vance parody</a>
+            </li>
+            <li>
+                <a href="https://youtu.be/UHi9pIlDlA8?si=LMVnIH_5EgMs3QQ5" target="_blank" rel="noopener noreferrer">Iran Lego Animation</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        const quizData = {
+            q1: { correct: "b", expl: "The speaker uses the typical American English stress: <strong>DIS-trak-shun</strong>." },
+            q2: { correct: "b", expl: "Correct pronunciation: <strong>FORE-kloh-zher</strong> with stress on the first syllable." },
+            q3: { correct: "d", expl: "Natural stress is on the second syllable: <strong>vul-NER-a-bil-i-ties</strong>." },
+            q4: { correct: "a", expl: "The stress is on the first syllable: <strong>CRI-ti-cal</strong>." },
+            q5: { correct: "a", expl: "The speaker pronounces it as <strong>e-ROH-zhun</strong>." },
+
+            q6: { correct: "b", expl: "Foreclosure is when a bank seizes a property because the mortgage is not being repaid." },
+            q7: { correct: "b", expl: "Critical minerals (e.g., copper) are vital for electronics, EVs, solar panels, and many modern technologies." },
+            q8: { correct: "b", expl: "It describes a slow, gradual decrease in public confidence in systems and institutions." },
+            q9: { correct: "b", expl: "Supply chains are the complex networks that bring products from raw materials to the final consumer." },
+            q10: { correct: "b", expl: "It refers to the competition between nations and companies to develop superior cyber weapons and defenses." },
+
+            q11: { correct: "b", expl: "'Could' expresses possibility or potential future impact." },
+            q12: { correct: "b", expl: "The modal 'could' indicates possible consequences in the future." },
+            q13: { correct: "a", expl: "'Will' is commonly used for predictions and expected future events." },
+            q14: { correct: "a", expl: "'Led' is the past form of 'lead' meaning 'resulted in' or 'caused'." },
+            q15: { correct: "a", expl: "The present participle 'leading to' shows a cause-and-effect relationship." },
+
+            q16: { correct: "b", expl: "The video argues that three under-the-radar stories may have bigger long-term effects than the Iran conflict." },
+            q17: { correct: "b", expl: "The first story is about powerful new AI tools that could enable sophisticated cyberattacks and erode trust." },
+            q18: { correct: "b", expl: "Instability in Peru threatens the supply of critical minerals such as copper." },
+            q19: { correct: "b", expl: "The video highlights rising foreclosures and declining birth rates leading to population stagnation." },
+            q20: { correct: "b", expl: "These slow-moving changes will influence housing, supply chains, energy, costs, and overall stability for years." }
+        };
+
+        function checkAnswer(radio) {
+            const qId = radio.name;
+            const selected = radio.value;
+            const fbDiv = document.getElementById('fb' + qId.substring(1));
+            const data = quizData[qId];
+
+            fbDiv.style.display = 'block';
+
+            if (selected === data.correct) {
+                fbDiv.className = 'feedback correct';
+                fbDiv.innerHTML = `✅ Correct!<br><strong>Explanation:</strong> ${data.expl}`;
+            } else {
+                fbDiv.className = 'feedback incorrect';
+                fbDiv.innerHTML = `❌ Incorrect. The correct answer is <strong>${data.correct.toUpperCase()}</strong>.<br><strong>Explanation:</strong> ${data.expl}`;
+            }
+
+            // Disable options and highlight correct one
+            const labels = radio.parentElement.parentElement.querySelectorAll('label');
+            labels.forEach(label => {
+                label.style.pointerEvents = 'none';
+                const input = label.querySelector('input');
+                if (input.value === data.correct) {
+                    label.style.borderColor = '#28a745';
+                    label.style.background = '#d4edda';
+                }
+            });
+        }
+
+        function showFinalScore() {
+            let score = 0;
+            const total = 20;
+
+            Object.keys(quizData).forEach(q => {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === quizData[q].correct) score++;
+            });
+
+            const percent = Math.round((score / total) * 100);
+            const resultDiv = document.getElementById('final-score');
+            resultDiv.style.display = 'block';
+
+            let message = percent >= 85 ? 'Excellent! 🎉' :
+                          percent >= 70 ? 'Very good job! 👍' :
+                          percent >= 50 ? 'Good effort. Review the explanations.' : 
+                          'Watch the video again and try once more.';
+
+            resultDiv.innerHTML = `
+                <strong>Your Final Score: ${score} / ${total} (${percent}%)</strong><br><br>
+                ${message}<br><br>
+                <small>You can refresh the page to retake the quiz.</small>
+            `;
+
+            resultDiv.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>

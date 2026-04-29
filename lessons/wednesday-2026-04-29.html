@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced English Mastery • Deep Learning Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; background-color: #09090b; color: #fafafa; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .quote-font { font-family: 'Source Serif 4', serif; }
+        .video-container { position: relative; padding-top: 56.25%; width: 100%; border-radius: 1.5rem; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .hide { display: none !important; }
+        .correct { background-color: #059669 !important; color: white !important; border-color: #10b981 !important; }
+        .wrong { background-color: #dc2626 !important; color: white !important; border-color: #ef4444 !important; }
+        .opt-btn { transition: all 0.2s ease; border: 1px solid #27272a; }
+        .opt-btn:hover:not(:disabled) { background-color: #27272a; border-color: #3f3f46; }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <header class="max-w-5xl mx-auto text-center mb-16">
+        <h1 class="text-5xl md:text-6xl title-font font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+            English Lesson Player
+        </h1>
+        <p class="text-zinc-400 text-xl">Video Analysis & Literary Comprehension</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto">
+        
+        <section class="mb-20">
+            <div class="video-container shadow-2xl shadow-blue-500/10 mb-8 border border-zinc-800">
+                <iframe src="https://www.youtube.com/embed/orQKfIXMiA8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-3xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+                    <h2 class="text-3xl title-font font-bold">Video Quiz: <span class="text-blue-400 font-normal">20 Questions</span></h2>
+                    <div id="score-box" class="bg-blue-600 px-6 py-2 rounded-full font-bold text-lg">Score: 0 / 45</div>
+                </div>
+
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-6">Part 1: Pronunciation</h3>
+                        <div class="grid grid-cols-1 gap-8" id="pron-v">
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">1. Stress in <strong>"Pathologies"</strong>:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">pa-THOL-o-gies</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">PA-tho-lo-gies</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">2. The word <strong>"Existential"</strong> ends with:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A 'tee-al' sound</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A 'shul' sound (/ˈʃəl/)</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">3. Stress in <strong>"Coherence"</strong>:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">co-HEER-ence</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">CO-her-ence</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">4. In <strong>"Hollowness"</strong>, the 'h' is:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Voiced (pronounced)</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Silent</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">5. Pronunciation of <strong>"Dopamine"</strong>:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">do-PA-mine</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">DOH-puh-meen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-6 border-t border-zinc-800 pt-10">Part 2: Vocabulary</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">1. What is a <strong>"Social Media Fast"</strong>?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Using apps very quickly</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Abstaining from social media for a period</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">2. What does <strong>"Prone to"</strong> mean?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Likely to suffer from or do something</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Against something</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">3. A <strong>"Prescription"</strong> in this context is:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A recommendation or rule to follow</button>
+                                    <button onclick="check(this, 1)" class="p-4 rounded-xl bg-zinc-800/50 text-left opt-btn">A physical medicine</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">4. <strong>"Idle"</strong> time means:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Time spent working hard</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Time when you are not active or working</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">5. <strong>"Coherence"</strong> refers to:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">The quality of being logical and consistent</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">The speed of thought</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-6 border-t border-zinc-800 pt-10">Part 3: Grammar</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">1. "If you <strong>pull out</strong> your phone..." is which conditional?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Second Conditional (Unlikely)</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">First Conditional (Possible future)</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">2. "We <strong>have been able</strong> to shut off..." is in:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Present Perfect</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Past Simple</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">3. "<strong>Being</strong> in your head" - 'Being' acts as:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A Gerund (Noun)</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A Present Participle (Verb)</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">4. "It <strong>is going to get</strong> harder" expresses:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A past habit</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">A prediction based on evidence</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">5. Identify the passive structure:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">"People have been reared..."</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">"People are looking..."</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-6 border-t border-zinc-800 pt-10">Part 4: Comprehension</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">1. What triggers the "Default Mode Network"?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Lack of cognitive occupation (boredom)</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Intense focus on a task</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">2. Why is boredom "uncomfortable"?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">It makes us feel sleepy</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">It forces us to face existential questions</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">3. What was the result of the Harvard experiment?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">People shocked themselves to avoid being bored</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">People meditated peacefully for 15 minutes</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="1">
+                                <p class="text-lg mb-4">4. What is Brooks' advice for the gym?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Listen to educational podcasts</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Don't take your phone; stay in your head</button>
+                                </div>
+                            </div>
+                            <div class="q-block" data-ans="0">
+                                <p class="text-lg mb-4">5. What is the main benefit of "social media cleanses"?</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <button onclick="check(this, 0)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Reminding yourself life doesn't revolve around devices</button>
+                                    <button onclick="check(this, 1)" class="opt-btn p-4 rounded-xl bg-zinc-800/50 text-left">Getting more followers</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-24 mb-32">
+            <h2 class="text-4xl title-font font-bold text-center mb-16">Text Analysis</h2>
+
+            <div class="bg-zinc-900/30 p-8 md:p-12 rounded-[2.5rem] border border-zinc-800">
+                <blockquote class="quote-font text-2xl md:text-3xl italic leading-relaxed text-zinc-100 mb-6">
+                    “We shall sooner have the fowl by hatching the egg than by smashing it. In today’s world of abundance, there’s always the next hot thing, a new miracle solution, a cure for it all. It’s no wonder that so many people lack the self-discipline to stick to one thing and constantly jump from one thing to another, deluding themselves that the new thing will surely be better than the one they have now.”
+                </blockquote>
+                <p class="text-zinc-500 text-sm font-medium mb-10 border-l-2 border-emerald-500 pl-4">
+                    Source: <span class="text-zinc-300 italic">"365 Days With Self-Discipline"</span>, Meadows Publishing (2017) • Abraham Lincoln excerpt via Martin Meadows.
+                </p>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="q-block" data-ans="1"><p class="mb-2">1. What does Lincoln's metaphor suggest?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Aggression works faster</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Patience is the only way to get results</button></div>
+                    
+                    <div class="q-block" data-ans="0"><p class="mb-2">2. What is the "next hot thing" in the text?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">A distraction from consistent effort</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">A necessary upgrade</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">3. "Deluding themselves" means:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Educating themselves</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Believing something that is not true</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">4. Why is self-discipline rare today?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Because of the abundance of options</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Because eggs are hard to hatch</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">5. To "stick to one thing" requires:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">A miracle solution</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Self-control and mental resilience</button></div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/30 p-8 md:p-12 rounded-[2.5rem] border border-zinc-800">
+                <blockquote class="quote-font text-2xl md:text-3xl italic leading-relaxed text-zinc-100 mb-6">
+                    “In practice, however, the possibility of a global return to sound money and liberal government is extremely unlikely as these concepts are largely alien to the vast majority of politicians and voters worldwide... Bitcoin's diminishing supply growth rate is likely to continue to make it an attractive speculative bet for many...”
+                </blockquote>
+                <p class="text-zinc-500 text-sm font-medium mb-10 border-l-2 border-orange-500 pl-4">
+                    Source: <span class="text-zinc-300 italic">"The Bitcoin Standard"</span>, Ammous, Saifedean (2018).
+                </p>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="q-block" data-ans="1"><p class="mb-2">1. Why is "sound money" described as "alien"?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">It's from another planet</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">It is unfamiliar to people raised on government control</button></div>
+                    
+                    <div class="q-block" data-ans="0"><p class="mb-2">2. What is Bitcoin's "attractive" feature mentioned?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Its diminishing supply growth</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Its government support</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">3. What have generations been "reared" to believe?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">That government control of money is necessary</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">That Bitcoin is the only money</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">4. "Speculative bet" implies:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">A guaranteed profit</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">An investment with risk and high potential reward</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">5. "Liberal government" in this context refers to:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Limited government intervention</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">A specific political party</button></div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/30 p-8 md:p-12 rounded-[2.5rem] border border-zinc-800">
+                <blockquote class="quote-font text-2xl md:text-3xl italic leading-relaxed text-zinc-100 mb-6">
+                    “My friend joked the company would only realize her value after she left... What she did inadvertently do by being absent was illustrate her co-workers' incompetence. Negotiating is not always about what you can do but rather what others cannot do.”
+                </blockquote>
+                <p class="text-zinc-500 text-sm font-medium mb-10 border-l-2 border-blue-500 pl-4">
+                    Source: <span class="text-zinc-300 italic">"The Joy of Game Theory"</span>, Presh Talwalkar (2013).
+                </p>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="q-block" data-ans="0"><p class="mb-2">1. How did the friend get the raise?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">By becoming ill and absent</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">By learning a new skill</button></div>
+                    
+                    <div class="q-block" data-ans="1"><p class="mb-2">2. What did her absence reveal?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">That she was lazy</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">That others couldn't handle her work</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">3. "To no avail" means:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Without any success</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Very expensive</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">4. Was the friend's value a "hidden talent"?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Yes, she never showed it before</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">No, she had cleaned messes before, but it wasn't noticed</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">5. What is the "Game Theory" lesson here?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Power comes from being indispensable</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Always talk during negotiations</button></div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/30 p-8 md:p-12 rounded-[2.5rem] border border-zinc-800">
+                <blockquote class="quote-font text-2xl md:text-3xl italic leading-relaxed text-zinc-100 mb-6">
+                    “originally known as elo, was lifted from the Canaanite tradition and became elohim... legal codices of the Mesopotamian kingdoms were incorporated into the biblical commandments. Even the long, complicated account of the division into the twelve tribes of Israel appears to be based on a Greek political tradition articulated by Plato...”
+                </blockquote>
+                <p class="text-zinc-500 text-sm font-medium mb-10 border-l-2 border-red-500 pl-4">
+                    Source: <span class="text-zinc-300 italic">"The Invention of the Land of Israel"</span>, Shlomo Sand, Verso Books (2012).
+                </p>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="q-block" data-ans="1"><p class="mb-2">1. Where does the name 'Elohim' originate from?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Greece</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Canaanite tradition</button></div>
+                    
+                    <div class="q-block" data-ans="0"><p class="mb-2">2. What happened to Mesopotamian legal codices?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">They were incorporated into biblical commandments</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">They were destroyed</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">3. Plato's influence is seen in:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">The concept of one God</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">The division into twelve tribes</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">4. "Plundered" in this literary context means:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Borrowed or taken extensively</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Sailing on a ship</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">5. What is the author's main claim?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">The Bible has no historical value</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Biblical narratives integrated diverse regional traditions</button></div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/30 p-8 md:p-12 rounded-[2.5rem] border border-zinc-800">
+                <blockquote class="quote-font text-2xl md:text-3xl italic leading-relaxed text-zinc-100 mb-6">
+                    “People with easy access to a good education, people with a network of influential friends... all stand a better chance... People with fewer resources, in spite of their best efforts, can be derailed so much more easily.”
+                </blockquote>
+                <p class="text-zinc-500 text-sm font-medium mb-10 border-l-2 border-pink-500 pl-4">
+                    Source: <span class="text-zinc-300 italic">"Mindset: The New Psychology of Success"</span>, Carol S. Dweck, Random House (2006).
+                </p>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="q-block" data-ans="1"><p class="mb-2">1. What helps effort "work better"?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Just working more hours</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Being rich, educated, and connected</button></div>
+                    
+                    <div class="q-block" data-ans="0"><p class="mb-2">2. "Derailed" means:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Thrown off course by obstacles</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Fixed or repaired</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">3. What is an example of being derailed?</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Winning the lottery</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">A family illness leading to debt</button></div>
+
+                    <div class="q-block" data-ans="0"><p class="mb-2">4. "Nest egg" refers to:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Savings for the future</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">A breakfast dish</button></div>
+
+                    <div class="q-block" data-ans="1"><p class="mb-2">5. The author highlights that:</p>
+                    <button onclick="check(this, 0)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left mb-2">Resources don't matter</button>
+                    <button onclick="check(this, 1)" class="opt-btn p-3 w-full bg-zinc-800 rounded-lg text-left">Circumstances heavily impact the outcome of effort</button></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center pb-20">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-10 py-4 bg-zinc-800 hover:bg-zinc-700 rounded-full font-bold transition-all border border-zinc-700">
+                Back to Top
+            </button>
+        </footer>
+    </main>
+
+    <script>
+        let score = 0;
+        const total = 45;
+        const answered = new Set();
+
+        function check(btn, idx) {
+            const block = btn.closest('.q-block');
+            const qIdx = Array.from(document.querySelectorAll('.q-block')).indexOf(block);
+            
+            if (answered.has(qIdx)) return;
+
+            const correct = parseInt(block.dataset.ans);
+            const buttons = block.querySelectorAll('button');
+
+            buttons.forEach((b, i) => {
+                b.disabled = true;
+                if (i === correct) b.classList.add('correct');
+                if (i === idx && i !== correct) b.classList.add('wrong');
+            });
+
+            if (idx === correct) score++;
+            answered.add(qIdx);
+            document.getElementById('score-box').innerText = `Score: ${score} / ${total}`;
+        }
+    </script>
+</body>
+</html>

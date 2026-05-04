@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Mastery Interface • Terence Tao Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #fafafa; scroll-behavior: smooth; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .quote-font { font-family: 'Source Serif 4', serif; }
+        .video-container { position: relative; padding-top: 56.25%; border-radius: 1.5rem; overflow: hidden; border: 1px solid #27272a; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .opt-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #27272a; }
+        .opt-btn:hover:not(:disabled) { background-color: #18181b; border-color: #3f3f46; transform: translateX(4px); }
+        .correct { background-color: #059669 !important; border-color: #10b981 !important; color: white; }
+        .wrong { background-color: #dc2626 !important; border-color: #ef4444 !important; color: white; }
+        .explanation { display: none; margin-top: 10px; padding: 12px; border-radius: 8px; background: #18181b; border-left: 4px solid #3b82f6; font-size: 0.95rem; }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <header class="max-w-5xl mx-auto text-center mb-16">
+        <h1 class="text-5xl md:text-6xl title-font font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">
+            Terence Tao: The Mathematical Mind
+        </h1>
+        <p class="text-zinc-400 text-xl">Advanced Linguistic & Concept Analysis</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto">
+        
+        <!-- VIDEO SECTION -->
+        <section class="mb-16">
+            <div class="video-container shadow-2xl shadow-indigo-500/10">
+                <iframe src="https://www.youtube.com/embed/1xxa5fxJkZo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="bg-zinc-900/50 border border-zinc-800 rounded-3xl p-6 md:p-12 mb-16">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl title-font font-bold">Interactive MCQ</h2>
+                <div id="live-score" class="bg-indigo-600 px-6 py-2 rounded-full font-bold">Score: 0 / 20</div>
+            </div>
+
+            <div id="quiz-content" class="space-y-12">
+                <!-- Les questions seront injectées ici par JS -->
+            </div>
+
+            <div id="final-result" class="hidden mt-16 p-8 bg-zinc-800/50 border border-indigo-500/30 rounded-2xl">
+                <h3 class="text-3xl title-font font-bold mb-4">Quiz Complete!</h3>
+                <p id="final-score-text" class="text-xl mb-6"></p>
+                <div id="error-recap" class="space-y-4">
+                    <!-- Récapitulatif des erreurs -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSCRIPT SECTION -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="space-y-6">
+                <h3 class="text-2xl title-font font-bold text-indigo-400 border-b border-zinc-800 pb-2">English Transcript</h3>
+                <div class="text-zinc-300 leading-relaxed quote-font text-xl space-y-4 h-96 overflow-y-auto pr-4">
+                    <p>"...I think mathematics is a very human activity. We often think of it as this very cold, logical, deductive process..."</p>
+                    <p>"...But actually, to find the right path, you need intuition. You need to have a feeling for where the answer might lie before you can prove it..."</p>
+                    <p>"...AI is changing the frontier. It's not just about calculation anymore, it's about how we formalize our thoughts..."</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h3 class="text-2xl title-font font-bold text-cyan-400 border-b border-zinc-800 pb-2">Traduction Française</h3>
+                <div class="text-zinc-400 leading-relaxed quote-font text-xl space-y-4 h-96 overflow-y-auto pr-4 italic">
+                    <p>"...Je pense que les mathématiques sont une activité très humaine. On les perçoit souvent comme un processus froid, logique et déductif..."</p>
+                    <p>"...Mais en réalité, pour trouver le bon chemin, il faut de l'intuition. Il faut avoir un pressentiment de l'endroit où se trouve la réponse avant de pouvoir la prouver..."</p>
+                    <p>"...L'IA déplace la frontière. Il ne s'agit plus seulement de calcul, mais de la manière dont nous formalisons nos pensées..."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            // PRONUNCIATION
+            { category: "Pronunciation", q: "How is the 'h' in 'Heuristic' pronounced by Tao?", options: ["It is silent", "It is a voiced glottal fricative (clearly heard)", "It sounds like a 'K'", "It sounds like a 'W'"], correct: 1, exp: "In English, the 'h' in 'heuristic' is pronounced, unlike in French where it is silent." },
+            { category: "Pronunciation", q: "Where is the primary stress in 'Mathematician'?", options: ["MA-the-ma-ti-cian", "ma-THE-ma-ti-cian", "ma-the-ma-TI-cian", "ma-the-ma-ti-CIAN"], correct: 2, exp: "The stress falls on the third syllable: /ˌmæθəməˈtɪʃən/." },
+            { category: "Pronunciation", q: "The word 'Intuition' ends with which sound?", options: ["A 'tee-on' sound", "A 'shun' sound (/ʃən/)", "A 'see-on' sound", "A 'zhun' sound"], correct: 1, exp: "The suffix -tion is almost always pronounced 'shun' in English." },
+            { category: "Pronunciation", q: "The vowel sound in 'Proof' is the same as in:", options: ["Foot", "Blood", "Moon", "Door"], correct: 2, exp: "'Proof' and 'Moon' both share the long /uː/ sound." },
+            { category: "Pronunciation", q: "How does Tao pronounce the 'x' in 'Exemplify'?", options: ["Like 'ks'", "Like 'gz'", "Like 's'", "Like 'z'"], correct: 1, exp: "When 'ex' is followed by a stressed vowel, it is often pronounced /ɪɡz/." },
+
+            // VOCABULARY
+            { category: "Vocabulary", q: "What does 'Tractable' mean in a mathematical context?", options: ["Easy to move", "Solvable or manageable", "Very long", "Impossible to prove"], correct: 1, exp: "A 'tractable' problem is one that can be solved with reasonable resources." },
+            { category: "Vocabulary", q: "What is a 'Frontier'?", options: ["A back door", "The extreme limit of understanding/discovery", "A type of equation", "A mathematical error"], correct: 1, exp: "The 'frontier' of knowledge refers to the leading edge of research." },
+            { category: "Vocabulary", q: "To 'Formalize' a thought means:", options: ["To dress it up for a party", "To translate it into a rigorous, logical language", "To forget it", "To speak it aloud"], correct: 1, exp: "Formalization involves putting concepts into a strict logical or symbolic framework." },
+            { category: "Vocabulary", q: "A 'Heuristic' is:", options: ["A precise rule", "A mental shortcut or rule of thumb", "A computer virus", "A type of ancient geometry"], correct: 1, exp: "Heuristics are practical methods that aren't guaranteed to be perfect but are sufficient for immediate goals." },
+            { category: "Vocabulary", q: "What does 'Nuance' refer to?", options: ["A loud noise", "A subtle difference in meaning or shade", "A total failure", "A new theory"], correct: 1, exp: "Nuance implies fine, delicate distinctions." },
+
+            // GRAMMAR
+            { category: "Grammar", q: "'If I were to solve this...' is an example of:", options: ["First Conditional", "Second Conditional (Hypothetical)", "Third Conditional", "Present Simple"], correct: 1, exp: "The 'If + subject + were to + verb' structure is a formal variation of the second conditional." },
+            { category: "Grammar", q: "Identify the tense: 'AI has been changing the field.'", options: ["Present Perfect", "Present Perfect Continuous", "Past Continuous", "Future Perfect"], correct: 1, exp: "Has + been + -ing indicates an action that started in the past and is still continuing." },
+            { category: "Grammar", q: "Which is correct for a non-defining relative clause?", options: ["The problem, that I solved, was hard.", "The problem which I solved was hard.", "The problem, which I solved, was hard.", "The problem I solved was hard."], correct: 2, exp: "Non-defining clauses use 'which' and are set off by commas." },
+            { category: "Grammar", q: "'One must formalize...' - 'Must' expresses:", options: ["Ability", "Permission", "Obligation/Necessity", "A past habit"], correct: 2, exp: "'Must' is a modal verb showing necessity." },
+            { category: "Grammar", q: "The passive voice of 'Tao wrote the paper' is:", options: ["The paper was written by Tao", "The paper is written by Tao", "Tao was writing the paper", "The paper has been written by Tao"], correct: 0, exp: "Passive: Object + was/were + past participle + by + Subject." },
+
+            // COMPREHENSION
+            { category: "Comprehension", q: "According to Tao, is math purely logical?", options: ["Yes, intuition is a distraction", "No, it is a deeply human activity involving intuition", "It is only logical for computers", "He doesn't mention logic"], correct: 1, exp: "Tao emphasizes that while the final result is logical, the process of discovery is very human." },
+            { category: "Comprehension", q: "What role does Tao see for IA?", options: ["It will replace all mathematicians", "It is a tool for formalization and exploration", "It is useless for high-level math", "It only helps with basic addition"], correct: 1, exp: "He views IA as a collaborator that helps navigate the frontier of formal logic." },
+            { category: "Comprehension", q: "How does Tao view collaboration?", options: ["Math should be done alone", "Collaboration is essential for modern complex problems", "He prefers working in secret", "Collaboration is only for students"], correct: 1, exp: "Tao is a major advocate for collaborative platforms like Polymath." },
+            { category: "Comprehension", q: "What is his view on 'getting stuck'?", options: ["It means you are not a good mathematician", "It's a natural part of the process and an opportunity to learn", "You should give up immediately", "You should only do easy problems"], correct: 1, exp: "He suggests that being stuck is where the real learning and breakthrough happen." },
+            { category: "Comprehension", q: "What does he mean by 'formalizing' thoughts with AI?", options: ["Teaching AI to speak English", "Converting intuition into machine-verifiable proofs", "Writing emails with AI", "Making math more 'fancy'"], correct: 1, exp: "Tools like Lean help mathematicians ensure their intuitive jumps are actually correct." }
+        ];
+
+        let score = 0;
+        let userAnswers = [];
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-content');
+            quizData.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "q-block";
+                qDiv.innerHTML = `
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">${item.category}</span>
+                        <p class="text-xl font-semibold mt-1">${index + 1}. ${item.q}</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="q-${index}">
+                        ${item.options.map((opt, i) => `
+                            <button onclick="check(${index}, ${i}, this)" class="opt-btn p-4 rounded-xl bg-zinc-800/30 text-left">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="exp-${index}" class="explanation">
+                        <strong>Correction:</strong> ${item.options[item.correct]}<br>
+                        ${item.exp}
+                    </div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function check(qIdx, choiceIdx, btn) {
+            const buttons = document.querySelectorAll(`#q-${qIdx} button`);
+            if (buttons[0].disabled) return;
+
+            const isCorrect = choiceIdx === quizData[qIdx].correct;
+            userAnswers[qIdx] = { choice: choiceIdx, correct: isCorrect };
+
+            buttons.forEach((b, i) => {
+                b.disabled = true;
+                if (i === quizData[qIdx].correct) b.classList.add('correct');
+                if (i === choiceIdx && !isCorrect) b.classList.add('wrong');
+            });
+
+            document.getElementById(`exp-${qIdx}`).style.display = 'block';
+
+            if (isCorrect) score++;
+            document.getElementById('live-score').innerText = `Score: ${score} / 20`;
+
+            if (Object.keys(userAnswers).length === quizData.length) {
+                showFinalSummary();
+            }
+        }
+
+        function showFinalSummary() {
+            const finalDiv = document.getElementById('final-result');
+            const recapDiv = document.getElementById('error-recap');
+            finalDiv.classList.remove('hidden');
+            document.getElementById('final-score-text').innerText = `Your total score is ${score} / 20.`;
+
+            recapDiv.innerHTML = '<h4 class="font-bold text-lg mb-4 text-zinc-400">Error Recap:</h4>';
+            
+            quizData.forEach((q, i) => {
+                if (!userAnswers[i].correct) {
+                    recapDiv.innerHTML += `
+                        <div class="p-4 bg-red-900/20 border-l-4 border-red-500 rounded-r-lg">
+                            <p class="font-bold">Q${i+1}: ${q.q}</p>
+                            <p class="text-sm text-zinc-400">You chose: <span class="text-red-400">${q.options[userAnswers[i].choice]}</span></p>
+                            <p class="text-sm text-emerald-400">Correct: ${q.options[q.correct]}</p>
+                        </div>
+                    `;
+                }
+            });
+
+            if (score === 20) recapDiv.innerHTML = "<p class='text-emerald-400 font-bold'>Perfect Score! No errors to recap.</p>";
+            
+            finalDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        renderQuiz();
+    </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Course • Monday, May 11, 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0c0c0e; color: #e4e4e7; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .video-container { position: relative; padding-top: 56.25%; border-radius: 1rem; overflow: hidden; border: 1px solid #27272a; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .opt-btn { transition: all 0.2s; border: 1px solid #27272a; }
+        .opt-btn:hover:not(:disabled) { background-color: #18181b; border-color: #3f3f46; transform: translateX(5px); }
+        .correct { background-color: #064e3b !important; border-color: #10b981 !important; color: #ecfdf5; }
+        .wrong { background-color: #7f1d1d !important; border-color: #ef4444 !important; color: #fef2f2; }
+        .explanation { display: none; margin-top: 10px; padding: 12px; border-radius: 8px; background: #18181b; border-left: 4px solid #6366f1; font-size: 0.9rem; color: #a1a1aa; }
+        .quote-card { background: linear-gradient(145deg, #18181b 0%, #0c0c0e 100%); border: 1px solid #27272a; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <header class="max-w-5xl mx-auto mb-16 text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest uppercase border border-indigo-500/50 text-indigo-400 rounded-full">
+            Monday, May 11, 2026 • AI & Language Session
+        </div>
+        <h1 class="text-4xl md:text-6xl title-font font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400">
+            Self-Attention Explained
+        </h1>
+        <p class="text-zinc-500 text-lg">Mastering the architecture of modern language understanding.</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto">
+        
+        <section class="mb-20">
+            <div class="video-container shadow-2xl shadow-indigo-500/10">
+                <iframe src="https://www.youtube.com/embed/vkhPtpUiLd8" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="bg-zinc-900/30 border border-zinc-800 rounded-3xl p-6 md:p-10 mb-20">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
+                <h2 class="text-3xl title-font font-bold">Comprehensive Quiz</h2>
+                <div id="score-badge" class="bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 px-6 py-2 rounded-full font-bold mono">
+                    PROGRESS: 0 / 20
+                </div>
+            </div>
+
+            <div id="quiz-container" class="space-y-16">
+                </div>
+
+            <div id="final-recap" class="hidden mt-20 p-8 border-t border-zinc-800">
+                <h3 class="text-3xl title-font font-bold mb-6 text-emerald-400">Session Complete</h3>
+                <p id="final-score-msg" class="text-xl mb-8"></p>
+                <div id="error-list" class="space-y-4"></div>
+                <button onclick="window.location.reload()" class="mt-10 px-8 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-xl transition font-bold">
+                    Restart Session
+                </button>
+            </div>
+        </section>
+
+        <section class="space-y-8 mb-20">
+            <h2 class="text-3xl title-font font-bold border-b border-zinc-800 pb-4 mb-10">Principles & Insights</h2>
+            <div id="quotes-container" class="grid gap-6">
+                </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            // COMPREHENSION
+            { cat: "Comprehension", q: "What was the main flaw of Recurrent Neural Networks (RNNs) mentioned in the video?", options: ["They were too fast to process information", "They processed words sequentially, losing long-term context", "They could only read from right to left", "They didn't use numbers for words"], correct: 1, exp: "RNNs process data one-by-one, meaning by the time they reach the end of a sentence, early context (the 'long-term dependency') is often lost." },
+            { cat: "Comprehension", q: "In the sentence 'The animal didn't cross the street because it was too tired', how does self-attention identify 'it'?", options: ["By picking a random word", "By ignoring the rest of the sentence", "By connecting 'it' to 'animal' through similarity scores", "By looking at the length of the words"], correct: 2, exp: "The model calculates relationships between 'it' and every other word, finding a high correlation with 'animal' based on the context of being 'tired'." },
+            { cat: "Comprehension", q: "What is an 'embedding'?", options: ["A hidden message in the code", "A dense vector of real values representing a word's meaning", "A way to delete words from a sentence", "A hardware component of the GPU"], correct: 1, exp: "An embedding is the mathematical 'fingerprint' of a word, mapping its semantic meaning into a multi-dimensional space." },
+            { cat: "Comprehension", q: "Why is the scaling step (dividing by the square root of dimensions) necessary?", options: ["To make the calculation slower", "To prevent scores from exploding and causing 'dead' gradients", "To double the values of the keys", "To remove the vowels from the input"], correct: 1, exp: "Without scaling, the scores can become so large that the Softmax function 'saturates', preventing the network from learning during training." },
+            { cat: "Comprehension", q: "How does the model learn grammatical relationships?", options: ["Engineers program the rules manually", "It reads a dictionary during training", "It discovers them purely through mathematical interactions during training", "It doesn't understand grammar at all"], correct: 2, exp: "Grammatical links (like subject-verb) emerge naturally from the math as the model learns which words consistently provide useful context to each other." },
+
+            // VOCABULARY
+            { cat: "Vocabulary", q: "What does the word 'Simultaneously' mean in the context of the video?", options: ["One after another", "In a very slow manner", "At the same time", "Only twice"], correct: 2, exp: "Transformers process all words in parallel (at the same time), unlike RNNs." },
+            { cat: "Vocabulary", q: "A 'Dense' vector is one that is:", options: ["Empty", "Full of non-zero values providing rich information", "Impossible to read", "Short and simple"], correct: 1, exp: "In AI, 'dense' refers to vectors where most dimensions contain meaningful numerical values." },
+            { cat: "Vocabulary", q: "What is 'Dot-product' used for here?", options: ["To add two sentences together", "To measure the similarity between two vectors", "To delete a word", "To count the number of letters"], correct: 1, exp: "The dot-product is the mathematical operation used to determine how much one word (query) should focus on another (key)." },
+            { cat: "Vocabulary", q: "If a function 'Saturates', it means:", options: ["It becomes more flexible", "It reaches a limit where changes in input have little effect on output", "It breaks the computer", "It becomes very quiet"], correct: 1, exp: "In neural networks, saturation (like in Softmax) means the gradients become nearly zero, stopping the learning process." },
+            { cat: "Vocabulary", q: "To 'Enrich' the meaning of a word means to:", options: ["Make it more expensive", "Add contextual information to it", "Translate it", "Shorten it"], correct: 1, exp: "Self-attention enriches word embeddings by blending them with relevant context from the surrounding sentence." },
+
+            // GRAMMAR
+            { cat: "Grammar", q: "Identify the tense: 'Nothing is ignored.'", options: ["Present Simple Active", "Present Simple Passive", "Past Simple Passive", "Present Continuous"], correct: 1, exp: "The structure 'is + past participle' indicates the passive voice in the present simple." },
+            { cat: "Grammar", q: "In 'What if every word could process every other word...', 'could' is used to express:", options: ["A past ability", "A hypothetical possibility", "A mandatory rule", "A physical strength"], correct: 1, exp: "In 'What if' clauses, 'could' is often used to discuss hypothetical or imaginary scenarios." },
+            { cat: "Grammar", q: "Choose the correct relative pronoun: 'The paper ___ introduced Transformers was published in 2017.'", options: ["Who", "Whom", "Which/That", "Whose"], correct: 2, exp: "We use 'which' or 'that' to refer to things (the paper)." },
+            { cat: "Grammar", q: "Identify the structure: 'By the time the state reaches the word...'", options: ["A conditional clause", "A time clause", "A purpose clause", "A relative clause"], correct: 1, exp: "'By the time' is a conjunction used to introduce a time clause indicating a deadline or sequence." },
+            { cat: "Grammar", q: "Which of these is a gerund used as a subject?", options: ["He is processing data", "Scaling the scores is important", "The model will scale the scores", "He likes to scale"], correct: 1, exp: "'Scaling' acts as a noun (the subject of the sentence) in this case." },
+
+            // PRONUNCIATION
+            { cat: "Pronunciation", q: "Where is the primary stress in 'Relationship'?", options: ["RE-lationship", "re-LA-tionship", "re-la-TION-ship", "re-la-tion-SHIP"], correct: 1, exp: "The stress is on the second syllable: /rɪˈleɪʃnʃɪp/." },
+            { cat: "Pronunciation", q: "How many syllables are in 'Simultaneously'?", options: ["4", "5", "6", "7"], correct: 2, exp: "Si-mul-ta-ne-ous-ly has 6 syllables." },
+            { cat: "Pronunciation", q: "The 'th' in 'Through' is:", options: ["Voiced (like 'this')", "Unvoiced (like 'think')", "Silent", "Pronounced like 'd'"], correct: 1, exp: "'Through' uses the unvoiced /θ/ sound." },
+            { cat: "Pronunciation", q: "The '-ed' in 'Derived' is pronounced as:", options: ["/t/ (like 'walked')", "/d/ (like 'played')", "/ɪd/ (like 'wanted')", "It is silent"], correct: 1, exp: "Since 'derive' ends in a voiced 'v' sound, the '-ed' is pronounced as /d/." },
+            { cat: "Pronunciation", q: "Where is the stress in 'Architecture'?", options: ["AR-chitecture", "ar-CHI-tecture", "ar-chi-TEC-ture", "ar-chi-tec-TURE"], correct: 0, exp: "The stress is on the first syllable: /ˈɑːrkɪtektʃər/." }
+        ];
+
+        const quotes = [
+            { 
+                text: "Principles are fundamental truths that serve as the foundations for behavior that gets you what you want out of life. They can be applied again and again in similar situations to help you achieve your goals.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Ray_Dalio" target="_blank">Ray Dalio</a>', 
+                trans: "Les principes sont des vérités fondamentales qui servent de base au comportement qui vous permet d'obtenir ce que vous voulez de la vie. Ils peuvent être appliqués encore et encore dans des situations similaires pour vous aider à atteindre vos objectifs." 
+            },
+            { 
+                text: "Take cold showers first thing in the morning. As soon as you get up. Jump in the shower. Close your eyes and turn the temperature to cold. Not just cold. Not ice cold. Try we-just-piped-this-water-in-from-Antarctica-because-the-penguins-won’t-swim-in-it-cold. Do this for thirty days in a row. I call it Cold Shower Therapy because it, quite literally, is therapy.", 
+                author: '<a href="https://joelrunyon.com/" target="_blank">Joel Runyon</a>', 
+                trans: "Prenez des douches froides dès le matin. Dès que vous vous levez. Sautez sous la douche. Fermez les yeux et réglez la température sur froid. Pas seulement froid. Pas froid comme de la glace. Essayez le froid genre 'on-vient-de-pomper-cette-eau-depuis-l'Antarctique-parce-que-les-manchots-refusent-d'y-nager'. Faites cela pendant trente jours d'affilée. J'appelle cela la thérapie par la douche froide parce que c'est, littéralement, une thérapie." 
+            },
+            { 
+                text: "Much as we must keep returning to the gym and pushing weight against resistance in order to sustain or increase our physical strength, so we must persistently shed light on those aspects of ourselves that we prefer not to see in order to build our mental, emotional and spiritual capacity.", 
+                author: '<a href="https://fs.blog/knowledge-project-podcast/dr-jim-loehr-193/" target="_blank">Jim Loehr</a>', 
+                trans: "Tout comme nous devons retourner régulièrement à la salle de sport et pousser des poids contre la résistance pour maintenir ou augmenter notre force physique, nous devons persister à mettre en lumière ces aspects de nous-mêmes que nous préférons ne pas voir afin de renforcer nos capacités mentales, émotionnelles et spirituelles." 
+            },
+            { 
+                text: "The more you regularly experience gratitude, the more self-control you have in various areas of your life.", 
+                author: '<a href="https://davedesteno.com/" target="_blank">David DeSteno</a>', 
+                trans: "Plus vous éprouvez régulièrement de la gratitude, plus vous avez de maîtrise de soi dans divers domaines de votre vie." 
+            },
+            { 
+                text: "The mark of a champion is the ability to win when things are not quite right — when you’re not playing well and your emotions are not the right ones.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Carol_Dweck" target="_blank">Carol Dweck</a>', 
+                trans: "La marque d'un champion est la capacité de gagner quand les choses ne vont pas tout à fait bien — quand vous ne jouez pas bien et que vos émotions ne sont pas les bonnes." 
+            },
+            { 
+                text: "Planning a variance, make it concrete, black and white, and specify exactly when the variance will end. For example, instead of doing your regular gym routine while traveling through Europe, you commit to do twenty pushups every morning, and then as soon as you return home, resume your normal routine.", 
+                author: '<a href="https://www.tynandavis.com/" target="_blank">Tynan</a>', 
+                trans: "Lorsque vous planifiez un écart, rendez-le concret, noir sur blanc, et précisez exactement quand cet écart prendra fin. Par exemple, au lieu de suivre votre routine habituelle de musculation pendant un voyage en Europe, engagez-vous à faire vingt pompes chaque matin, puis, dès votre retour, reprenez votre routine normale." 
+            },
+            { 
+                text: "We shall sooner have the fowl by hatching the egg than by smashing it.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="_blank">Abraham Lincoln</a>', 
+                trans: "Nous aurons plus vite le poulet en couvant l'œuf qu'en le brisant." 
+            },
+            { 
+                text: "The cost of a thing is the amount of what I call life which is required to be exchanged for it, immediately or in the long run.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Henry_David_Thoreau" target="_blank">Henry David Thoreau</a>', 
+                trans: "Le coût d'une chose est la quantité de ce que j'appelle la 'vie' qu'il faut échanger contre elle, immédiatement ou à long terme." 
+            },
+            { 
+                text: "Most transactions have an upside and a downside, but when something is “FREE!” we forget the downside. “FREE!” gives us such an emotional charge that we perceive what is being offered as immensely more valuable than it really is. Why? Because humans are intrinsically afraid of loss. The real allure of “FREE!” is tied to this fear.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Dan_Ariely" target="_blank">Dan Ariely</a>', 
+                trans: "La plupart des transactions ont un côté positif et un côté négatif, mais quand quelque chose est 'GRATUIT !', nous oublions le côté négatif. Le 'GRATUIT !' nous procure une telle charge émotionnelle que nous percevons ce qui est offert comme étant immensément plus précieux qu'il ne l'est réellement. Pourquoi ? Parce que les humains ont intrinsèquement peur de la perte. Le véritable attrait du 'GRATUIT !' est lié à cette peur." 
+            },
+            { 
+                text: "There is no friend as loyal as a book.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Ernest_Hemingway" target="_blank">Ernest Hemingway</a>', 
+                trans: "Il n'y a pas d'ami aussi fidèle qu'un livre." 
+            },
+            { 
+                text: "The trouble with having an open mind, of course, is that people will insist on coming along and trying to put things in it.", 
+                author: '<a href="https://en.wikipedia.org/wiki/Terry_Pratchett" target="_blank">Terry Pratchett</a>', 
+                trans: "Le problème quand on a l'esprit ouvert, bien sûr, c'est que les gens s'obstinent à vouloir y mettre des choses." 
+            },
+            { 
+                text: "Whoever is winning at the moment will always seem to be invincible.", 
+                author: '<a href="https://en.wikipedia.org/wiki/George_Orwell" target="_blank">George Orwell</a>', 
+                trans: "Quiconque gagne en ce moment semblera toujours invincible." 
+            },
+            { 
+                text: "Life isn't about finding yourself. Life is about creating yourself.", 
+                author: '<a href="https://en.wikipedia.org/wiki/George_Bernard_Shaw" target="_blank">George Bernard Shaw</a>', 
+                trans: "La vie ne consiste pas à se trouver. La vie consiste à se créer." 
+            }
+        ];
+
+        let score = 0;
+        let answeredCount = 0;
+        let errors = [];
+
+        function initQuiz() {
+            const container = document.getElementById('quiz-container');
+            quizData.forEach((item, idx) => {
+                const qBlock = document.createElement('div');
+                qBlock.innerHTML = `
+                    <div class="mb-6">
+                        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">${item.cat}</span>
+                        <h3 class="text-xl font-bold mt-2">${idx + 1}. ${item.q}</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="q-group-${idx}">
+                        ${item.options.map((opt, i) => `
+                            <button onclick="handleSelect(${idx}, ${i}, this)" class="opt-btn p-4 rounded-xl text-left bg-zinc-800/40 hover:bg-zinc-800">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="exp-${idx}" class="explanation">
+                        <p class="font-bold text-white mb-1">Answer: ${item.options[item.correct]}</p>
+                        ${item.exp}
+                    </div>
+                `;
+                container.appendChild(qBlock);
+            });
+        }
+
+        function handleSelect(qIdx, choiceIdx, btn) {
+            const buttons = document.querySelectorAll(`#q-group-${qIdx} button`);
+            if (buttons[0].disabled) return;
+
+            const correctIdx = quizData[qIdx].correct;
+            const isCorrect = (choiceIdx === correctIdx);
+
+            buttons.forEach((b, i) => {
+                b.disabled = true;
+                if (i === correctIdx) b.classList.add('correct');
+                if (i === choiceIdx && !isCorrect) b.classList.add('wrong');
+            });
+
+            document.getElementById(`exp-${qIdx}`).style.display = 'block';
+
+            if (isCorrect) score++;
+            else {
+                errors.push({
+                    q: quizData[qIdx].q,
+                    user: quizData[qIdx].options[choiceIdx],
+                    correct: quizData[qIdx].options[correctIdx]
+                });
+            }
+
+            answeredCount++;
+            document.getElementById('score-badge').innerText = `PROGRESS: ${answeredCount} / 20`;
+
+            if (answeredCount === quizData.length) {
+                showFinal();
+            }
+        }
+
+        function showFinal() {
+            const final = document.getElementById('final-recap');
+            final.classList.remove('hidden');
+            document.getElementById('final-score-msg').innerText = `Your final score is ${score} / 20.`;
+            
+            const errorList = document.getElementById('error-list');
+            if (errors.length > 0) {
+                errorList.innerHTML = '<h4 class="font-bold text-zinc-400 mb-4 uppercase text-sm tracking-widest">Reviewing Mistakes:</h4>';
+                errors.forEach(err => {
+                    errorList.innerHTML += `
+                        <div class="p-4 bg-zinc-800/50 rounded-lg border-l-2 border-red-500">
+                            <p class="font-semibold text-zinc-200">${err.q}</p>
+                            <p class="text-sm mt-1">You chose: <span class="text-red-400 line-through">${err.user}</span></p>
+                            <p class="text-sm">Correction: <span class="text-emerald-400 font-bold">${err.correct}</span></p>
+                        </div>
+                    `;
+                });
+            } else {
+                errorList.innerHTML = '<p class="text-emerald-400 font-bold">Perfect score! Well done.</p>';
+            }
+            final.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function initQuotes() {
+            const container = document.getElementById('quotes-container');
+            quotes.forEach(q => {
+                const card = document.createElement('div');
+                card.className = "quote-card p-6 md:p-8 rounded-2xl";
+                card.innerHTML = `
+                    <p class="text-xl italic text-zinc-100 mb-4">“${q.text}”</p>
+                    <p class="text-indigo-400 font-bold mb-6 text-sm">— ${q.author}</p>
+                    <div class="pt-6 border-t border-zinc-800/50">
+                        <p class="text-zinc-500 text-lg italic">${q.trans}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = () => {
+            initQuiz();
+            initQuotes();
+        };
+    </script>
+</body>
+</html>

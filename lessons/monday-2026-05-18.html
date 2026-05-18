@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dekosophy Lesson • Why Some People Suddenly Blow Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #f4f4f5; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .video-container { position: relative; padding-top: 56.25%; border-radius: 1rem; overflow: hidden; border: 1px solid #27272a; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .opt-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #27272a; }
+        .opt-btn:hover:not(:disabled) { background-color: #18181b; border-color: #52525b; transform: translateX(4px); }
+        .correct { background-color: #064e3b !important; border-color: #10b981 !important; color: #ecfdf5; }
+        .wrong { background-color: #7f1d1d !important; border-color: #ef4444 !important; color: #fef2f2; }
+        .explanation { display: none; margin-top: 12px; padding: 16px; border-radius: 12px; background: #18181b; border-left: 4px solid #6366f1; font-size: 0.95rem; color: #d4d4d8; }
+        tr:nth-child(even) { background-color: #121214; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <header class="max-w-6xl mx-auto mb-16 text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest uppercase border border-amber-500/40 text-amber-400 rounded-full bg-amber-500/5">
+            Dekosophy Psychology & Linguistics Session
+        </div>
+        <h1 class="text-4xl md:text-6xl title-font font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-indigo-300 to-cyan-400">
+            Why Some People Suddenly Blow Up
+        </h1>
+        <p class="text-zinc-400 text-lg">Understanding how luck is structured, repeated, and mastered.</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+        
+        <section class="mb-20">
+            <div class="video-container shadow-2xl shadow-indigo-500/5">
+                <iframe src="https://www.youtube.com/embed/XNSfJu-4cjQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="bg-zinc-900/40 border border-zinc-800 rounded-3xl p-6 md:p-12 mb-20">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl title-font font-bold">Interactive Lesson Quiz</h2>
+                    <p class="text-zinc-500 text-sm mt-1">Test your comprehension, vocabulary, grammar, and pronunciation.</p>
+                </div>
+                <div id="score-badge" class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-6 py-2 rounded-full font-bold mono text-lg">
+                    SCORE: 0 / 20
+                </div>
+            </div>
+
+            <div id="quiz-container" class="space-y-16">
+                </div>
+
+            <div id="final-recap" class="hidden mt-20 p-8 border border-zinc-800 bg-zinc-950/50 rounded-2xl">
+                <h3 class="text-3xl title-font font-bold mb-4 text-indigo-400">Quiz Terminé !</h3>
+                <p id="final-score-msg" class="text-xl text-zinc-300 mb-8"></p>
+                <div id="error-list" class="space-y-4"></div>
+                <button onclick="window.location.reload()" class="mt-8 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-xl transition font-semibold text-sm">
+                    Recommencer le Quiz
+                </button>
+            </div>
+        </section>
+
+        <section class="border-t border-zinc-800 pt-16">
+            <h2 class="text-3xl title-font font-bold mb-4">Focus Prononciation : La Graphie "OW"</h2>
+            <p class="text-zinc-400 mb-8 max-w-3xl leading-relaxed">
+                Voici une liste alphabétique qui contraste les deux prononciations de la graphie <strong>"ow"</strong> : le son <strong>/aʊ/</strong> (comme dans <em>cow</em>) et le son <strong>/əʊ/</strong> (comme dans <em>row</em>). Pour chaque lettre, un exemple est fourni pour chaque son avec sa phonétique et sa traduction.
+            </p>
+
+            <div class="overflow-x-auto border border-zinc-800 rounded-2xl mb-10">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-zinc-800 bg-zinc-900/80 text-sm tracking-wider text-zinc-400 font-semibold">
+                            <th class="p-4">Lettre</th>
+                            <th class="p-4 text-amber-400">Mot en /aʊ/ (Cow)</th>
+                            <th class="p-4 mono text-zinc-500">IPA</th>
+                            <th class="p-4 text-zinc-400">Traduction</th>
+                            <th class="p-4 text-indigo-400">Mot en /əʊ/ (Row)</th>
+                            <th class="p-4 mono text-zinc-500">IPA</th>
+                            <th class="p-4 text-zinc-400">Traduction</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-zinc-300 divide-y divide-zinc-800/40 text-sm md:text-base">
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">A</td><td class="p-4 font-bold text-amber-300">Allow</td><td class="p-4 mono text-zinc-500">/əˈlaʊ/</td><td class="p-4 text-zinc-400">Permettre</td><td class="p-4 font-bold text-indigo-300">Arrow</td><td class="p-4 mono text-zinc-500">/ˈærəʊ/</td><td class="p-4 text-zinc-400">Flèche</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">B</td><td class="p-4 font-bold text-amber-300">Bow</td><td class="p-4 mono text-zinc-500">/baʊ/</td><td class="p-4 text-zinc-400">S'incliner</td><td class="p-4 font-bold text-indigo-300">Blow</td><td class="p-4 mono text-zinc-500">/bləʊ/</td><td class="p-4 text-zinc-400">Souffler</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">C</td><td class="p-4 font-bold text-amber-300">Crowd</td><td class="p-4 mono text-zinc-500">/kraʊd/</td><td class="p-4 text-zinc-400">Foule</td><td class="p-4 font-bold text-indigo-300">Crow</td><td class="p-4 mono text-zinc-500">/krəʊ/</td><td class="p-4 text-zinc-400">Corbeau</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">D</td><td class="p-4 font-bold text-amber-300">Down</td><td class="p-4 mono text-zinc-500">/faʊn/</td><td class="p-4 text-zinc-400">Bas / En bas</td><td class="p-4 font-bold text-indigo-300">Shadow</td><td class="p-4 mono text-zinc-500">/ˈʃædəʊ/</td><td class="p-4 text-zinc-400">Ombre</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">E</td><td class="p-4 font-bold text-amber-300">Eyebrow</td><td class="p-4 mono text-zinc-500">/ˈaɪbraʊ/</td><td class="p-4 text-zinc-400">Sourcil</td><td class="p-4 font-bold text-indigo-300">Elbow</td><td class="p-4 mono text-zinc-500">/ˈelbəʊ/</td><td class="p-4 text-zinc-400">Coude</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">F</td><td class="p-4 font-bold text-amber-300">Flower</td><td class="p-4 mono text-zinc-500">/ˈflaʊə/</td><td class="p-4 text-zinc-400">Fleur</td><td class="p-4 font-bold text-indigo-300">Flow</td><td class="p-4 mono text-zinc-500">/fləʊ/</td><td class="p-4 text-zinc-400">Couler / Flux</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">G</td><td class="p-4 font-bold text-amber-300">Gown</td><td class="p-4 mono text-zinc-500">/ɡaʊn/</td><td class="p-4 text-zinc-400">Robe (soirée)</td><td class="p-4 font-bold text-indigo-300">Glow</td><td class="p-4 mono text-zinc-500">/ɡləʊ/</td><td class="p-4 text-zinc-400">Lueur / Briller</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">H</td><td class="p-4 font-bold text-amber-300">How</td><td class="p-4 mono text-zinc-500">/haʊ/</td><td class="p-4 text-zinc-400">Comment</td><td class="p-4 font-bold text-indigo-300">Hollow</td><td class="p-4 mono text-zinc-500">/ˈhɒləʊ/</td><td class="p-4 text-zinc-400">Creux</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">K</td><td class="p-4 font-bold text-amber-300">Knockdown</td><td class="p-4 mono text-zinc-500">/ˈnɒkdaʊn/</td><td class="p-4 text-zinc-400">Renverser</td><td class="p-4 font-bold text-indigo-300">Know</td><td class="p-4 mono text-zinc-500">/nəʊ/</td><td class="p-4 text-zinc-400">Savoir</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">L</td><td class="p-4 font-bold text-amber-300">Lowly <span class="text-xs text-zinc-500">(rare)</span></td><td class="p-4 mono text-zinc-500">/ˈlaʊli/</td><td class="p-4 text-zinc-400">Humble</td><td class="p-4 font-bold text-indigo-300">Low</td><td class="p-4 mono text-zinc-500">/ləʊ/</td><td class="p-4 text-zinc-400">Bas (adj)</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">M</td><td class="p-4 font-bold text-amber-300">Meow</td><td class="p-4 mono text-zinc-500">/miˈaʊ/</td><td class="p-4 text-zinc-400">Miaou</td><td class="p-4 font-bold text-indigo-300">Mow</td><td class="p-4 mono text-zinc-500">/məʊ/</td><td class="p-4 text-zinc-400">Tondre</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">N</td><td class="p-4 font-bold text-amber-300">Now</td><td class="p-4 mono text-zinc-500">/naʊ/</td><td class="p-4 text-zinc-400">Maintenant</td><td class="p-4 font-bold text-indigo-300">Narrow</td><td class="p-4 mono text-zinc-500">/ˈnærəʊ/</td><td class="p-4 text-zinc-400">Étroit</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">O</td><td class="p-4 font-bold text-amber-300">Owl</td><td class="p-4 mono text-zinc-500">/aʊl/</td><td class="p-4 text-zinc-400">Hibou</td><td class="p-4 font-bold text-indigo-300">Own</td><td class="p-4 mono text-zinc-500">/əʊn/</td><td class="p-4 text-zinc-400">Posséder</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">P</td><td class="p-4 font-bold text-amber-300">Powder</td><td class="p-4 mono text-zinc-500">/ˈpaʊdə/</td><td class="p-4 text-zinc-400">Poudre</td><td class="p-4 font-bold text-indigo-300">Pillow</td><td class="p-4 mono text-zinc-500">/ˈpɪləʊ/</td><td class="p-4 text-zinc-400">Oreiller</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">R</td><td class="p-4 font-bold text-amber-300">Row <span class="text-xs text-zinc-500">(dispute)</span></td><td class="p-4 mono text-zinc-500">/raʊ/</td><td class="p-4 text-zinc-400">Bagarre</td><td class="p-4 font-bold text-indigo-300">Row <span class="text-xs text-zinc-500">(ramer)</span></td><td class="p-4 mono text-zinc-500">/rəʊ/</td><td class="p-4 text-zinc-400">Ramer / Rangée</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">S</td><td class="p-4 font-bold text-amber-300">Shower</td><td class="p-4 mono text-zinc-500">/ˈʃaʊə/</td><td class="p-4 text-zinc-400">Douche</td><td class="p-4 font-bold text-indigo-300">Show</td><td class="p-4 mono text-zinc-500">/ʃəʊ/</td><td class="p-4 text-zinc-400">Montrer</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">T</td><td class="p-4 font-bold text-amber-300">Tower</td><td class="p-4 mono text-zinc-500">/ˈftaʊə/</td><td class="p-4 text-zinc-400">Tour</td><td class="p-4 font-bold text-indigo-300">Tow</td><td class="p-4 mono text-zinc-500">/təʊ/</td><td class="p-4 text-zinc-400">Remorquer</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">V</td><td class="p-4 font-bold text-amber-300">Vowel</td><td class="p-4 mono text-zinc-500">/ˈvaʊəl/</td><td class="p-4 text-zinc-400">Voyelle</td><td class="p-4 text-zinc-500">—</td><td class="p-4 text-zinc-500">—</td><td class="p-4 text-zinc-500">—</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">W</td><td class="p-4 font-bold text-amber-300">Wow</td><td class="p-4 mono text-zinc-500">/waʊ/</td><td class="p-4 text-zinc-400">Waouh</td><td class="p-4 font-bold text-indigo-300">Window</td><td class="p-4 mono text-zinc-500">/ˈwɪndəʊ/</td><td class="p-4 text-zinc-400">Fenêtre</td></tr>
+                        <tr><td class="p-4 font-bold text-center bg-zinc-900/30">Y</td><td class="p-4 text-zinc-500">—</td><td class="p-4 text-zinc-500">—</td><td class="p-4 text-zinc-500">—</td><td class="p-4 font-bold text-indigo-300">Yellow</td><td class="p-4 mono text-zinc-500">/ˈjeləʊ/</td><td class="p-4 text-zinc-400">Jaune</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-zinc-900/20 border border-zinc-800 rounded-2xl p-6 space-y-6 text-zinc-300 leading-relaxed">
+                <h4 class="text-xl font-bold text-indigo-400 title-font">Zoom sur les mots difficiles :</h4>
+                <ul class="list-disc list-inside space-y-3">
+                    <li><strong class="text-white">Tow /təʊ/ (Remorquer) :</strong> On l'utilise souvent pour une voiture en panne (<em>tow truck</em> = dépanneuse). C'est le même son que dans <em>know</em>.</li>
+                    <li><strong class="text-white">Row :</strong> C'est un hétéronyme. Prononcé <strong class="text-amber-400">/raʊ/</strong>, il signifie une dispute bruyante ou un vacarme. Prononcé <strong class="text-indigo-400">/rəʊ/</strong>, c'est le verbe ramer ou une rangée (de sièges, de légumes).</li>
+                    <li><strong class="text-white">Bow :</strong> Prononcé <strong class="text-amber-400">/baʊ/</strong>, c'est l'action de s'incliner (ou la proue d'un bateau). Prononcé <strong class="text-indigo-400">/rəʊ/</strong>, c'est un arc ou un nœud de ruban.</li>
+                    <li><strong class="text-white">Mow :</strong> On l'utilise principalement pour <em>mow the lawn</em> (tondre la pelouse).</li>
+                </ul>
+                <p class="pt-4 border-t border-zinc-800/60 text-zinc-400 text-sm italic">
+                    Cette liste montre bien que la terminaison <strong>-low</strong> (hollow, pillow, yellow, shallow) tend presque toujours vers le son <strong>/əʊ/</strong>, tandis que les mots courts comme <em>how, now, cow</em> utilisent le son <strong>/aʊ/</strong>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            // COMPREHENSION
+            { 
+                cat: "Comprehension", 
+                q: "What problem does the speaker describe encountering during their first month on YouTube?", 
+                options: ["Being unable to record high-quality videos", "Getting stuck at 28 subscribers with minimal views", "Having their channel banned by the algorithm", "Forgetting the main script of their topics"], 
+                correct: 1, 
+                exp: "The speaker mentions being stuck at 28 subscribers with most videos barely crossing 50 views during the initial month." 
+            },
+            { 
+                cat: "Comprehension", 
+                q: "According to Level 1 (Perception), why do people often quit early in a system that actually works?", 
+                options: ["Because they encounter statistical variance and noise, mistaking it for complete failure", "Because they run out of financial resources", "Because their friends tell them to change their topic", "Because algorithms deliberately block new accounts"], 
+                correct: 0, 
+                exp: "Early results are unstable due to statistical variance; people misread this natural 'noise' and delayed feedback as permanent bad luck." 
+            },
+            { 
+                cat: "Comprehension", 
+                q: "What is 'survivorship bias' as explained by the speaker?", 
+                options: ["When you only survive by changing your strategies every single week", "When you only see visible successes while failures stay completely invisible", "When an athlete wins a game without training properly", "When a business grows because it has no competition"], 
+                correct: 1, 
+                exp: "Survivorship bias makes us compare ourselves to visible success stories while all the failures remain hidden, making our progress look uniquely bad." 
+            },
+            { 
+                cat: "Comprehension", 
+                q: "According to the Law of Large Numbers (Level 2), what happens as exposure and repetition increase?", 
+                options: ["The results become completely random and unpredictable", "The system breaks down under pressure", "Patterns that were invisible start becoming obvious", "The cost of processing increases exponentially"], 
+                correct: 2, 
+                exp: "When repetition increases, small random outcomes fade, and the real underlying patterns of success reveal themselves." 
+            },
+            { 
+                cat: "Comprehension", 
+                q: "What does the speaker mean by an 'asymmetric payoff' in Level 3?", 
+                options: ["An action where the risk and reward are exactly identical", "An action with limited downside but massive, scalable upside", "An effort that requires two people to cooperate symmetrically", "A mathematical equation that cannot be solved"], 
+                correct: 1, 
+                exp: "Asymmetric payoff means the downside is protected and small (e.g., a video disappearing), but the upside can explode and change everything." 
+            },
+
+            // VOCABULARY
+            { 
+                cat: "Vocabulary", 
+                q: "What does the expression 'to blow up' mean in the video's title?", 
+                options: ["To physically explode or get destroyed", "To become angry very suddenly", "To suddenly achieve massive popularity or success", "To fail dramatically in public"], 
+                correct: 2, 
+                exp: "In modern content and business context, 'to blow up' means to experience sudden, exponential growth or viral success." 
+            },
+            { 
+                cat: "Vocabulary", 
+                q: "What is the meaning of the word 'Lane' in 'I stayed in one lane and kept refining'?", 
+                options: ["A physical running track in a stadium", "A specialized area, niche, or consistent topic direction", "A tool used to edit video files", "A highway speed limit indicator"], 
+                correct: 1, 
+                exp: "Staying in one 'lane' means maintaining focus on a single thematic niche (philosophy, storytelling, etc.) instead of scattering efforts." 
+            },
+            { 
+                cat: "Vocabulary", 
+                q: "What does 'Volatility' mean in a systemic context?", 
+                options: ["The quality of being perfectly steady and predictable", "The tendency to change rapidly and unpredictably", "The speed at which a video gets uploaded", "The total cost of production"], 
+                correct: 1, 
+                exp: "Volatility refers to rapid fluctuations or instability in results, typical of early-stage projects." 
+            },
+            { 
+                cat: "Vocabulary", 
+                q: "In the sentence 'Each upload was carrying lessons', what does the verb 'to carry forward' imply?", 
+                options: ["To drop something because it is too heavy", "To transmit or apply acquired information to future attempts", "To delay a video launch date", "To copy someone else's content verbatim"], 
+                correct: 1, 
+                exp: "Carrying lessons forward means using insights from past failures to improve your next attempt (anti-fragility)." 
+            },
+            { 
+                cat: "Vocabulary", 
+                q: "What is a 'Threshold' in complex systems theory?", 
+                options: ["The wooden frame at the bottom of a door", "A critical point or limit that, once crossed, triggers a major change", "A specific type of video title", "A structural error in database code"], 
+                correct: 1, 
+                exp: "Crossing a threshold means entering a new phase where growth dynamics shift completely (e.g., network effects take over)." 
+            },
+
+            // GRAMMAR
+            { 
+                cat: "Grammar", 
+                q: "Analyze the conditional structure: 'If you think you're unlucky, you might be quitting...'", 
+                options: ["Zero Conditional (general truth)", "First Conditional (real present/future possibility)", "Second Conditional (hypothetical present)", "Third Conditional (past regret)"], 
+                correct: 1, 
+                exp: "This is a First Conditional variation: 'If + Present Simple, Modal (might) + Continuous verb', describing a plausible present/future scenario." 
+            },
+            { 
+                cat: "Grammar", 
+                q: "In 'why does it start appearing only after...', why is 'does' used?", 
+                options: ["As a past tense marker", "As an auxiliary verb to form a question in the Present Simple", "To emphasize an absolute truth", "To replace a plural noun phrase"], 
+                correct: 1, 
+                exp: "In English questions using the Present Simple, the auxiliary 'does' is required before third-person singular subjects ('it')." 
+            },
+            { 
+                cat: "Grammar", 
+                q: "What is the grammatical function of 'combined' in 'your previous 50 combined'?", 
+                options: ["A past continuous main verb", "A participle adjective modifying the noun phrase", "A preposition indicating location", "An adverb of frequency"], 
+                correct: 1, 
+                exp: "'Combined' acts as a post-positive participle adjective modifying 'your previous 50 [videos]' to mean taken together." 
+            },
+            { 
+                cat: "Grammar", 
+                q: "Identify the tense/aspect: 'Luck has actually been building for a long time.'", 
+                options: ["Present Perfect Simple", "Present Perfect Continuous", "Past Perfect Continuous", "Present Continuous"], 
+                correct: 1, 
+                exp: "'Has + been + building' forms the Present Perfect Continuous, highlighting an action that began in the past and is still ongoing or relevant." 
+            },
+            { 
+                cat: "Grammar", 
+                q: "In 'what looks popular gets trusted more', the word 'gets' acts as:", 
+                options: ["A passive voice auxiliary variant (similar to 'is trusted')", "A possessive verb meaning 'to own'", "A modal verb of ability", "A conjunction connecting clauses"], 
+                correct: 0, 
+                exp: "'Get + past participle' forms the 'get-passive', frequently used in informal spoken English instead of 'be + past participle'." 
+            },
+
+            // PRONUNCIATION
+            { 
+                cat: "Pronunciation", 
+                q: "How is the word 'Blow' in the title pronounced?", 
+                options: ["With the sound /aʊ/ (like 'cow')", "With the sound /əʊ/ (like 'row/know')", "With a silent 'w' and short /ɒ/", "With a trailing /uː/ sound"], 
+                correct: 1, 
+                exp: "'Blow' is pronounced /bləʊ/, using the exact same vowel sound as 'know', 'show', or 'low'." 
+            },
+            { 
+                cat: "Pronunciation", 
+                q: "Where is the primary word stress in 'Statistical'?", 
+                options: ["STAtistical", "staTIStical", "statisTIcal", "statisticAL"], 
+                correct: 1, 
+                exp: "The stress is on the second syllable: /stəˈtɪstɪkl/." 
+            },
+            { 
+                cat: "Pronunciation", 
+                q: "The word 'Variance' has how many distinct pronounced syllables?", 
+                options: ["2 syllables", "3 syllables", "4 syllables", "5 syllables"], 
+                correct: 1, 
+                exp: "'Va-ri-ance' is pronounced as a 3-syllable word: /ˈveəriəns/." 
+            },
+            { 
+                cat: "Pronunciation", 
+                q: "Which of these words from the video contains the unvoiced /θ/ sound?", 
+                options: ["Threshold", "Then", "There", "Through"], 
+                correct: 3, 
+                exp: "'Through' uses the unvoiced /θ/ sound, whereas 'then' and 'there' use the voiced /ð/ sound. 'Threshold' is pronounced with /θ/ but has different syllable metrics.", 
+                correct_alt_check: "Through is the clearest example of unvoiced /θ/ beginning a syllable." 
+            },
+            { 
+                cat: "Pronunciation", 
+                q: "How is the '-ed' ending pronounced in 'earned' (/ɜːnd/)?", 
+                options: ["As a distinct syllable /ɪd/", "As a sharp voiceless /t/", "As a soft voiced /d/", "The whole ending is entirely silent"], 
+                correct: 2, 
+                exp: "Because 'earn' ends with a voiced nasal sound /n/, the suffix is pronounced simply as a voiced /d/." 
+            }
+        ];
+
+        let score = 0;
+        let totalAnswered = 0;
+        let userErrors = [];
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            quizData.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "quiz-block";
+                qDiv.innerHTML = `
+                    <div class="mb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 border border-indigo-500/20 px-2.5 py-0.5 rounded bg-indigo-500/5">${item.cat}</span>
+                        <h4 class="text-xl font-medium mt-3">${index + 1}. ${item.q}</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="q-block-${index}">
+                        ${item.options.map((opt, i) => `
+                            <button onclick="checkAnswer(${index}, ${i}, this)" class="opt-btn p-4 rounded-xl text-left bg-zinc-900/50 text-zinc-300 text-sm md:text-base">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="explanation-${index}" class="explanation">
+                        <span class="font-bold text-white block mb-1">✓ Right answer : ${item.options[item.correct]}</span>
+                        ${item.exp}
+                    </div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function checkAnswer(qIdx, choiceIdx, selectedBtn) {
+            const buttons = document.querySelectorAll(`#q-block-${qIdx} button`);
+            if (buttons[0].disabled) return; // Prevent multiple clicks
+
+            const correctIdx = quizData[qIdx].correct;
+            const isCorrect = (choiceIdx === correctIdx);
+
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (i === correctIdx) btn.classList.add('correct');
+                if (i === choiceIdx && !isCorrect) btn.classList.add('wrong');
+            });
+
+            document.getElementById(`explanation-${qIdx}`).style.display = 'block';
+
+            if (isCorrect) {
+                score++;
+            } else {
+                userErrors.push({
+                    num: qIdx + 1,
+                    question: quizData[qIdx].q,
+                    userChoice: quizData[qIdx].options[choiceIdx],
+                    correctChoice: quizData[qIdx].options[correctIdx]
+                });
+            }
+
+            totalAnswered++;
+            document.getElementById('score-badge').innerText = `SCORE: ${score} / 20`;
+
+            if (totalAnswered === quizData.length) {
+                displayFinalResults();
+            }
+        }
+
+        function displayFinalResults() {
+            const finalDiv = document.getElementById('final-recap');
+            const errorList = document.getElementById('error-list');
+            finalDiv.classList.remove('hidden');
+            document.getElementById('final-score-msg').innerText = `Vous avez obtenu un score de ${score} sur 20.`;
+
+            errorList.innerHTML = '';
+            if (userErrors.length > 0) {
+                errorList.innerHTML = '<h5 class="font-bold text-zinc-400 uppercase tracking-wider text-xs mb-4">Récapitulatif de vos erreurs :</h5>';
+                userErrors.forEach(err => {
+                    errorList.innerHTML += `
+                        <div class="p-4 bg-zinc-900/80 border-l-4 border-red-500 rounded-r-xl space-y-1">
+                            <p class="font-semibold text-zinc-200">Question ${err.num}: ${err.question}</p>
+                            <p class="text-sm text-zinc-400">Votre choix : <span class="text-red-400 line-through">${err.userChoice}</span></p>
+                            <p class="text-sm text-emerald-400 font-medium">Correction : ${err.correctChoice}</p>
+                        </div>
+                    `;
+                });
+            } else {
+                errorList.innerHTML = '<p class="text-emerald-400 font-bold text-lg">🎉 Score parfait ! Aucune erreur à corriger.</p>';
+            }
+
+            finalDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.onload = renderQuiz;
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Immersion English Session • 4 Language Habits That Get You Fluent FAST</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .video-container { position: relative; padding-top: 56.25%; border-radius: 1.25rem; overflow: hidden; border: 1px solid #1f2937; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .opt-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #1f2937; }
+        .opt-btn:hover:not(:disabled) { background-color: #111827; border-color: #4b5563; transform: translateX(6px); }
+        .correct { background-color: #064e3b !important; border-color: #10b981 !important; color: #ecfdf5; }
+        .wrong { background-color: #7f1d1d !important; border-color: #ef4444 !important; color: #fef2f2; }
+        .explanation { display: none; margin-top: 14px; padding: 18px; border-radius: 12px; background: #111827; border-left: 4px solid #818cf8; font-size: 0.95rem; color: #d1d5db; }
+        .quiz-block { border-bottom: 1px solid #1f2937; padding-bottom: 3.5rem; }
+        .quiz-block:last-child { border-bottom: none; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <header class="max-w-5xl mx-auto mb-16 text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest uppercase border border-indigo-500/30 text-indigo-400 rounded-full bg-indigo-500/5">
+            Olly Richards • Language Acquisition Analysis
+        </div>
+        <h1 class="text-4xl md:text-5xl title-font font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-400">
+            4 Language Habits That Get You Fluent FAST
+        </h1>
+        <p class="text-gray-400 text-base md:text-lg">Monday, May 25 • Full Immersion Training Module</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto">
+        
+        <section class="mb-20">
+            <div class="video-container shadow-2xl shadow-indigo-950/40">
+                <iframe src="https://www.youtube.com/embed/Ewd6CGwaEXY" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="bg-gray-900/30 border border-gray-800 rounded-3xl p-6 md:p-12 mb-20 shadow-xl">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4 pb-6 border-b border-gray-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl title-font font-bold text-white">Interactive Quiz</h2>
+                    <p class="text-gray-500 text-sm mt-1">20 Multiple-Choice Questions: Listening, Vocabulary, Grammar & Pronunciation.</p>
+                </div>
+                <div id="score-badge" class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-6 py-2 rounded-full font-bold mono text-lg shadow-inner">
+                    SCORE: 0 / 20
+                </div>
+            </div>
+
+            <div id="quiz-container" class="space-y-12">
+                </div>
+
+            <div id="final-recap" class="hidden mt-16 p-8 border border-gray-800 bg-gray-950/60 rounded-2xl shadow-inner">
+                <h3 class="text-2xl md:text-3xl title-font font-bold mb-3 text-indigo-400">Quiz Completed!</h3>
+                <p id="final-score-msg" class="text-lg text-gray-300 mb-8"></p>
+                <div id="error-list" class="space-y-4"></div>
+                <button onclick="window.location.reload()" class="mt-8 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-all font-semibold text-sm shadow-md">
+                    <i class="fa-solid fa-rotate-right mr-2"></i> Restart Quiz
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            // COMPREHENSION / LISTENING
+            { cat: "Listening Comprehension", q: "According to Olly Richards, why do most language learners stay stuck as beginners for a very long time?", options: ["They fundamentally lack personal willpower and give up too early.", "They build the wrong study habits entirely instead of acquiring the language naturally.", "They do not have immediate access to professional native speakers from day one.", "They consistently pick target languages that are inherently too difficult for their profile."], correct: 1, exp: "Olly explicitly states that most people stay stuck because they build the wrong habits (like raw memorization of isolated words) instead of leveraging natural acquisition processes." },
+            { cat: "Listening Comprehension", q: "What does the anecdote about Viggo Mortensen's experience with Danish demonstrate?", options: ["He successfully mastered Russian prison slang purely through grammar textbooks.", "He failed to learn Danish through formal studying as a teen, but picked it up later by interacting with people while selling flowers in Copenhagen.", "He memorized all his Arabic dialogue lines using a well-known spaced repetition mobile app.", "He relocated to Tokyo to take salsa dancing lessons and became completely fluent in three months."], correct: 1, exp: "Viggo initially struggled with Danish when he tried to look at sounds and grammar frameworks as a teenager, but succeeded later in life through conversational immersion on the street without textbooks." },
+            { cat: "Listening Comprehension", q: "What is the core operational principle of the first habit, the 'daily immersion anchor'?", options: ["Setting aside 30 minutes of rigid, uninterrupted grammar study every morning.", "Swapping an existing audio routine (like music or news during a drive or workout) for content in your target language.", "Traveling to a foreign country for intensive linguistic immersion at least twice a year.", "Watching television shows for four consecutive hours without any subtitles."], correct: 1, exp: "The immersion anchor requires precisely zero extra minutes because you don't find new time; you simply swap the background content of an existing routine (driving, gym, coffee break) for target language input." },
+            { cat: "Listening Comprehension", q: "Why does the human brain naturally resist or fail to retain long lists of random, isolated vocabulary words?", options: ["Because the human brain is biologically capped at memorizing five new words per week.", "Because the brain doesn't latch on to isolated data well; it only pays attention to patterns that appear repeatedly in contextual situations that make sense.", "Because long-term memory structures are only triggered if lists are handwritten using distinct colors.", "Because random lists do not display standard International Phonetic Alphabet transcriptions."], correct: 1, exp: "Olly explains that forgetting random lists is just the brain doing what it's supposed to do. The brain prioritizes words and phrases that keep showing up in situations where context provides clear meaning." },
+            { cat: "Listening Comprehension", q: "What is the fourth habit, the 'bedtime story', and what is its primary scientific objective?", options: ["Analyzing complex syntax trees and verb paradigms for 45 minutes right before turning off the lights.", "Listening to 5 minutes of simple, enjoyable target language content to feed the brain's overnight memory consolidation process.", "Repeating high-energy verbal affirmations about one's fluency goals aloud in front of a mirror.", "Mentally translating your entire day into English to intentionally exhaust the prefrontal cortex."], correct: 1, exp: "While you are sleeping, your brain processes and logs information through 'memory consolidation'. Providing an easy, relaxing 5-minute piece of input before bed gives the brain optimal material to sort overnight." },
+
+            // VOCABULARY
+            { cat: "Vocabulary Analysis", q: "What is the definition of the phrasal verb 'to stumble onto / into something' as used in the video?", options: ["To intentionally reject an academic theory out of personal pride.", "To find, discover, or encounter something entirely by chance or unexpectedly.", "To systematically plan a long-term commercial strategy.", "To make a critical technical error that ruins a project."], correct: 1, exp: "'To stumble onto' means to discover something by accident or unexpectedly without actively searching for it." },
+            { cat: "Vocabulary Analysis", q: "What does the verb 'to piggyback (on something)' mean when Olly notes: 'Language tends to stick when it piggybacks on something that you're already doing'?", options: ["To abruptly stop or interrupt a productive daily habit.", "To connect to, utilize, or take advantage of an existing setup or routine to achieve something else easily.", "To carefully avoid repetitive everyday tasks.", "To anonymously fund an educational development program."], correct: 1, exp: "In a behavioral context, 'to piggyback on' means to hitch a ride on an established habit so you don't need additional willpower to execute the new action." },
+            { cat: "Vocabulary Analysis", q: "What is the precise meaning of the expression 'to get all fired up' in a motivational or learning context?", options: ["To become extremely angry, irritated, or defensive.", "To become highly excited, enthusiastic, or full of temporary energy.", "To be unexpectedly dismissed or terminated from a job.", "To feel a physical burning sensation caused by overexertion."], correct: 1, exp: "'To get all fired up' describes a sudden, intense burst of excitement, motivation, or inspiration to act." },
+            { cat: "Vocabulary Analysis", q: "What does 'to latch on (to something)' mean when applied to cognitive processing or memory?", options: ["To permanently delete unnecessary historical data to optimize storage.", "To grab hold of, attach itself to, or successfully absorb and retain information.", "To pronounce a specific technical word incorrectly.", "To organize vocabulary lists in precise alphabetical order."], correct: 1, exp: "Figuratively, if your brain 'latches on' to a structural pattern or word, it means it successfully grips, understands, and remembers it." },
+            { cat: "Vocabulary Analysis", q: "In the phrase 'to pull off a night out in Madrid', what does the phrasal verb 'to pull off' signify?", options: ["To cancel a scheduled social event at the very last second.", "To succeed in doing or managing something difficult, challenging, or unexpected.", "To purchase entry tickets to a venue at a highly discounted price.", "To get lost or disoriented in the streets of an unfamiliar city."], correct: 1, exp: "'To pull something off' means to successfully execute or achieve something challenging or tricky." },
+
+            // GRAMMAR
+            { cat: "Grammar & Syntax", q: "In the excerpt: 'no matter how long they've been learning a language', what grammatical aspect is used and what is its primary function?", options: ["The Future Perfect Continuous, highlighting a milestone dependent on a future condition.", "The Present Perfect Continuous, emphasizing the duration and continuity of an action that started in the past and is still ongoing.", "The Present Simple Passive, stating an unchangeable truth completely independent of time.", "The Past Subjunctive, indicating an unfulfilled desire or hypothetical regret."], correct: 1, exp: "The Present Perfect Continuous (have/has been + V-ing) is used to link the past to the present, focusing on the duration of an ongoing action." },
+            { cat: "Grammar & Syntax", q: "What semantic nuance is conveyed by the modal verb choice in: 'your brain won't even try to resist them'?", options: ["It indicates a strict moral obligation or social duty imposed from the outside.", "It expresses a highly certain negative prediction regarding how the cognitive system behaves naturally.", "It signals a retrospective regret concerning an action that should have been done.", "It serves as a soft, polite mitigation formula to avoid sounding overly assertive."], correct: 1, exp: "The contraction 'won't' (will not) is used here to make a confident prediction about the certain lack of resistance from the brain." },
+            { cat: "Grammar & Syntax", q: "Examine the clause: 'the hour of TV that I was already watching each night and just swapped it...'. Why is 'was watching' preferred over 'watched'?", options: ["It uses the Past Perfect to show that the television program had completely ended before he arrived.", "It uses the Past Continuous to establish an ongoing background action or habit within which a specific swap took place.", "It represents a rare conditional construction used for imaginary past events.", "It represents a historic present tense device used to make a past narrative feel immediate."], correct: 1, exp: "The Past Continuous (was/were + V-ing) sets the scene or contextual background for another past action that interrupts or replaces it." },
+            { cat: "Grammar & Syntax", q: "In the phrase 'Things that you say all the time without even thinking', what is the structural reason for using the form 'thinking'?", options: ["It is a standard present continuous verb inflection requiring an auxiliary drop.", "It is a gerund (noun form of the verb) required immediately after the preposition 'without'.", "It is an attributive adjective modifying the pronoun 'you'.", "It is an adverb of manner modifying the primary verb 'say'."], correct: 1, exp: "In English, whenever a verb directly follows a preposition (such as *without, before, after, by, of*), it must take its gerund form (-ing)." },
+            { cat: "Grammar & Syntax", q: "Analyze the conditional structure: 'If he'd ordered that drink phrase-book style, there's not much chance...'. What does the contraction \"'d\" stand for?", options: ["The modal 'would', creating a standard second conditional structure.", "The auxiliary 'had', forming a Past Perfect verb structure required in a third conditional clause (unreal past).", "The auxiliary 'did', used to create emphatic past assertion.", "A phonetic structural variant common only in colloquial modern slang."], correct: 1, exp: "The clause sets up a Third Conditional (unreal past hypothesis). 'If he'd ordered' stands for 'If he had ordered' (Past Perfect)." },
+
+            // PRONUNCIATION
+            { cat: "Phonetics & Pronunciation", q: "On which syllable does the primary lexical stress fall in the noun 'Fluency'?", options: ["The second syllable: flu-EN-cy.", "The first syllable: FLU-en-cy.", "The word features completely flat stress; no syllable is emphasized.", "The stress pattern shifts dynamically depending on where it sits in a sentence."], correct: 1, exp: "The noun 'fluency' is stressed on its very first syllable: /ˈfluːənsi/. Most two-syllable nouns follow this initial-stress pattern." },
+            { cat: "Phonetics & Pronunciation", q: "What is the correct phonetic pronunciation of the past tense '-ed' suffix in the verb 'swapped'?", options: ["It is pronounced as a distinct, additional full syllable /ɪd/.", "It is pronounced as a sharp, unvoiced /t/ sound.", "It is pronounced as a soft, voiced /d/ sound.", "The entire structural suffix remains completely silent or unpronounced."], correct: 1, exp: "The base verb 'swap' ends in the unvoiced consonant sound /p/. Therefore, the '-ed' ending assimilates to become an unvoiced /t/ sound: /swɒpt/." },
+            { cat: "Phonetics & Pronunciation", q: "Which vowel sound is produced during the stressed second syllable of the word 'Notoriously' (/nəʊˈtɔː.ri.əs.li/)?", options: ["A short, clipped 'o' vowel sound, matching the sound in the word 'pot'.", "A long, open-mid back rounded vowel sound /ɔː/, similar to the sound in 'law' or 'door'.", "The vowel sound in this specific syllable is completely dropped or silent.", "A long high back rounded /uː/ sound, matching the vowel in 'blue'."], correct: 1, exp: "The primary stressed syllable of 'notoriously' features the long vowel sound /ɔː/, which is open-mid, back, and rounded." },
+            { cat: "Phonetics & Pronunciation", q: "The noun 'Episode' contains a silent 'e' at the end. What is the standard structural effect of this 'magic E' on the preceding 'o'?", options: ["It converts the 'o' into a highly nasalized vowel sound.", "It forces the 'o' to be pronounced as its long alphabetical diphthong value /əʊ/.", "It shortens the 'o' into an open central unrounded vowel /ʌ/, like the vowel in 'cup'.", "It renders the 'o' entirely mute, collapsing the word's pronunciation."], correct: 1, exp: "A silent final 'e' separated from a preceding vowel by a single consonant typically indicates that the internal vowel is long, sounding like its alphabet name: /ˈep.ɪ.səʊd/." },
+            { cat: "Phonetics & Pronunciation", q: "How is the consonant cluster 'ch' pronounced in the keyword 'Anchor' or the word 'Stomach'?", options: ["As a soft sibilant fricative 'sh' sound, like in the word 'chef' or 'machine'.", "As a hard velar plosive /k/ sound, identical to the letter 'K'.", "As a palato-alveolar affricate sound, like in the words 'chair' or 'church'.", "The consonant cluster is completely silent and produces no airflow."], correct: 1, exp: "In words of classical Greek origin such as 'Anchor' (/ˈæŋ.kər/), 'Stomach', or 'Chaos', the 'ch' spelling systematically corresponds to a hard /k/ sound." }
+        ];
+
+        let score = 0;
+        let totalAnswered = 0;
+        let userErrors = [];
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            quizData.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "quiz-block";
+                qDiv.innerHTML = `
+                    <div class="mb-5">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-md bg-indigo-500/5">${item.cat}</span>
+                        <h4 class="text-lg md:text-xl font-medium mt-4 text-gray-100">${index + 1}. ${item.q}</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="q-block-${index}">
+                        ${item.options.map((opt, i) => `
+                            <button onclick="checkAnswer(${index}, ${i}, this)" class="opt-btn p-4 rounded-xl text-left bg-gray-900/40 text-gray-300 text-sm md:text-base font-medium">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="explanation-${index}" class="explanation shadow-inner">
+                        <span class="font-bold text-white block mb-1.5"><i class="fa-solid fa-circle-check text-emerald-400 mr-2"></i> Correct Answer Feedback:</span>
+                        <p class="text-gray-300">${item.exp}</p>
+                    </div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function checkAnswer(qIdx, choiceIdx, selectedBtn) {
+            const buttons = document.querySelectorAll(`#q-block-${qIdx} button`);
+            if (buttons[0].disabled) return; 
+
+            const correctIdx = quizData[qIdx].correct;
+            const isCorrect = (choiceIdx === correctIdx);
+
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (i === correctIdx) btn.classList.add('correct');
+                if (i === choiceIdx && !isCorrect) btn.classList.add('wrong');
+            });
+
+            document.getElementById(`explanation-${qIdx}`).style.display = 'block';
+
+            if (isCorrect) {
+                score++;
+            } else {
+                userErrors.push({
+                    num: qIdx + 1,
+                    question: quizData[qIdx].q,
+                    userChoice: quizData[qIdx].options[choiceIdx],
+                    correctChoice: quizData[qIdx].options[correctIdx]
+                });
+            }
+
+            totalAnswered++;
+            document.getElementById('score-badge').innerText = `SCORE: ${score} / 20`;
+
+            if (totalAnswered === quizData.length) {
+                displayFinalResults();
+            }
+        }
+
+        function displayFinalResults() {
+            const finalDiv = document.getElementById('final-recap');
+            const errorList = document.getElementById('error-list');
+            finalDiv.classList.remove('hidden');
+            document.getElementById('final-score-msg').innerText = `You have completed the module with a final score of ${score} out of 20.`;
+
+            errorList.innerHTML = '';
+            if (userErrors.length > 0) {
+                errorList.innerHTML = '<h5 class="font-bold text-gray-400 uppercase tracking-wider text-xs mb-4 flex items-center"><i class="fa-solid fa-triangle-exclamation text-amber-500 mr-2"></i> Detailed Error Analysis:</h5>';
+                userErrors.forEach(err => {
+                    errorList.innerHTML += `
+                        <div class="p-5 bg-gray-900/50 border-l-4 border-red-500 rounded-r-xl space-y-2 text-sm md:text-base">
+                            <p class="font-semibold text-gray-200">Question ${err.num}: ${err.question}</p>
+                            <p class="text-sm text-gray-400">Your choice: <span class="text-red-400 line-through">${err.userChoice}</span></p>
+                            <p class="text-sm text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1.5"></i> Correction: ${err.correctChoice}</p>
+                        </div>
+                    `;
+                });
+            } else {
+                errorList.innerHTML = `
+                    <div class="p-6 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center">
+                        <p class="text-emerald-400 font-bold text-lg">🎉 Perfect Score! Excellent performance. You fully absorbed the entire lesson structure.</p>
+                    </div>
+                `;
+            }
+
+            finalDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.onload = renderQuiz;
+    </script>
+</body>
+</html>

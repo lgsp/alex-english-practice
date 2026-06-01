@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Immersion English Session • Conversational Mastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; color: #f3f4f6; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .video-container { position: relative; padding-top: 56.25%; border-radius: 1.25rem; overflow: hidden; border: 1px solid #1f2937; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .opt-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #1f2937; }
+        .opt-btn:hover:not(:disabled) { background-color: #111827; border-color: #4b5563; transform: translateX(6px); }
+        .correct { background-color: #064e3b !important; border-color: #10b981 !important; color: #ecfdf5; }
+        .wrong { background-color: #7f1d1d !important; border-color: #ef4444 !important; color: #fef2f2; }
+        .explanation { display: none; margin-top: 14px; padding: 18px; border-radius: 12px; background: #111827; border-left: 4px solid #818cf8; font-size: 0.95rem; color: #d1d5db; }
+        .quiz-block { border-bottom: 1px solid #1f2937; padding-bottom: 3.5rem; }
+        .quiz-block:last-child { border-bottom: none; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <!-- HEADER -->
+    <header class="max-w-5xl mx-auto mb-16 text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest uppercase border border-indigo-500/30 text-indigo-400 rounded-full bg-indigo-500/5">
+            Vinh Giang • Public Speaking & Communication Insights
+        </div>
+        <h1 class="text-4xl md:text-5xl title-font font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-400">
+            How to Talk to Anyone
+        </h1>
+        <p class="text-gray-400 text-base md:text-lg">Monday, June 1st • Full Immersion Training Module</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto">
+        
+        <!-- VIDEO SECTION -->
+        <section class="mb-20">
+            <div class="video-container shadow-2xl shadow-indigo-950/40">
+                <iframe src="https://www.youtube.com/embed/elFdkfSNlpE" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="bg-gray-900/30 border border-gray-800 rounded-3xl p-6 md:p-12 mb-20 shadow-xl">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4 pb-6 border-b border-gray-800">
+                <div>
+                    <h2 class="text-2xl md:text-3xl title-font font-bold text-white">Interactive Quiz</h2>
+                    <p class="text-gray-500 text-sm mt-1">20 Multiple-Choice Questions: Listening, Vocabulary, Grammar & Pronunciation.</p>
+                </div>
+                <div id="score-badge" class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-6 py-2 rounded-full font-bold mono text-lg shadow-inner">
+                    SCORE: 0 / 20
+                </div>
+            </div>
+
+            <!-- QUESTIONS CONTAINER -->
+            <div id="quiz-container" class="space-y-12">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- FINAL RESULTS RECAP -->
+            <div id="final-recap" class="hidden mt-16 p-8 border border-gray-800 bg-gray-950/60 rounded-2xl shadow-inner">
+                <h3 class="text-2xl md:text-3xl title-font font-bold mb-3 text-indigo-400">Quiz Completed!</h3>
+                <p id="final-score-msg" class="text-lg text-gray-300 mb-8"></p>
+                <div id="error-list" class="space-y-4"></div>
+                <button onclick="window.location.reload()" class="mt-8 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-all font-semibold text-sm shadow-md">
+                    <i class="fa-solid fa-rotate-right mr-2"></i> Restart Quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- EXPRESSIONS SHOWCASE SECTION -->
+        <section class="bg-gray-900/10 border border-gray-800/60 rounded-3xl p-6 md:p-12 shadow-xl mb-12">
+            <h2 class="text-2xl md:text-3xl title-font font-bold text-white mb-2">Key Video Expressions</h2>
+            <p class="text-gray-500 text-sm mb-8 pb-4 border-b border-gray-800">Essential conversational tools and high-leverage communication phrases used by Vinh Giang.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 1</span>
+                    <h4 class="text-lg font-semibold text-white">To break the ice</h4>
+                    <p class="text-sm text-gray-400">To say or do something that relieves tension, awkwardness, or social friction when meeting someone new.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "Instead of talking about the bad weather, he asked a unique question about my hobbies to break the ice."
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 2</span>
+                    <h4 class="text-lg font-semibold text-white">To be in your own head</h4>
+                    <p class="text-sm text-gray-400">To be overthinking, highly self-conscious, or consumed by internal anxieties instead of staying present.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "I couldn't enjoy the networking event because I was too in my own head about saying the wrong thing."
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 3</span>
+                    <h4 class="text-lg font-semibold text-white">To pick up on something</h4>
+                    <p class="text-sm text-gray-400">To notice, detect, or correctly interpret subtle non-verbal cues, micro-expressions, or shifts in vocal tone.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "Great communicators immediately pick up on tiny changes in body language to shift the flow of a meeting."
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 4</span>
+                    <h4 class="text-lg font-semibold text-white">To build rapport</h4>
+                    <p class="text-sm text-gray-400">To establish a relationship of mutual trust, understanding, harmony, and smooth fluid communication with another individual.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "Matching the structural pacing and rate of speech of your client is a fast way to build authentic professional rapport."
+                    </p>
+                </div>
+                <!-- Card 5 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 5</span>
+                    <h4 class="text-lg font-semibold text-white">To shift the spotlight</h4>
+                    <p class="text-sm text-gray-400">To direct the attention or focus of the conversation away from yourself and onto the other person.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "When they asked me an uncomfortable question about my personal life, I tried to shift the spotlight back onto their career achievements."
+                    </p>
+                </div>
+                <!-- Card 6 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 6</span>
+                    <h4 class="text-lg font-semibold text-white">To leave someone hanging</h4>
+                    <p class="text-sm text-gray-400">To keep someone waiting for a response, or to leave a conversational statement incomplete, causing awkward suspense.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "Don't just say 'Guess what happened yesterday' and then leave me hanging for three hours!"
+                    </p>
+                </div>
+                <!-- Card 7 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 7</span>
+                    <h4 class="text-lg font-semibold text-white">To carry the conversation</h4>
+                    <p class="text-sm text-gray-400">To do almost all the talking or put in all the social effort to keep a conversation going when the other person is passive.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "He was so shy that I had to carry the conversation for the entire dinner, which was quite exhausting."
+                    </p>
+                </div>
+                <!-- Card 8 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 8</span>
+                    <h4 class="text-lg font-semibold text-white">To drop a hook</h4>
+                    <p class="text-sm text-gray-400">To intentionally include an interesting or open-ended detail in your answer to invite the other person to ask more questions.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "When answering where I live, I always drop a hook by mentioning I spent a year living in an old train car."
+                    </p>
+                </div>
+                <!-- Card 9 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 9</span>
+                    <h4 class="text-lg font-semibold text-white">To be second nature</h4>
+                    <p class="text-sm text-gray-400">When a skill or behavior has been practiced so much that it becomes completely automatic, requiring no conscious thought.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "After years of teaching online, managing multiple windows and checking the code layout has become second nature to me."
+                    </p>
+                </div>
+                <!-- Card 10 -->
+                <div class="p-6 bg-gray-900/40 border border-gray-800 rounded-xl space-y-3">
+                    <span class="mono text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Expression 10</span>
+                    <h4 class="text-lg font-semibold text-white">To put someone at ease</h4>
+                    <p class="text-sm text-gray-400">To make someone feel relaxed, safe, comfortable, and free from anxiety or nervousness in a social setting.</p>
+                    <p class="text-xs italic text-purple-300 bg-purple-950/20 p-3 rounded-lg border border-purple-900/30">
+                        <strong class="not-italic text-purple-400 block mb-1">Real-Life Example:</strong>
+                        "Her warm smile and slow, calm way of speaking immediately put the nervous candidate at ease during the interview."
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            // COMPREHENSION / LISTENING
+            { cat: "Listening Comprehension", q: "According to Vinh Giang, what is the primary mistake people make when they experience conversational anxiety?", options: ["They speak way too softly for the room acoustics.", "They overthink what to say next instead of genuinely listening to the other person.", "They physically walk away from conversations without warning.", "They memorize long lists of complex vocabulary terms."], correct: 1, exp: "Vinh explains that anxiety traps people inside their own heads, making them focus entirely on their next sentence rather than listening to pick up conversational hooks." },
+            { cat: "Listening Comprehension", q: "What role does Vinh Giang assign to pauses and silence during an active conversational exchange?", options: ["They are powerful tools used to create rhythm, give weight to points, and allow the listener to process information.", "They are a sign of structural weakness or a total lack of social preparation.", "They are only useful when you completely forget the other person's name.", "They should be avoided completely by using continuous filler words like 'um' and 'ah'."], correct: 0, exp: "Pauses provide structural punctuation to your speech, building comfort, presence, and status while eliminating distracting filler words." },
+            { cat: "Listening Comprehension", q: "How does Vinh Giang suggest we handle situations where we have absolutely nothing to say or share?", options: ["By making up wild, fictional stories to look interesting.", "By remaining completely silent and staring directly at the floor.", "By asking curious, open-ended questions that shift the spotlight onto the other person's passions.", "By abruptly ending the dialogue and leaving the venue immediately."], correct: 2, exp: "Shifting the conversational spotlight via deliberate, exploratory open-ended questions allows the other person to share, relieving you of immediate speaking pressure." },
+            { cat: "Listening Comprehension", q: "What fundamental vocal element does Vinh emphasize to instantly change how charismatic you sound?", options: ["Shouting at maximum volume to project authority.", "Speaking as fast as humanly possible to show intelligence.", "Adopting a completely formal, artificial accent.", "Varying your vocal melody, rate of speech, and pitch variation rather than remaining flat or monotonic."], correct: 3, exp: "Vocal variety (modulating your tone, speed, and pitch) prevents you from sounding monotonic, which automatically increases listener engagement." },
+            { cat: "Listening Comprehension", q: "What is the ultimate psychological goal of using 'conversational hooks' during a normal interaction?", options: ["To leave small, interesting details in your answers that give the other person an easy opportunity to ask follow-up questions.", "To confuse the listener and take total control of the meeting.", "To trap the other person into a business contract.", "To prove that your technical background is superior to theirs."], correct: 0, exp: "Hooks act as social invitation cards. By leaving a curious detail open in your response, you give the other speaker an easy anchor to keep the dialogue rolling naturally." },
+
+            // VOCABULARY
+            { cat: "Vocabulary Analysis", q: "What does the colloquial expression 'to stand out from the crowd' mean?", options: ["To look for a physical emergency exit in a busy room.", "To be highly distinctive, noticeably superior, or easily recognizable compared to peers.", "To intentionally stand on a chair during a professional presentation.", "To disagree with an obvious statement out of pure spite."], correct: 1, exp: "'To stand out' means to possess unique qualities or skills that make you clearly visible and distinct from the average group." },
+            { cat: "Vocabulary Analysis", q: "What is the meaning of the word 'monotone' when applied to human speech?", options: ["A voice that changes pitch and volume continuously every second.", "A highly sophisticated musical composition for a single instrument.", "A vocal delivery that stays flat, unvaried, and completely unchanging in pitch.", "A specific type of high-tech microphone filter used by creators."], correct: 2, exp: "Monotone (mono = single, tone = sound) describes speech that lacks melodic contour or inflection, making it sound flat and unengaging." },
+            { cat: "Vocabulary Analysis", q: "What is the precise meaning of the noun 'friction' in a social interaction framework?", options: ["A heavy layer of dust on office furniture.", "An official business agreement signed by corporate entities.", "The exact physical distance measured between two speakers.", "A feeling of awkwardness, resistance, or structural difficulty that stops a conversation from flowing smoothly."], correct: 3, exp: "Social or conversational 'friction' refers to awkward hitches, uncomfortable silences, or mismatched energies that disrupt natural rapport." },
+            { cat: "Vocabulary Analysis", q: "What does it mean if someone's communication style is described as 'genuine'?", options: ["It is authentic, real, honest, and free from pretense or artificiality.", "It is highly calculated, rehearsed, and intentionally deceptive.", "It is exclusively reserved for formal legal negotiations.", "It is completely quiet and avoids all forms of verbal contact."], correct: 0, exp: "'Genuine' stems from authenticity. A genuine communicator speaks honestly and connects sincerely without wearing a manipulative social mask." },
+            { cat: "Vocabulary Analysis", q: "In communication, what does the phrasal verb 'to open up' signify?", options: ["To unlock a physical door using a master key.", "To begin talking freely, sharing personal thoughts, stories, or real feelings with someone.", "To launch a new software application on a computer terminal.", "To increase the physical volume of your voice to an uncomfortable level."], correct: 1, exp: "When a speaker 'opens up', they drop their defensive social guard and begin sharing real narratives, which deepens connection." },
+
+            // GRAMMAR
+            { cat: "Grammar & Syntax", q: "Identify the correct structure using a modal verb for past hypothetical speculation: 'If I had used a pause, I _______ more confident.'", options: ["would sound", "would have sounded", "will have sounded", "had sounded"], correct: 1, exp: "This is a Third Conditional structure (unreal past hypothesis). The correct result clause formula requires *would have + past participle* (*would have sounded*)." },
+            { cat: "Grammar & Syntax", q: "Which of the following options displays a perfectly structured negative imperative for giving advice?", options: ["Don't to forget to look for conversational hooks.", "Not forget looking for conversational hooks.", "Don't forget to look for conversational hooks.", "Do not forgetting to look for conversational hooks."], correct: 2, exp: "Negative imperatives are formed using *do not* or *don't* followed directly by the bare infinitive form of the verb (*Don't forget*)." },
+            { cat: "Grammar & Syntax", q: "In the phrase 'the more you practice your pitch variation, the more charismatic you become', what grammatical framework is applied?", options: ["The proportional comparative structure (The + comparative, the + comparative).", "A past perfect progressive timeline.", "An embedded indirect question format.", "A passive causative construction."], correct: 0, exp: "Proportional comparatives (*the more..., the more...*) are used to show that two variations are parallel and directly dependent on each other." },
+            { cat: "Grammar & Syntax", q: "Choose the option that correctly implements a gerund as the absolute subject of the clause.", options: ["Listen actively is the secret to discovering deep conversational hooks.", "To listening actively is the secret to discovering deep conversational hooks.", "For listen actively is the secret to discovering deep conversational hooks.", "Listening actively is the secret to discovering deep conversational hooks."], correct: 3, exp: "When an action functions as the noun subject of a sentence, it must take the gerund (-ing) form (*Listening actively is...*)." },
+            { cat: "Grammar & Syntax", q: "Analyze this sentence: 'Vinh Giang, whose videos focus on vocal training, lives in Australia.' What type of clause is 'whose videos focus on vocal training'?", options: ["An adverbial clause of unexpected concession.", "A non-defining relative clause providing extra information using a possessive relative pronoun.", "A defining restrictive noun clause essential to sentence meaning.", "A past conditional hypothetical block."], correct: 1, exp: "The clause is a non-defining relative clause separated by commas. It uses the relative possessive pronoun *whose* to add non-essential bonus context." },
+
+            // PRONUNCIATION
+            { cat: "Phonetics & Pronunciation", q: "On which syllable does the primary lexical stress fall in the noun 'Charisma'?", options: ["The first syllable: CHA-ris-ma.", "The second syllable: cha-RIS-ma.", "The third syllable: cha-ris-MA.", "The stress is distributed equally across all parts."], correct: 1, exp: "The noun 'charisma' places its primary lexical stress on the second syllable: /kəˈrɪz.mə/. The internal 's' is pronounced as a voiced /z/." },
+            { cat: "Phonetics & Pronunciation", q: "How is the final structural '-s' sound pronounced in the plural noun 'Pauses' (/ˈpɔː.zɪz/)?", options: ["As a sharp, unvoiced /s/ sound, like in the word 'gas'.", "It remains completely silent and unvocalized.", "As a distinct additional syllable ending in a voiced /ɪz/ sound.", "As a weak, breathy aspirate /h/ sound."], correct: 2, exp: "When a base noun ends in a sibilant sound like /z/ (*pause*), the plural '-es' ending adds a new syllable pronounced as a voiced /ɪz/." },
+            { cat: "Phonetics & Pronunciation", q: "Identify the correct phonetic pronunciation of the vowel sound in the keyword 'Pitch' (/pɪtʃ/).", options: ["A short high lax unrounded vowel /ɪ/, like the vowel in 'bit' or 'sit'.", "A long high front unrounded vowel /iː/, like the vowel in 'beach'.", "A low central unrounded vowel /ʌ/, like the vowel in 'cup'.", "A complex open diphthong sound."], correct: 0, exp: "The word 'pitch' utilizes the short, lax vowel sound /ɪ/ -> /pɪtʃ/. Prolonging it into an /iː/ changes the meaning entirely to 'peach'." },
+            { cat: "Phonetics & Pronunciation", q: "Which syllable receives the absolute maximum primary lexical stress in the verb 'To Modulate'?", options: ["The second syllable: mod-U-late.", "The third syllable: mod-u-LATE.", "The stress changes depending on whether it is a question or a statement.", "The first syllable: MOD-u-late."], correct: 3, exp: "The three-syllable verb 'modulate' places its primary lexical stress squarely on the very first syllable: /ˈmɒd.jə.leɪt/." },
+            { cat: "Phonetics & Pronunciation", q: "In native connected speech, how is the phrase 'don't know' typically reduced or linked?", options: ["Both words maintain their full, hard dictionary boundaries with an aspirated /t/.", "The final /t/ is dropped, and the phrase often blends into a smooth, colloquial /dəʊˈnəʊ/ ('dunno').", "The vowel in 'know' shifts to a long nasal sound.", "The 'd' sound becomes entirely silent, leaving only the vowels."], correct: 1, exp: "During casual connected speech, assimilation and elision cause the unvoiced /t/ in *don't* to vanish, linking the nasal sounds into /dəʊˈnəʊ/." }
+        ];
+
+        let score = 0;
+        let totalAnswered = 0;
+        let userErrors = [];
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            quizData.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "quiz-block";
+                qDiv.innerHTML = `
+                    <div class="mb-5">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-md bg-indigo-500/5">${item.cat}</span>
+                        <h4 class="text-lg md:text-xl font-medium mt-4 text-gray-100">${index + 1}. ${item.q}</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="q-block-${index}">
+                        ${item.options.map((opt, i) => `
+                            <button onclick="checkAnswer(${index}, ${i}, this)" class="opt-btn p-4 rounded-xl text-left bg-gray-900/40 text-gray-300 text-sm md:text-base font-medium">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="explanation-${index}" class="explanation shadow-inner">
+                        <span class="font-bold text-white block mb-1.5"><i class="fa-solid fa-circle-check text-emerald-400 mr-2"></i> Correct Answer Feedback:</span>
+                        <p class="text-gray-300">${item.exp}</p>
+                    </div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function checkAnswer(qIdx, choiceIdx, selectedBtn) {
+            const buttons = document.querySelectorAll(`#q-block-${qIdx} button`);
+            if (buttons[0].disabled) return; 
+
+            const correctIdx = quizData[qIdx].correct;
+            const isCorrect = (choiceIdx === correctIdx);
+
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (i === correctIdx) btn.classList.add('correct');
+                if (i === choiceIdx && !isCorrect) btn.classList.add('wrong');
+            });
+
+            document.getElementById(`explanation-${qIdx}`).style.display = 'block';
+
+            if (isCorrect) {
+                score++;
+            } else {
+                userErrors.push({
+                    num: qIdx + 1,
+                    question: quizData[qIdx].q,
+                    userChoice: quizData[qIdx].options[choiceIdx],
+                    correctChoice: quizData[qIdx].options[correctIdx]
+                });
+            }
+
+            totalAnswered++;
+            document.getElementById('score-badge').innerText = `SCORE: ${score} / 20`;
+
+            if (totalAnswered === quizData.length) {
+                displayFinalResults();
+            }
+        }
+
+        function displayFinalResults() {
+            const finalDiv = document.getElementById('final-recap');
+            const errorList = document.getElementById('error-list');
+            finalDiv.classList.remove('hidden');
+            document.getElementById('final-score-msg').innerText = `You have completed the module with a final score of ${score} out of 20.`;
+
+            errorList.innerHTML = '';
+            if (userErrors.length > 0) {
+                errorList.innerHTML = '<h5 class="font-bold text-gray-400 uppercase tracking-wider text-xs mb-4 flex items-center"><i class="fa-solid fa-triangle-exclamation text-amber-500 mr-2"></i> Detailed Error Analysis & Corrections:</h5>';
+                userErrors.forEach(err => {
+                    errorList.innerHTML += `
+                        <div class="p-5 bg-gray-900/50 border-l-4 border-red-500 rounded-r-xl space-y-2 text-sm md:text-base">
+                            <p class="font-semibold text-gray-200">Question ${err.num}: ${err.question}</p>
+                            <p class="text-sm text-gray-400">Your choice: <span class="text-red-400 line-through">${err.userChoice}</span></p>
+                            <p class="text-sm text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1.5"></i> Correction: ${err.correctChoice}</p>
+                        </div>
+                    `;
+                });
+            } else {
+                errorList.innerHTML = `
+                    <div class="p-6 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-center">
+                        <p class="text-emerald-400 font-bold text-lg">🎉 Perfect Score! Excellent performance. You fully mastered the communication framework.</p>
+                    </div>
+                `;
+            }
+
+            finalDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.onload = renderQuiz;
+    </script>
+</body>
+</html>

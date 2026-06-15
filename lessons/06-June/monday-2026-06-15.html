@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Analysis: Latin American Expatriation & Fiscal Frameworks 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-950/10 to-gray-950">
+
+    <div class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-6">
+                <a href="#" class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white bg-gray-900/60 hover:bg-gray-900 border border-gray-800 hover:border-gray-700 px-3 py-2 rounded-xl transition-all duration-200 group">
+                    <i class="fa-solid fa-arrow-left text-indigo-400 group-hover:-translate-x-1 transition-transform"></i>
+                    <span>Back to Course</span>
+                </a>
+                
+                <div class="hidden sm:flex items-center space-x-3 border-l border-gray-800 pl-6">
+                    <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i class="fa-solid fa-chart-pie text-white text-sm"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">LatAm Expat Analytics</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                    <span class="h-1.5 w-1.5 rounded-full bg-indigo-400 mr-2 animate-pulse"></span>
+                    2026 Sovereign Data Matrix
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+                Sovereign Relocation & <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400">Tax Optimization</span> Hub
+            </h1>
+            <p class="text-gray-400 text-base sm:text-lg">
+                A quantitative, objective comparative analysis across 12 prominent Latin American jurisdictions mapped via their primary economic capitals. Optimized specifically for European remote professionals, entrepreneurs, and high-net-worth individuals.
+            </p>
+        </div>
+
+        <div class="bg-gray-900/40 border border-gray-800/80 rounded-2xl p-6 backdrop-blur space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg font-bold text-white">Dynamic Jurisdiction Directory</h2>
+                    <p class="text-xs text-gray-400">Filter and sort jurisdictions based on tactical operational advantages.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <select id="sortBy" onchange="sortData()" class="bg-gray-950 border border-gray-800 rounded-xl px-4 py-2 text-sm text-gray-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                        <option value="name">Sort by: Jurisdiction Name</option>
+                        <option value="cost">Sort by: Cost of Living (Lowest to Highest)</option>
+                        <option value="safety">Sort by: Safety Score (Highest to Lowest)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="countryGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            </div>
+
+        <div class="bg-gray-900/20 border border-gray-800 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-cyan-500/5 pointer-events-none"></div>
+            <div class="relative z-10 space-y-6">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-scale-balanced text-cyan-400 text-xl"></i>
+                    <h3 class="text-xl font-bold text-white">Core Quantitative Reference Table</h3>
+                </div>
+                <p class="text-sm text-gray-400 max-w-3xl">
+                    Quick cross-reference matrix summarizing taxation systems, safety profiles, and estimated financial baselines across the economic capitals for a standard single professional expat lifestyle.
+                </p>
+                <div class="overflow-x-auto border border-gray-800 rounded-xl bg-gray-950/60 custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs text-gray-300">
+                        <thead>
+                            <tr class="border-b border-gray-800 bg-gray-900/50 text-gray-400 font-mono uppercase tracking-wider">
+                                <th class="p-4">Jurisdiction & Capital</th>
+                                <th class="p-4">Taxation Framework</th>
+                                <th class="p-4">Est. Monthly Cost</th>
+                                <th class="p-4">Macro Safety Level</th>
+                                <th class="p-4">Key Residency Route</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60">
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Belize (Belize City)</td>
+                                <td class="p-4 text-emerald-400">Territorial (0% Foreign)</td>
+                                <td class="p-4 font-mono">$1,600 - $2,100</td>
+                                <td class="p-4 text-amber-400">Moderate (High localized crime)</td>
+                                <td class="p-4 text-gray-400">QRP Program / Annual Renewal</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Bolivia (Santa Cruz)</td>
+                                <td class="p-4 text-emerald-400">Pure Territorial</td>
+                                <td class="p-4 font-mono">$1,100 - $1,500</td>
+                                <td class="p-4 text-emerald-400">Good / Stable</td>
+                                <td class="p-4 text-gray-400">Specific Purpose Visa / Investment</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Chile (Santiago)</td>
+                                <td class="p-4 text-amber-400">Worldwide (3-yr Temporary Excl.)</td>
+                                <td class="p-4 font-mono">$1,900 - $2,600</td>
+                                <td class="p-4 text-emerald-400">High / Stable Urban</td>
+                                <td class="p-4 text-gray-400">Independent Income Track</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Costa Rica (San José)</td>
+                                <td class="p-4 text-emerald-400">Strict Territorial</td>
+                                <td class="p-4 font-mono">$1,800 - $2,500</td>
+                                <td class="p-4 text-emerald-400">Very High / No Army</td>
+                                <td class="p-4 text-gray-400">Rentista / Digital Nomad Visa</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">El Salvador (San Salvador)</td>
+                                <td class="p-4 text-emerald-400">Territorial (New Exemptions)</td>
+                                <td class="p-4 font-mono">$1,400 - $1,900</td>
+                                <td class="p-4 text-emerald-400">Drastic Improvement (High Security)</td>
+                                <td class="p-4 text-gray-400">Freedom Visa / Bitcoin Track</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Guatemala (Guatemala City)</td>
+                                <td class="p-4 text-emerald-400">Pure Territorial</td>
+                                <td class="p-4 font-mono">$1,300 - $1,800</td>
+                                <td class="p-4 text-amber-400">Moderate (Vigilance Required)</td>
+                                <td class="p-4 text-gray-400">Rentista Visa / Business Entity</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Honduras (San Pedro Sula)</td>
+                                <td class="p-4 text-emerald-400">Territorial Framework</td>
+                                <td class="p-4 font-mono">$1,200 - $1,700</td>
+                                <td class="p-4 text-rose-400">Low (Requires strict zoning knowledge)</td>
+                                <td class="p-4 text-gray-400">Rentista Route / Corporate Move</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Nicaragua (Managua)</td>
+                                <td class="p-4 text-emerald-400">Territorial Framework</td>
+                                <td class="p-4 font-mono">$1,100 - $1,500</td>
+                                <td class="p-4 text-emerald-400">High Low-Level Safety</td>
+                                <td class="p-4 text-gray-400">Pensionado / Rentista Laws</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Panama (Panama City)</td>
+                                <td class="p-4 text-emerald-400">Strict Territorial (USD Base)</td>
+                                <td class="p-4 font-mono">$2,200 - $3,000</td>
+                                <td class="p-4 text-emerald-400">High / Safe Business Hub</td>
+                                <td class="p-4 text-gray-400">Friendly Nations Visa Route</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Paraguay (Asunción)</td>
+                                <td class="p-4 text-emerald-400">Pure Territorial (10% Local)</td>
+                                <td class="p-4 font-mono">$1,200 - $1,600</td>
+                                <td class="p-4 text-emerald-400">High Peace of Mind / Stable</td>
+                                <td class="p-4 text-gray-400">SUACE Temporary to Permanent</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Rep. Dominicana (Santo Domingo)</td>
+                                <td class="p-4 text-emerald-400">Territorial (First 3 Years Exempt)</td>
+                                <td class="p-4 font-mono">$1,500 - $2,200</td>
+                                <td class="p-4 text-amber-400">Moderate Urban (Vigilance)</td>
+                                <td class="p-4 text-gray-400">Rentista / Real Estate Investor</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Uruguay (Montevideo)</td>
+                                <td class="p-4 text-emerald-400">Territorial base (Tax Holidays)</td>
+                                <td class="p-4 font-mono">$2,300 - $3,200</td>
+                                <td class="p-4 text-emerald-400">Excellent / Democratic Benchmark</td>
+                                <td class="p-4 text-gray-400">Independent Means Visa Track</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-900 bg-gray-950/60 mt-20 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500 font-mono">
+            Sovereign Relocation Database. Compiled for C1/C2 Educational Assessment and Strategic Evaluation.
+        </div>
+    </footer>
+
+    <script>
+        const countryData = [
+            {
+                name: "Belize",
+                flag: "🇧🇿",
+                capital: "Belize City",
+                costRank: 6,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,600 - $2,100",
+                    rent: "Standard 1-bedroom apartment inside safe professional zones costs around $700 - $1,000/month.",
+                    market: "Imported goods carry high customs tariffs. Supermarket bills are steep; localized fresh seafood and produce are cheap.",
+                    dining: "Local diners cost $6 - $12 per meal; upscale coastal tourist spots average $30 - $50."
+                },
+                taxation: {
+                    framework: "Pure Territorial Tax System",
+                    rules: "Foreign-sourced income is entirely exempt from local taxation. The Qualified Retired Persons (QRP) program offers explicit permanent zero-tax incentives for foreign revenues. Local income, if authorized, faces progressive brackets up to 25%."
+                },
+                security: {
+                    level: "Moderate (High localized volatility)",
+                    analysis: "Belize City exhibits high national homicide metrics, but crime is intensely compartmentalized within specific southern districts. Expat enclaves maintain solid security profiles, though opportunistic property crime requires consistent personal diligence."
+                }
+            },
+            {
+                name: "Bolivia",
+                flag: "🇧🇴",
+                capital: "Santa Cruz de la Sierra",
+                costRank: 2,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,100 - $1,500",
+                    rent: "Premium modern high-rise apartments in Equipetrol district range between $500 - $800/month.",
+                    market: "Local markets (mercados) are exceptionally cheap. Standard western supermarket bills are roughly 40% cheaper than in Europe.",
+                    dining: "Excellent regional steak houses and expat bistros cost $12 - $25; casual everyday dining sits below $5."
+                },
+                taxation: {
+                    framework: "Strict Territorial System",
+                    rules: "Bolivia taxes only domestic source income under the RC-IVA framework (flat 13%). Foreign investments, remote corporate salaries, or capital gains generated outside Bolivian borders face 0% domestic tax. Becoming a resident requires establishing local purpose or investment."
+                },
+                security: {
+                    level: "Good / Generally Stable",
+                    analysis: "Santa Cruz offers a much lower violent crime environment compared to regional neighbors. Petty theft, scams, and occasional political blockades (paros) represent the primary structural nuisances. Violent crime targeting foreigners is extremely rare."
+                }
+            },
+            {
+                name: "Chile",
+                flag: "🇨🇱",
+                capital: "Santiago",
+                costRank: 9,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,900 - $2,600",
+                    rent: "Modern condos in safe professional sectors like Las Condes or Providencia command $800 - $1,300/month.",
+                    market: "High-quality supermarket networks (e.g., Jumbo) offer premium infrastructure at prices near southern European baselines.",
+                    dining: "Mid-range restaurant dining costs around $20 - $35 per person. Local street food or casual lunches cost $7 - $12."
+                },
+                taxation: {
+                    framework: "Worldwide Income (With temporary exemptions)",
+                    rules: "Chile operates on a worldwide tax structure. However, newly arrived expats can formally apply for a 3-year absolute exemption on foreign-sourced income, extendable by application. After this window, global revenues face standard progressive scales up to 40%."
+                },
+                security: {
+                    level: "High Urban Security / Developed Infrastructure",
+                    analysis: "Santiago boasts the most advanced public infrastructure in South America. While pickpocketing networks and vehicle thefts are active in urban hubs, violent crime rates remain well below the continental average. Neighborhoods like Vitacura feel remarkably secure."
+                }
+            },
+            {
+                name: "Costa Rica",
+                flag: "🇨🇷",
+                capital: "San José",
+                costRank: 8,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,800 - $2,500",
+                    rent: "Secure apartments in expat-favored neighborhoods like Escazú or Rohrmoser range from $850 - $1,400/month.",
+                    market: "High consumer pricing. Imported commodities are heavily taxed. Local supermarkets (e.g., Automercado) mirror US or European cost profiles.",
+                    dining: "A typical meal at a local 'Soda' is $6 - $10, while international culinary venues match European prices ($25 - $40)."
+                },
+                taxation: {
+                    framework: "Strict Territorial Principle",
+                    rules: "Costa Rica does not tax income generated outside its borders. Digital nomads, offshore business owners, and international pensioners owe 0% local income tax. The Digital Nomad Visa and Rentista tracks provide solid legislative protection for external capital."
+                },
+                security: {
+                    level: "Very High / Peace Benchmark",
+                    analysis: "Having no standing army since 1948, the nation allocates deep resources toward healthcare and education. San José has seen minor rises in localized crime, but safe suburbs like Escazú offer peaceful environments where expats routinely walk at night without distress."
+                }
+            },
+            {
+                name: "El Salvador",
+                flag: "🇸🇻",
+                capital: "San Salvador",
+                costRank: 5,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,400 - $1,900",
+                    rent: "Premium residential apartments in Colonia San Benito or Escalón cost $800 - $1,200/month.",
+                    market: "Supermarket chains offer diverse US products at average costs. Local produce from traditional markets is highly economical.",
+                    dining: "Upper-tier restaurants average $15 - $30. Local pupuserías offer highly nutritious meals for under $4 $4."
+                },
+                taxation: {
+                    framework: "Territorial with Modern Capital Incentives",
+                    rules: "El Salvador fundamentally taxes domestic income. In an historic legal update, the nation eliminated income tax on all international capital inflows, foreign salaries, and external investments (slashing it from 30% to 0%). Bitcoin is recognized as legal tender."
+                },
+                security: {
+                    level: "Drastic Structural Improvement / High Policing",
+                    analysis: "Once marked by complex security concerns, El Salvador has undergone a massive internal safety transformation. San Salvador is currently one of the most heavily monitored capitals in the hemisphere. Expats report a relaxed daily atmosphere with negligible gang risk."
+                }
+            },
+            {
+                name: "Guatemala",
+                flag: "🇬🇹",
+                capital: "Guatemala City",
+                costRank: 4,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,300 - $1,800",
+                    rent: "Modern high-security condos in safe premium enclaves (Zone 10, Zone 14) command $700 - $1,100/month.",
+                    market: "Basic foods and regional produce are cheap. Specialized imported goods from the EU or US face structural markups up to 30%.",
+                    dining: "Gourmet dining in Zone 10 costs $20 - $35; traditional local business lunch menus sit at $5 - $8."
+                },
+                taxation: {
+                    framework: "Pure Territorial Framework",
+                    rules: "Only income generated inside the geographic boundaries of Guatemala is subject to tax (up to a flat 7% on gross corporate scales or 25% on net options). Foreign investments, global consulting revenues, and remote salaries are legally tax-free."
+                },
+                security: {
+                    level: "Moderate / Strict Zoning Required",
+                    analysis: "Guatemala City presents structural contrasts. Major zones carry historical crime statistics, but specific professional districts (Zone 10, 14, 15) employ heavy private and public security. Expats must maintain standard spatial awareness and avoid night transit outside secure bubbles."
+                }
+            },
+            {
+                name: "Honduras",
+                flag: "🇭🇳",
+                capital: "San Pedro Sula",
+                costRank: 3,
+                safetyRank: 2,
+                cost: {
+                    baseline: "$1,200 - $1,700",
+                    rent: "Secure, guarded modern apartments in premium neighborhoods like Río de Piedras cost $600 - $950/month.",
+                    market: "Very economical for local poultry, beef, and farm produce. Standard processed supermarket commodities match average Latin American grids.",
+                    dining: "Upscale corporate lunch spots cost $12 - $22 per head; street options are abundant for under $5."
+                },
+                taxation: {
+                    framework: "Territorial Framework",
+                    rules: "Honduras operates on a territorial system where only domestic profits and salaries face taxation. Foreign income streams remain untouched by local authorities. Specialized corporate zones (ZEDEs) historically offered alternative tracks, though standard residency requires Rentista proof."
+                },
+                security: {
+                    level: "Low / Strict Vigilance & Gated Layouts Mandated",
+                    analysis: "San Pedro Sula is a powerful corporate engine but carries significant security caveats. It displays high crime indexes in working-class peripheral districts. Expat life is lived almost exclusively inside gated, heavily armed residential complexes and modern commercial developments."
+                }
+            },
+            {
+                name: "Nicaragua",
+                flag: "🇳🇮",
+                capital: "Managua",
+                costRank: 1,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,100 - $1,500",
+                    rent: "Guarded residential homes or modern apartments in safe sectors like Villa Fontana cost $500 - $850/month.",
+                    market: "Extremely affordable. Supermarket staples and locally sourced items are among the cheapest in Central America.",
+                    dining: "A complete traditional meal costs $3 - $6; international steakhouses or fusion bistros rarely cross $15 - $25."
+                },
+                taxation: {
+                    framework: "Territorial Tax Model",
+                    rules: "Nicaragua enforces a territorial model. Foreign revenue sources are not assessed for local income tax. The country has attractive structural legislation (Law 694) targeting foreign retirees and rentistas, providing tax-free importation of household goods and zero tax on foreign pensions."
+                } ,
+                security: {
+                    level: "High Low-Level Safety / Complex Political Landscape",
+                    analysis: "Statistically, Nicaragua features some of the lowest violent crime indicators in Central America. Petty theft occurs but cartel or gang operations are non-existent. The primary consideration for French expats is navigating the unique and rigid centralized political framework safely."
+                }
+            },
+            {
+                name: "Panama",
+                flag: "🇵🇦",
+                capital: "Panama City",
+                costRank: 11,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$2,200 - $3,000",
+                    rent: "High-rise ocean-view condos in Punta Pacifica or San Francisco run between $1,200 - $2,000/month.",
+                    market: "Fully dollarized economy. High-end supermarkets (e.g., Riba Smith) stock complete international inventories at matching US prices.",
+                    dining: "World-class gastronomy. Casual lunches run $8 - $15; fine dining inside the banking center easily hits $40 - $70."
+                },
+                taxation: {
+                    framework: "Strict Territorial Benchmark (USD Based)",
+                    rules: "Panama is a premier global financial hub. Under Article 694 of the Tax Code, all foreign-sourced revenue is entirely exempt from income tax. The Friendly Nations Visa allows for structured paths via a $200k property investment or local bank deposit."
+                },
+                security: {
+                    level: "High / Structured Global Corporate Environment",
+                    analysis: "Panama City is highly secure for international executives and expats. The massive banking and logistics infrastructure ensures visible policing. Specific old districts require avoidance, but central business areas and residential towers feel equivalent to modern global metropolises."
+                }
+            },
+            {
+                name: "Paraguay",
+                flag: "🇵🇾",
+                capital: "Asunción",
+                costRank: 2,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,200 - $1,600",
+                    rent: "Upscale corporate apartments in the modern premium districts of Villa Morra or Santa Teresa cost $550 - $900/month.",
+                    market: "One of the world's top agricultural exporters; premium local beef, fresh organic produce, and basic items are incredibly inexpensive.",
+                    dining: "Excellent modern restaurants and classic churrascarías average $15 - $25 for a high-end experience."
+                },
+                taxation: {
+                    framework: "Pure Territorial System (Low Flat Tiers)",
+                    rules: "Paraguay offers a very favorable tax framework. Foreign-sourced income is completely tax-exempt. Domestic income is capped at a low flat 10% (IRP/IRE). The temporary residency via the SUACE process is incredibly fast, cheap, and does not require active physical presence to maintain."
+                },
+                security: {
+                    level: "High Peace of Mind / Safe Corporate Climate",
+                    analysis: "Asunción provides an exceptionally peaceful environment with low violent crime metrics. Expats appreciate a relaxed, slow-paced lifestyle. Standard urban precautions against petty theft in crowded central markets are sufficient; violent gang crime is non-existent in daily life."
+                }
+            },
+            {
+                name: "República Dominicana",
+                flag: "🇩🇴",
+                capital: "Santo Domingo",
+                costRank: 5,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,500 - $2,200",
+                    rent: "Premium apartments in coastal or central corporate districts (Piantini, Naco) range from $800 - $1,400/month.",
+                    market: "Moderate pricing structures. Local hypermarkets are well-stocked. Imported French or European foods carry distinct luxury taxes.",
+                    dining: "Mid-tier restaurants cost $15 - $30; typical Caribbean lunches from local businesses cost $5 - $8."
+                },
+                taxation: {
+                    framework: "Territorial with Initial Exemptions",
+                    rules: "The Dominican Republic utilizes a territorial tax baseline. Under standard code, foreign investment income is technically taxed after three years of residency. However, specialized pensionado and rentista expedited residency laws offer clear exemptions on international passive wealth."
+                },
+                security: {
+                    level: "Moderate Urban Environment / High Vigilance Needed",
+                    analysis: "Santo Domingo is a busy, densely populated metropolitan capital. Rates of street level opportunism, phone snatches, and traffic chaos are high. Gated upscale communities are very safe, but walking alone in unlit urban areas at night is highly discouraged."
+                }
+            },
+            {
+                name: "Uruguay",
+                flag: "🇺🇾",
+                capital: "Montevideo",
+                costRank: 12,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$2,300 - $3,200",
+                    rent: "Safe coastal apartments in Punta Carretas or Pocitos command $900 - $1,500/month.",
+                    market: "The highest cost index in South America. Heavy state monopolies and protectionist taxes make utilities, electronics, and standard groceries expensive.",
+                    dining: "Excellent local parity for meats and wines. Standard restaurant dining averages $25 - $45 per person."
+                },
+                taxation: {
+                    framework: "Territorial Base with 10-Year Tax Holidays",
+                    rules: "Uruguay taxes foreign financial investment income at a flat 12%, but offers a generous 10-year 'Tax Holiday' window for new residents (0% tax on foreign capital yields). Remote service exports and non-financial foreign income are completely exempt from day one."
+                },
+                security: {
+                    level: "Excellent / Regional Democratic Benchmark",
+                    analysis: "Uruguay represents the gold standard for civil liberties, political stability, and democratic transparency in Latin America. Montevideo has experienced minor property crime growth, but its institutional safety, walkable coastal 'Rambla', and public order are unmatched."
+                }
+            }
+        ];
+
+        function renderCards(data) {
+            const grid = document.getElementById('countryGrid');
+            grid.innerHTML = '';
+            
+            data.forEach(c => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-900/30 border border-gray-800 rounded-2xl p-6 hover:border-indigo-500/40 transition-all space-y-6 backdrop-blur flex flex-col justify-between";
+                card.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="flex items-start justify-between pb-4 border-b border-gray-800/60">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-2xl">${c.flag}</span>
+                                    <h3 class="text-xl font-bold text-white tracking-tight">${c.name}</h3>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1 font-mono">Economic Focus: <span class="text-indigo-400 font-medium">${c.capital}</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-mono px-2 py-1 rounded bg-gray-950 text-gray-400 border border-gray-800">
+                                    Est. Baseline: <span class="text-white font-bold">${c.cost.baseline}</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-cyan-400 font-mono flex items-center">
+                                <i class="fa-solid fa-wallet mr-2"></i> Living Costs & Budgets
+                            </h4>
+                            <ul class="text-xs space-y-1.5 text-gray-300 bg-gray-950/40 p-3 rounded-xl border border-gray-900">
+                                <li><strong class="text-gray-400">Housing/Rent:</strong> ${c.cost.rent}</li>
+                                <li><strong class="text-gray-400">Supermarket:</strong> ${c.cost.market}</li>
+                                <li><strong class="text-gray-400">Dining Out:</strong> ${c.cost.dining}</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono flex items-center">
+                                <i class="fa-solid fa-building-columns mr-2"></i> Fiscal Residency & Taxation
+                            </h4>
+                            <div class="text-xs p-3 rounded-xl bg-gray-950/40 border border-gray-900 space-y-1">
+                                <p class="font-semibold text-white">${c.taxation.framework}</p>
+                                <p class="text-gray-400 leading-relaxed">${c.taxation.rules}</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-rose-400 font-mono flex items-center">
+                                <i class="fa-solid fa-shield-halved mr-2"></i> Security & Risk Assessment
+                            </h4>
+                            <div class="text-xs p-3 rounded-xl bg-gray-950/40 border border-gray-900 space-y-1">
+                                <p class="font-semibold text-white">Security Rating: <span class="text-amber-400">${c.security.level}</span></p>
+                                <p class="text-gray-400 leading-relaxed">${c.security.analysis}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function sortData() {
+            const criteria = document.getElementById('sortBy').value;
+            let sorted = [...countryData];
+            
+            if (criteria === 'name') {
+                sorted.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (criteria === 'cost') {
+                sorted.sort((a, b) => a.costRank - b.costRank);
+            } else if (criteria === 'safety') {
+                sorted.sort((a, b) => b.safetyRank - a.safetyRank);
+            }
+            renderCards(sorted);
+        }
+
+        window.onload = () => {
+            sortData();
+        };
+    </script>
+</body>
+</html>

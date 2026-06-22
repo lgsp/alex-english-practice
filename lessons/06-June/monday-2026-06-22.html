@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Analysis: Asian & Middle Eastern Low-Tax Jurisdictions 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-indigo-950/10 to-gray-950">
+
+    <!-- Top Status Bar -->
+    <div class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-6">
+                <a href="#" class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white bg-gray-900/60 hover:bg-gray-900 border border-gray-800 hover:border-gray-700 px-3 py-2 rounded-xl transition-all duration-200 group">
+                    <i class="fa-solid fa-arrow-left text-indigo-400 group-hover:-translate-x-1 transition-transform"></i>
+                    <span>Back to Course</span>
+                </a>
+                
+                <div class="hidden sm:flex items-center space-x-3 border-l border-gray-800 pl-6">
+                    <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+                        <i class="fa-solid fa-globe text-white text-sm"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Asia & ME Tax Analytics</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+                    2026 Extended Fiscal Matrix
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        
+        <!-- Hero & Context -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+                Sovereign Relocation & <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">Strategic Arbitrage</span> in Asia & ME
+            </h1>
+            <p class="text-gray-400 text-base sm:text-lg">
+                An objective quantitative evaluation of 12 low-tax jurisdictions spanning the Caucasus, Middle East, and East/Southeast Asia. Geared towards digital entrepreneurs, remote corporate professionals, and mobile capital.
+            </p>
+        </div>
+
+        <!-- Live Metrics Filter Dashboard -->
+        <div class="bg-gray-900/40 border border-gray-800/80 rounded-2xl p-6 backdrop-blur space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg font-bold text-white">Dynamic Jurisdiction Directory</h2>
+                    <p class="text-xs text-gray-400">Filter and sort hubs based on cost profiles or macro safety indices.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <select id="sortBy" onchange="sortData()" class="bg-gray-950 border border-gray-800 rounded-xl px-4 py-2 text-sm text-gray-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                        <option value="name">Sort by: Hub Name</option>
+                        <option value="cost">Sort by: Cost of Living (Lowest to Highest)</option>
+                        <option value="safety">Sort by: Safety Score (Highest to Lowest)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Country Grid System -->
+        <div id="countryGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Quick Comparison Reference Table Matrix -->
+        <div class="bg-gray-900/20 border border-gray-800 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5 pointer-events-none"></div>
+            <div class="relative z-10 space-y-6">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-scale-balanced text-emerald-400 text-xl"></i>
+                    <h3 class="text-xl font-bold text-white">Core Quantitative Reference Table</h3>
+                </div>
+                <p class="text-sm text-gray-400 max-w-3xl">
+                    Quick cross-reference matrix summarizing taxation benchmarks, local safety profiles, and platform booking baselines for independent professionals.
+                </p>
+                <div class="overflow-x-auto border border-gray-800 rounded-xl bg-gray-950/60 custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs text-gray-300">
+                        <thead>
+                            <tr class="border-b border-gray-800 bg-gray-900/50 text-gray-400 font-mono uppercase tracking-wider">
+                                <th class="p-4">Hub & Capital</th>
+                                <th class="p-4">Taxation Framework</th>
+                                <th class="p-4">Est. Total Monthly Cost</th>
+                                <th class="p-4">Macro Safety Level</th>
+                                <th class="p-4">External Verification Links</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60">
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Turkey (Istanbul)</td>
+                                <td class="p-4 text-emerald-400">0% for 20 Years (Foreign Income Exemption)</td>
+                                <td class="p-4 font-mono">$1,300 - $1,900</td>
+                                <td class="p-4 text-amber-400">Moderate / Urban Alertness</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.gib.gov.tr/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Revenue Admin</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Georgia (Tbilisi)</td>
+                                <td class="p-4 text-emerald-400">1% Individual Tax / Territorial Base</td>
+                                <td class="p-4 font-mono">$1,100 - $1,600</td>
+                                <td class="p-4 text-emerald-400">Very High Regional Safety</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.rs.ge/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Revenue Service</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Armenia (Yerevan)</td>
+                                <td class="p-4 text-emerald-400">0% IT Sector / 5% Turnover Track</td>
+                                <td class="p-4 font-mono">$1,200 - $1,700</td>
+                                <td class="p-4 text-emerald-400">Excellent Urban Peace</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.petekamutner.am/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Tax Authority</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Cambodia (Phnom Penh)</td>
+                                <td class="p-4 text-emerald-400">De Facto Territorial / Flat Tiers</td>
+                                <td class="p-4 font-mono">$1,150 - $1,650</td>
+                                <td class="p-4 text-amber-400">Moderate / Standard Precautions</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.tax.gov.kh/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> GDT Cambodia</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Hong Kong (Hong Kong)</td>
+                                <td class="p-4 text-emerald-400">Strict Territorial (Offshore 0%)</td>
+                                <td class="p-4 font-mono">$3,500 - $5,200</td>
+                                <td class="p-4 text-emerald-400">Extremely High Order</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.ird.gov.hk/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Inland Revenue</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Indonesia (Bali)</td>
+                                <td class="p-4 text-emerald-400">Territorial Under Specific Visas (E33G)</td>
+                                <td class="p-4 font-mono">$1,250 - $1,950</td>
+                                <td class="p-4 text-emerald-400">High / Relaxed Beach Hub</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.pajak.go.id/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Ditjen Pajak</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Malaysia (Kuala Lumpur)</td>
+                                <td class="p-4 text-emerald-400">Territorial (0% Foreign Remitted)</td>
+                                <td class="p-4 font-mono">$1,400 - $2,000</td>
+                                <td class="p-4 text-emerald-400">High / Family Friendly</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.hasil.gov.my/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> LHDN Portal</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Philippines (Manila)</td>
+                                <td class="p-4 text-emerald-400">Strict Territorial for Foreign Citizens</td>
+                                <td class="p-4 font-mono">$1,300 - $1,900</td>
+                                <td class="p-4 text-amber-400">Moderate / Monitored Enclaves</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.bir.gov.ph/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> BIR Bureau</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Singapore (Singapore)</td>
+                                <td class="p-4 text-amber-400">Territorial Tiers (Low Caps)</td>
+                                <td class="p-4 font-mono">$3,800 - $5,500</td>
+                                <td class="p-4 text-emerald-400">Absolute Global Benchmark</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.iras.gov.sg/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> IRAS Bureau</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Taiwan (Taipei)</td>
+                                <td class="p-4 text-amber-400">Gold Card Concessions / AMT Limits</td>
+                                <td class="p-4 font-mono">$1,900 - $2,800</td>
+                                <td class="p-4 text-emerald-400">Outstanding Public Safety</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.ntbt.gov.tw/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> National Tax</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Thailand (Bangkok)</td>
+                                <td class="p-4 text-emerald-400">Territorial Baseline (LTR Exemptions)</td>
+                                <td class="p-4 font-mono">$1,300 - $1,900</td>
+                                <td class="p-4 text-emerald-400">High / Welcoming Atmosphere</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.rd.go.th/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Thai Revenue</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Vietnam (Hanoi / HCMC)</td>
+                                <td class="p-4 text-rose-400">Worldwide for Residents / Business Tracks</td>
+                                <td class="p-4 font-mono">$1,100 - $1,650</td>
+                                <td class="p-4 text-emerald-400">High Low-Level Safety</td>
+                                <td class="p-4 text-cyan-400"><a href="https://gdt.gov.vn/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> General Dept Tax</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-gray-950/60 mt-20 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500 font-mono">
+            Strategic Relocation Matrix • Verified Frameworks for Educational & Professional Assessment.
+        </div>
+    </footer>
+
+    <script>
+        const countryData = [
+            {
+                name: "Turkey",
+                flag: "🇹🇷",
+                capital: "Istanbul",
+                costRank: 4,
+                safetyRank: 2,
+                cost: {
+                    baseline: "$1,300 - $1,900",
+                    monthlyPlatform: "$900 - $1,500/month for premium central serviced flats during peak operational months.",
+                    yearlyContract: "$650 - $1,100/month (Calculated as $7,800 - $13,200 total per annum) for local leases inside modern residential towers (Residans).",
+                    market: "Fresh goods are economical; western luxury electronic items face steep domestic luxury taxes.",
+                    dining: "Local traditional dinings cost $5 - $10; high-end global fusion bistros average $25 - $40.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Istanbul"
+                },
+                taxation: {
+                    framework: "New 20-Year 0% Non-Dom Foreign Income Exemption (Passed June 2026)",
+                    rules: "Under newly enacted Article 20/D, individuals relocating to Turkey who were not tax residents for the prior 3 years enjoy an absolute 20-year personal income tax exemption on all foreign-sourced dividends, capital gains, and offshore company distributions. No tax return filing is required for these exempt external categories."
+                },
+                security: {
+                    level: "Moderate / Urban Alertness Required",
+                    analysis: "Istanbul maintains solid security parameters within financial districts and high-end residential quarters. Standard urban caution regarding petty financial scams is recommended in crowded tourism hubs."
+                }
+            },
+            {
+                name: "Georgia",
+                flag: "🇬🇪",
+                capital: "Tbilisi",
+                costRank: 1,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,100 - $1,600",
+                    monthlyPlatform: "$650 - $1,100/month via flexible digital platforms within active historical or business hubs.",
+                    yearlyContract: "$450 - $750/month ($5,400 - $9,000 per annum) for long-term leases in upscale districts like Vake or Saburtalo.",
+                    market: "Highly economical for regional organic produce, wines, and everyday domestic items.",
+                    dining: "Exceptional local culinary selections cost $6 - $12; trendy expat-oriented bistros run $20 - $30.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Tbilisi"
+                },
+                taxation: {
+                    framework: "1% Individual Entrepreneur Regime & Territorial Base",
+                    rules: "Georgia features a highly attractive 1% income tax track for independent entrepreneurs making up to ~500,000 GEL (~$185k USD) per year. Pure foreign-source income generated outside the country remains entirely free from local individual income tax assessment."
+                },
+                security: {
+                    level: "Very High / Outstanding Peace of Mind",
+                    analysis: "Tbilisi is structurally one of the safest capitals in Europe and Asia. Violent crime rates are extremely low, and independent professionals routinely navigate the city safely at all hours."
+                }
+            },
+            {
+                name: "Armenia",
+                flag: "🇦🇲",
+                capital: "Yerevan",
+                costRank: 2,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,200 - $1,700",
+                    monthlyPlatform: "$700 - $1,200/month for fully equipped apartments in the city center via online booking engines.",
+                    yearlyContract: "$500 - $850/month ($6,000 - $10,200 per annum) when signing standard local 12-month housing pacts.",
+                    market: "Local agricultural goods, public utilities, and basic mobile networks are highly cost-efficient.",
+                    dining: "Casual urban café structures run $5 - $10; high-end premium dining choices average $20 - $35.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Yerevan"
+                },
+                taxation: {
+                    framework: "0% IT Industry Incentives & 5% Turnover Track",
+                    rules: "Armenia actively courts the tech sector by granting 0% corporate and income tax incentives to certified IT startups and micro-enterprises. Standard independent business models benefit from a turnover tax system capped at 1.5% to 5%."
+                },
+                security: {
+                    level: "Excellent / Safe Urban Hub",
+                    analysis: "Yerevan offers an exceptionally secure, hospitable city layout with active street life lasting past midnight. Petty street opportunism or security emergencies targeting expats are structurally rare."
+                }
+            },
+            {
+                name: "Cambodia",
+                flag: "🇰🇭",
+                capital: "Phnom Penh",
+                costRank: 3,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,150 - $1,650",
+                    monthlyPlatform: "$600 - $1,050/month for serviced Western-style condos in prime districts via online providers.",
+                    yearlyContract: "$400 - $750/month ($4,800 - $9,000 per annum) for residential leases in BKK1 or Tonle Bassac zones.",
+                    market: "Imported goods carry distinct markups, but local fresh food markets and domestic services are very cheap.",
+                    dining: "Everyday expat dining costs $5 - $12; high-end French or Asian fusion spots run $20 - $35.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Phnom-Penh"
+                },
+                taxation: {
+                    framework: "De Facto Territorial System for Expatriates",
+                    rules: "While Cambodia technically features a worldwide income tax framework for residents, the General Department of Taxation currently enforces tax collection primarily on domestic-sourced wages and business operations. Foreign-sourced income remains unassessed in practical daily operations."
+                },
+                security: {
+                    level: "Moderate / Standard Urban Vigilance",
+                    analysis: "Phnom Penh is generally safe for foreign residents. Main security parameters involve non-violent opportunistic property crimes, such as mobile phone or bag snatches by passing motorbikes in active areas."
+                }
+            },
+            {
+                name: "Hong Kong",
+                flag: "🇭🇰",
+                capital: "Hong Kong",
+                costRank: 11,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$3,500 - $5,200",
+                    monthlyPlatform: "$2,200 - $3,800/month for micro-apartments or short-term corporate studios via specialized aggregators.",
+                    yearlyContract: "$1,600 - $2,900/month ($19,200 - $34,800 per annum) for unfurnished long-term residential spaces.",
+                    market: "Extremely steep infrastructure, space, and international logistical costs make overall living metrics high.",
+                    dining: "Traditional local diners cost $10 - $20; premium venues inside corporate towers range from $50 - $100.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Hong-Kong"
+                },
+                taxation: {
+                    framework: "Strict Territorial Source Benchmark",
+                    rules: "Hong Kong taxes purely corporate profits or personal salaries derived from operations within the territory. Salaries tax is capped at a maximum flat 15%. Genuine offshore income streams qualify for a complete 0% exemption through formal claims."
+                },
+                security: {
+                    level: "Extremely High Public Order",
+                    analysis: "Hong Kong boasts highly effective policing and visible public surveillance networks. Violent criminal activities are exceptionally minimal, making it an entirely safe landscape for independent operators at any time."
+                }
+            },
+            {
+                name: "Indonesia",
+                flag: "🇮🇩",
+                capital: "Bali (Canggu / Ubud)",
+                costRank: 5,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,250 - $1,950",
+                    monthlyPlatform: "$900 - $1,800/month for fully staffed tourist villas booked on popular digital marketplaces.",
+                    yearlyContract: "$600 - $1,200/month ($7,200 - $14,400 per annum) for private villa leases secured with local property agents.",
+                    market: "Local agricultural produce and domestic staff services are low-cost; imported alcohols and electronics face heavy customs duties.",
+                    dining: "Healthy expat café options cost $6 - $12; local Indonesian warungs offer highly nutritious options for under $4.",
+                    source: "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Indonesia"
+                },
+                taxation: {
+                    framework: "Territorial Exemption via E33G Remote Worker / Kitas tracks",
+                    rules: "Indonesia uses a worldwide tax system for standard residents. However, the specialized E33G Remote Worker Visa (and related modern investment tracks) allows foreign digital operators to legally reside in the country while enjoying 0% Indonesian income tax on purely offshore-sourced revenues."
+                },
+                security: {
+                    level: "High / Relaxed Coastal Ecosystem",
+                    analysis: "Bali presents an immensely secure and welcoming community landscape. Security concerns are largely confined to scooter traffic hazards, minor nightlife arguments, and petty villa opportunism if personal vaults are left unsecured."
+                }
+            },
+            {
+                name: "Malaysia",
+                flag: "🇲🇾",
+                capital: "Kuala Lumpur",
+                costRank: 7,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,400 - $2,000",
+                    monthlyPlatform: "$750 - $1,300/month for high-end luxury spaces via global short-term accommodation applications.",
+                    yearlyContract: "$500 - $900/month ($6,000 - $10,800 per annum) for standard 12-month luxury condominium contracts in KLCC.",
+                    market: "Exceedingly economical for basic utilities, high-speed fiber internet, and regional domestic food distribution networks.",
+                    dining: "Street Hawker centers cost $2 - $5; modern global dining options inside commercial zones run $15 - $25.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Kuala-Lumpur"
+                },
+                taxation: {
+                    framework: "Pure Territorial Income Exemption",
+                    rules: "Malaysia does not assess income taxes on foreign-sourced income earned by individual expats, provided it originates outside domestic borders. The DE Rantau Digital Nomad Visa formally codifies this status for remote IT workers."
+                },
+                security: {
+                    level: "High / Structured Family-Friendly Environment",
+                    analysis: "Kuala Lumpur features modern healthcare, clean public transit, and strong civil order. Violent incidents are rare. Standard vigilance is recommended against petty corner pickpocketing or scooter bag snatches."
+                }
+            },
+            {
+                name: "Philippines",
+                flag: "🇵🇭",
+                capital: "Manila (BGC)",
+                costRank: 6,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,300 - $1,900",
+                    monthlyPlatform: "$800 - $1,400/month for fully equipped urban condos inside premier monitored zones.",
+                    yearlyContract: "$550 - $1,000/month ($6,600 - $12,000 per annum) via standard local leasing agreements in major commercial districts.",
+                    market: "Western supermarkets and local data plans are moderately priced; domestic helper assistance is highly economical.",
+                    dining: "Mid-tier business district dining averages $12 - $22; localized urban counters run $4 - $7.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Manila"
+                },
+                taxation: {
+                    framework: "Strict Territorial Law for Non-Citizens",
+                    rules: "Under the National Internal Revenue Code, resident foreign nationals are explicitly taxed strictly on income derived from sources within the Philippines. All foreign-sourced remote earnings, offshore corporate dividends, and external investments are 100% tax-free."
+                },
+                security: {
+                    level: "Moderate / Highly Policed Financial Enclaves",
+                    analysis: "While wider metropolitan sectors show varying safety indicators, master-planned financial districts like Bonifacio Global City (BGC) or Makati employ extensive private security details, ensuring top-tier safety for expat professionals."
+                }
+            },
+            {
+                name: "Singapore",
+                flag: "🇸🇬",
+                capital: "Singapore",
+                costRank: 12,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$3,800 - $5,500",
+                    monthlyPlatform: "$2,800 - $4,500/month for transient executive suites or certified short-term aparthotels.",
+                    yearlyContract: "$2,200 - $3,800/month ($26,400 - $45,600 per annum) for standard long-term private condo modules.",
+                    market: "Extremely high living costs. Total dependency on imported commodities raises grocery and utility costs considerably.",
+                    dining: "World-class Hawker centers provide meals for $4 - $7; premium corporate bistros routinely cost $60 - $120.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Singapore"
+                },
+                taxation: {
+                    framework: "Territorial Tiers with Competitive Caps",
+                    rules: "Singapore does not tax individual foreign-sourced income remitted by expats. Domestic personal income tax is highly progressive but caps out at 24%, while corporate tax features corporate exemptions with a flat 17% headline rate."
+                },
+                security: {
+                    level: "Absolute Global Safety Benchmark",
+                    analysis: "Singapore features virtually non-existent violent crime metrics due to stringent legal codes and pervasive monitoring frameworks. It represents the global peak for personal safety and asset preservation."
+                }
+            },
+            {
+                name: "Taiwan",
+                flag: "🇹🇼",
+                capital: "Taipei",
+                costRank: 9,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,900 - $2,800",
+                    monthlyPlatform: "$1,100 - $1,900/month for fully furnished serviced properties via digital market platforms.",
+                    yearlyContract: "$750 - $1,350/month ($9,000 - $16,200 per annum) for local long-term rental contracts in central Taipei.",
+                    market: "High-quality public healthcare and advanced mass transit keep basic operational parameters highly economical.",
+                    dining: "Excellent night market culinary choices cost $4 - $8; premium international standard dining ranges from $25 - $45.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Taipei"
+                },
+                taxation: {
+                    framework: "Employment Gold Card Concessions & AMT Limits",
+                    rules: "Taiwan's Employment Gold Card program offers high-earning foreign tech talent a 50% income tax deduction on salary exceeding NT$3 million for their initial years. Foreign-sourced income is only reviewed under the Alternative Minimum Tax (AMT) framework, featuring a generous global exemption threshold of NT$6.7 million (~$200k+ USD)."
+                },
+                security: {
+                    level: "Outstanding / Superior Civil Safety",
+                    analysis: "Taipei offers an exceptionally safe environment with minimal street crime. Expats experience full freedom of movement at any hour, backed by high institutional transparency and civic order."
+                }
+            },
+            {
+                name: "Thailand",
+                flag: "🇹🇭",
+                capital: "Bangkok",
+                costRank: 8,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,300 - $1,900",
+                    monthlyPlatform: "$850 - $1,500/month for modern central high-rise apartments via short-term platforms.",
+                    yearlyContract: "$550 - $1,000/month ($6,600 - $12,000 per annum) for standard 1-year leases alongside the BTS/MRT lines.",
+                    market: "Highly economical for regional fresh food, logistics, and healthcare infrastructure.",
+                    dining: "Renowned street food maps cost $2 - $5; upper-tier global culinary developments run $25 - $50.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Bangkok"
+                },
+                taxation: {
+                    framework: "Territorial Core with LTR Protection",
+                    rules: "Thailand taxes foreign-sourced income if remitted into the country by a tax resident. While compliance monitoring has increased, premium long-term pathways—such as the 10-year Long-Term Resident (LTR) Visa—provide explicit, legislated tax exemptions on all foreign earnings."
+                },
+                security: {
+                    level: "High / Highly Hospitable Social Environment",
+                    analysis: "Bangkok presents a safe, vibrant urban landscape for international operators. Main considerations involve traffic management and basic precautions against minor retail tourist markups in busy transit spots."
+                }
+            },
+            {
+                name: "Vietnam",
+                flag: "🇻🇳",
+                capital: "Hanoi / HCMC",
+                costRank: 2,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,100 - $1,650",
+                    monthlyPlatform: "$650 - $1,100/month for premium short-term serviced suites via online reservation software.",
+                    yearlyContract: "$450 - $800/month ($5,400 - $9,600 per annum) for 1-year condo contracts inside modern developments (e.g., Vinhomes).",
+                    market: "Extremely cost-effective for daily fresh items, domestic transport, and high-speed data connectivity.",
+                    dining: "Excellent local cafés and traditional street food cost $2 - $5; upscale Western dining venues run $20 - $35.",
+                    source: "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Vietnam"
+                },
+                taxation: {
+                    framework: "Worldwide Income for Residents / Business Track Structuring",
+                    rules: "Vietnam treats individuals residing 183+ days as tax residents subject to worldwide income tax (up to 35%). To optimize legally, expats structure operations through local corporate entities (LLCs) or utilize business structures that control salary distributions and maximize deductible corporate expenses."
+                },
+                security: {
+                    level: "High / Socially Stable Environment",
+                    analysis: "Vietnam provides a high degree of general public safety. Organized gang activity or violent incidents targeting expats are rare. Main urban precautions are limited to protecting personal devices from opportunistic pickpocketing in crowded areas."
+                }
+            }
+        ];
+
+        function renderCards(data) {
+            const grid = document.getElementById('countryGrid');
+            grid.innerHTML = '';
+            
+            data.forEach(c => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-900/30 border border-gray-800 rounded-2xl p-6 hover:border-emerald-500/40 transition-all space-y-6 backdrop-blur flex flex-col justify-between";
+                card.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="flex items-start justify-between pb-4 border-b border-gray-800/60">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-2xl">${c.flag}</span>
+                                    <h3 class="text-xl font-bold text-white tracking-tight">${c.name}</h3>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1 font-mono">Hub Core: <span class="text-emerald-400 font-medium">${c.capital}</span></p>
+                            </div>
+                            <div class="text-right flex flex-col items-end space-y-1">
+                                <span class="text-xs font-mono px-2 py-1 rounded bg-gray-950 text-gray-400 border border-gray-800">
+                                    Total Est: <span class="text-white font-bold">${c.cost.baseline}</span>
+                                </span>
+                                <a href="${c.cost.source}" target="_blank" class="text-[10px] text-cyan-400 hover:underline font-mono"><i class="fa-solid fa-chart-line mr-1"></i> Live Index Source</a>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-cyan-400 font-mono flex items-center">
+                                <i class="fa-solid fa-wallet mr-2"></i> Housing & Cost Diagnostics
+                            </h4>
+                            <ul class="text-xs space-y-1.5 text-gray-300 bg-gray-950/40 p-3 rounded-xl border border-gray-900">
+                                <li><strong class="text-amber-400"><i class="fa-solid fa-hotel text-[10px] mr-1"></i> Short-Term (Month-to-Month):</strong> ${c.cost.monthlyPlatform}</li>
+                                <li><strong class="text-emerald-400"><i class="fa-solid fa-file-contract text-[10px] mr-1"></i> Long-Term (1-Year Lease Contract):</strong> ${c.cost.yearlyContract}</li>
+                                <li><strong class="text-gray-400">Market Matrix:</strong> ${c.cost.market}</li>
+                                <li><strong class="text-gray-400">Gastronomy Costs:</strong> ${c.cost.dining}</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono flex items-center">
+                                <i class="fa-solid fa-building-columns mr-2"></i> Fiscal Residency & Incentives
+                            </h4>
+                            <div class="text-xs p-3 rounded-xl bg-gray-950/40 border border-gray-900 space-y-1">
+                                <p class="font-semibold text-white">${c.taxation.framework}</p>
+                                <p class="text-gray-400 leading-relaxed">${c.taxation.rules}</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-rose-400 font-mono flex items-center">
+                                <i class="fa-solid fa-shield-halved mr-2"></i> Security & Risk Assessment
+                            </h4>
+                            <div class="text-xs p-3 rounded-xl bg-gray-950/40 border border-gray-900 space-y-1">
+                                <p class="font-semibold text-white">Security Rating: <span class="text-amber-400">${c.security.level}</span></p>
+                                <p class="text-gray-400 leading-relaxed">${c.security.analysis}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function sortData() {
+            const criteria = document.getElementById('sortBy').value;
+            let sorted = [...countryData];
+            
+            if (criteria === 'name') {
+                sorted.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (criteria === 'cost') {
+                sorted.sort((a, b) => a.costRank - b.costRank);
+            } else if (criteria === 'safety') {
+                sorted.sort((a, b) => b.safetyRank - a.safetyRank);
+            }
+            renderCards(sorted);
+        }
+
+        window.onload = () => {
+            sortData();
+        };
+    </script>
+</body>
+</html>

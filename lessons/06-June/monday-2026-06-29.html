@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Analysis: European & African Low-Tax Jurisdictions 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-blue-950/10 to-gray-950">
+
+    <div class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-6">
+                <a href="#" class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white bg-gray-900/60 hover:bg-gray-900 border border-gray-800 hover:border-gray-700 px-3 py-2 rounded-xl transition-all duration-200 group">
+                    <i class="fa-solid fa-arrow-left text-indigo-400 group-hover:-translate-x-1 transition-transform"></i>
+                    <span>Back to Course</span>
+                </a>
+                
+                <div class="hidden sm:flex items-center space-x-3 border-l border-gray-800 pl-6">
+                    <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <i class="fa-solid fa-earth-europe text-white text-sm"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Euro & Africa Analytics</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    <span class="h-1.5 w-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
+                    2026 Sovereign Matrix
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+                Sovereign Relocation & <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">Fiscal Arbitrage</span> in Europe & Africa
+            </h1>
+            <p class="text-gray-400 text-base sm:text-lg">
+                A structured macro analysis of 12 tactical jurisdictions across the European and African continents. Evaluated for digital builders, remote consultants, and sovereign individuals.
+            </p>
+        </div>
+
+        <div class="bg-gray-900/40 border border-gray-800/80 rounded-2xl p-6 backdrop-blur space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-lg font-bold text-white">Dynamic Jurisdiction Directory</h2>
+                    <p class="text-xs text-gray-400">Filter and sort hubs based on cost profiles or regional safety scores.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <select id="sortBy" onchange="sortData()" class="bg-gray-950 border border-gray-800 rounded-xl px-4 py-2 text-sm text-gray-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                        <option value="name">Sort by: Hub Name</option>
+                        <option value="cost">Sort by: Cost of Living (Lowest to Highest)</option>
+                        <option value="safety">Sort by: Safety Score (Highest to Lowest)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="countryGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            </div>
+
+        <div class="bg-gray-900/20 border border-gray-800 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-emerald-500/5 pointer-events-none"></div>
+            <div class="relative z-10 space-y-6">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-scale-balanced text-blue-400 text-xl"></i>
+                    <h3 class="text-xl font-bold text-white">Core Quantitative Reference Table</h3>
+                </div>
+                <p class="text-sm text-gray-400 max-w-3xl">
+                    Cross-reference matrix summarizing tax frameworks, platform-based monthly rental projections, and regulatory verification channels.
+                </p>
+                <div class="overflow-x-auto border border-gray-800 rounded-xl bg-gray-950/60 custom-scrollbar">
+                    <table class="w-full text-left border-collapse text-xs text-gray-300">
+                        <thead>
+                            <tr class="border-b border-gray-800 bg-gray-900/50 text-gray-400 font-mono uppercase tracking-wider">
+                                <th class="p-4">Hub & Region</th>
+                                <th class="p-4">Taxation Framework</th>
+                                <th class="p-4">Est. Platform Rent (Month)</th>
+                                <th class="p-4">Macro Safety</th>
+                                <th class="p-4">Regulatory Data Source</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60">
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Andorra (Andorra la Vella)</td>
+                                <td class="p-4 text-emerald-400">10% Flat Cap / 0% Capital Gains</td>
+                                <td class="p-4 font-mono text-cyan-400">$1,400 - $2,300</td>
+                                <td class="p-4 text-emerald-400">Absolute Peace</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.impostos.ad/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Tributs Andorra</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Bulgaria (Sofia)</td>
+                                <td class="p-4 text-emerald-400">10% Flat Personal & Corporate</td>
+                                <td class="p-4 font-mono text-cyan-400">$650 - $1,100</td>
+                                <td class="p-4 text-emerald-400">High / Stable</td>
+                                <td class="p-4 text-cyan-400"><a href="https://nap.bg/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> NRA Bulgaria</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Cyprus (Limassol)</td>
+                                <td class="p-4 text-emerald-400">Non-Dom Status (0% Div/Int)</td>
+                                <td class="p-4 font-mono text-cyan-400">$1,300 - $2,200</td>
+                                <td class="p-4 text-emerald-400">Very High</td>
+                                <td class="p-4 text-cyan-400"><a href="https://gk-lawfirm.com/cyprus-tax-residency/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Tax Dept</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Malta (Valletta)</td>
+                                <td class="p-4 text-emerald-400">Remittance Base Non-Dom System</td>
+                                <td class="p-4 font-mono text-cyan-400">$1,100 - $1,950</td>
+                                <td class="p-4 text-emerald-400">Excellent</td>
+                                <td class="p-4 text-cyan-400"><a href="https://cfr.gov.mt/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Commissioner Revenue</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Romania (Bucharest)</td>
+                                <td class="p-4 text-emerald-400">1% Micro-Co Option / 10% Flat</td>
+                                <td class="p-4 font-mono text-cyan-400">$600 - $1,050</td>
+                                <td class="p-4 text-emerald-400">High Stability</td>
+                                <td class="p-4 text-cyan-400"><a href="https://taxsummaries.pwc.com/romania/individual/taxes-on-personal-income" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> ANAF Portal</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Cape Verde (Praia)</td>
+                                <td class="p-4 text-emerald-400">Territorial Tiers / Nomad Visa</td>
+                                <td class="p-4 font-mono text-cyan-400">$550 - $950</td>
+                                <td class="p-4 text-amber-400">Moderate / Stable</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.visit-caboverde.com/en/remote-working" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> MF Cabo Verde</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Kenya (Nairobi)</td>
+                                <td class="p-4 text-amber-400">Digital Nomad / 30% Resident Scale</td>
+                                <td class="p-4 font-mono text-cyan-400">$700 - $1,300</td>
+                                <td class="p-4 text-amber-400">Moderate Urban</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.globaltaxconsulting.co.uk/tax-index/kenya" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> KRA Revenue</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Mauritius (Port Louis)</td>
+                                <td class="p-4 text-emerald-400">15% Flat / Partial Exemption (3%)</td>
+                                <td class="p-4 font-mono text-cyan-400">$850 - $1,500</td>
+                                <td class="p-4 text-emerald-400">Top Africa Safety</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.mra.mu/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> Mauritius Revenue</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Morocco (Casablanca)</td>
+                                <td class="p-4 text-amber-400">CFC Zone Exemptions / 0-15% Tiers</td>
+                                <td class="p-4 font-mono text-cyan-400">$650 - $1,150</td>
+                                <td class="p-4 text-emerald-400">Good Order</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.globaltaxconsulting.co.uk/tax-index/morocco" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> DGI Maroc</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Namibia (Windhoek)</td>
+                                <td class="p-4 text-emerald-400">Strict Territorial Framework</td>
+                                <td class="p-4 font-mono text-cyan-400">$600 - $1,100</td>
+                                <td class="p-4 text-amber-400">Moderate / Peaceful</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.namra.org.na/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> NamRA Portal</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">South Africa (Cape Town)</td>
+                                <td class="p-4 text-amber-400">New Nomad Visa / Worldwide Scale</td>
+                                <td class="p-4 font-mono text-cyan-400">$950 - $1,750</td>
+                                <td class="p-4 text-rose-400">Vigilance Mandated</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.sars.gov.za/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> SARS Bureau</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-white">Zanzibar - Tanzania (Stone Town)</td>
+                                <td class="p-4 text-emerald-400">Strategic Investment Area / 0-15%</td>
+                                <td class="p-4 font-mono text-cyan-400">$750 - $1,400</td>
+                                <td class="p-4 text-emerald-400">High Island Safety</td>
+                                <td class="p-4 text-cyan-400"><a href="https://www.tra.go.tz/" target="_blank" class="hover:underline"><i class="fa-solid fa-link mr-1"></i> TRA Authority</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-gray-900 bg-gray-950/60 mt-20 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500 font-mono">
+            Sovereign Relocation Database • Compiled for Advanced Educational Matrix Evaluation.
+        </div>
+    </footer>
+
+    <script>
+        const countryData = [
+            {
+                name: "Andorra",
+                flag: "🇦🇩",
+                capital: "Andorra la Vella",
+                region: "Europe",
+                costRank: 10,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$2,000 - $2,900",
+                    monthlyPlatform: "$1,400 - $2,300/month for central apartments via Booking or Airbnb.",
+                    yearlyPlatform: "$15,000 - $24,000/year under structured long-term digital resident leases.",
+                    market: "Duty-free jurisdiction provides massive savings on consumer products, fuels, and groceries.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Andorra-La-Vella"
+                },
+                taxation: {
+                    framework: "10% Flat Maximum / 0% Capital Gains",
+                    rules: "Personal income tax is a flat 10%, applied only after a generous €24,000 baseline exemption. Corporate tax is capped at a flat 10%. Dividends from local corporate entities and international capital gains face a legal 0% taxation rate."
+                },
+                security: {
+                    level: "Absolute Global Benchmark / Zero Crime Culture",
+                    analysis: "Andorra represents one of the safest geographic entities globally. Total physical security allows for unrestricted urban movement at any late hour with absolute peace of mind."
+                }
+            },
+            {
+                name: "Bulgaria",
+                flag: "🇧🇬",
+                capital: "Sofia",
+                region: "Europe",
+                costRank: 3,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,200 - $1,700",
+                    monthlyPlatform: "$650 - $1,100/month for premium Lozenets district flats via Airbnb.",
+                    yearlyPlatform: "$6,500 - $10,500/year utilizing platforms with extended stays.",
+                    market: "One of the lowest baseline costs inside the European Union. Local food networks, utilities, and dining are highly economical.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Sofia"
+                },
+                taxation: {
+                    framework: "10% Flat Personal & Corporate Income Tax",
+                    rules: "Operates an absolute flat 10% tier on personal revenue and 10% on corporate profits, representing the lowest fixed fiscal framework in the EU. Dividend withholding tax is restricted to a minor 5%."
+                },
+                security: {
+                    level: "High Stability / Standard Urban Vigilance",
+                    analysis: "Sofia is historically secure and calm. Minor property risks or opportunism are restricted to highly congested transportation terminals or transient central sectors."
+                }
+            },
+            {
+                name: "Cyprus",
+                flag: "🇨🇾",
+                capital: "Limassol",
+                region: "Europe",
+                costRank: 9,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,900 - $2,700",
+                    monthlyPlatform: "$1,300 - $2,200/month for modern coastal executive apartments via Booking.",
+                    yearlyPlatform: "$14,000 - $22,000/year when managed via corporate platform structures.",
+                    market: "Standard southern European pricing structure. Locally sourced seafood and fresh items are highly cost-efficient.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Limassol"
+                },
+                taxation: {
+                    framework: "Non-Domicile Framework (0% Div & Int)",
+                    rules: "Foreigners moving to Cyprus can claim 'Non-Dom' status, legally exempting global dividend income and global passive interest streams from local taxation for 17 years. Software services generated outside Cyprus enjoy excellent corporate structuring options."
+                },
+                security: {
+                    level: "Very High / Exceptionally Low Crime Index",
+                    analysis: "Cyprus maintains a peaceful Mediterranean environment. Street safety is optimal across all hours, providing an ultra-secure destination for solo professionals and digital families."
+                }
+            },
+            {
+                name: "Malta",
+                flag: "🇲🇹",
+                capital: "Valletta",
+                region: "Europe",
+                costRank: 8,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,800 - $2,500",
+                    monthlyPlatform: "$1,100 - $1,950/month for seaside townhouses in Sliema or St. Julian's via Airbnb.",
+                    yearlyPlatform: "$12,000 - $19,000/year under structured multi-month extensions.",
+                    market: "Island pricing parameters mean standard western imports are slightly marked up; utilities are reasonable.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Valletta"
+                },
+                taxation: {
+                    framework: "Remittance-Based Non-Dom System",
+                    rules: "Enforces a classic remittance-based framework: foreign-sourced income that is not physically remitted into a Maltese bank account remains completely tax-free (0% tax). Capital gains generated outside Malta are exempt even if brought into the country."
+                },
+                security: {
+                    level: "Excellent / Safe Commercial Environment",
+                    analysis: "Malta is highly monitored and secure. Standard precautions are only required during peak summer tourist seasons in heavy nightlife zones."
+                }
+            },
+            {
+                name: "Romania",
+                flag: "🇷🇴",
+                capital: "Bucharest",
+                region: "Europe",
+                costRank: 2,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,150 - $1,650",
+                    monthlyPlatform: "$600 - $1,050/month for modern apartments in sectors 1 or 3 via Booking/Airbnb.",
+                    yearlyPlatform: "$6,000 - $9,500/year for continuous digital nomad stays.",
+                    market: "Superb value for money. Digital infrastructure is elite, offering some of the fastest fiber-optic web pipelines globally at extremely low costs.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Bucharest"
+                },
+                taxation: {
+                    framework: "1% Micro-Company Regime / 10% Personal Flat",
+                    rules: "Qualified corporate structures meeting micro-company standards can opt for an aggressive 1% tax on total gross turnover up to €500,000. Standard individual personal income tax is a low flat 10%."
+                },
+                security: {
+                    level: "High / Exceptionally Safe Urban Layout",
+                    analysis: "Bucharest has remarkably low violent crime rates compared to western European capitals. Solo travelers routinely walk across public squares at late hours without encountering risk profiles."
+                }
+            },
+            {
+                name: "Cape Verde",
+                flag: "🇨🇻",
+                capital: "Praia",
+                region: "Africa",
+                costRank: 1,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$950 - $1,450",
+                    monthlyPlatform: "$550 - $950/month for coastal apartments in Sal or Santiago via Airbnb.",
+                    yearlyPlatform: "$5,000 - $8,500/year for extended island allocations.",
+                    market: "Highly economical for fresh regional catch and local agricultural inputs. European manufactured items are subject to maritime import markups.",
+                    source: "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Cape+Verde"
+                },
+                taxation: {
+                    framework: "Digital Nomad Visa & Territorial Elements",
+                    rules: "The Remote Working Cabo Verde program provides clear administrative processes. Remote professionals working for offshore entities enjoy complete individual income tax exemptions (0% tax) during their stay.",
+                },
+                security: {
+                    level: "Moderate / Stable Island Framework",
+                    analysis: "Generally tranquil and stable. Basic awareness is recommended in dense urban central sectors of Praia at night to avoid localized petty phone theft."
+                }
+            },
+            {
+                name: "Kenya",
+                flag: "🇰🇪",
+                capital: "Nairobi",
+                region: "Africa",
+                costRank: 5,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,300 - $1,900",
+                    monthlyPlatform: "$700 - $1,300/month for premium secure high-rises in Westlands via Airbnb.",
+                    yearlyPlatform: "$7,500 - $13,000/year under structured multi-month corporate platform options.",
+                    market: "Local agricultural sectors make domestic cooking cheap. Digital ride-hailing services and domestic assistance are remarkably affordable.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Nairobi"
+                },
+                taxation: {
+                    framework: "New Digital Nomad Visa Parameters (2026)",
+                    rules: "Kenya’s newly operational framework offers designated digital nomad visas. Qualified remote consultants working exclusively for foreign enterprises can obtain a 0% local income tax status, bypassing the standard 30% resident progressive bracket."
+                },
+                security: {
+                    level: "Moderate / Strict Zoning Mandated",
+                    analysis: "Nairobi features a world-class expat ecosystem but requires zoning awareness. Premium sectors like Westlands, Karen, or Gigiri are highly secure and guarded, whereas peripheral sectors require complete avoidance at night."
+                }
+            },
+            {
+                name: "Mauritius",
+                flag: "🇲🇺",
+                capital: "Port Louis",
+                region: "Africa",
+                costRank: 7,
+                safetyRank: 5,
+                cost: {
+                    baseline: "$1,400 - $2,100",
+                    monthlyPlatform: "$850 - $1,500/month for beachfront serviced bungalows via Agoda Homes.",
+                    yearlyPlatform: "$9,000 - $16,000/year for sustained premium expat allocations.",
+                    market: "Excellent balance of value. Moderate pricing grids for high-quality healthcare and private services.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Port-Louis"
+                },
+                taxation: {
+                    framework: "15% Flat Rate / Partial Exemption System",
+                    rules: "Features a highly competitive 15% flat corporate and personal tax system. A structured partial exemption regime can drop the effective corporate tax rate down to an aggressive 3% for specific international trading activities."
+                },
+                security: {
+                    level: "Top African Safety Benchmark",
+                    analysis: "Consistently leads the African continent for governance, institutional transparency, and civic order. The daily environment is extremely peaceful and safe for foreign professionals."
+                }
+            },
+            {
+                name: "Morocco",
+                flag: "🇲🇦",
+                capital: "Casablanca",
+                region: "Africa",
+                costRank: 4,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,200 - $1,750",
+                    monthlyPlatform: "$650 - $1,150/month for modern suites in Casablanca Finance City or Marrakech via Booking.",
+                    yearlyPlatform: "$7,000 - $11,500/year for managed long-term platform extensions.",
+                    market: "Extremely cost-effective fresh food networks. High-speed 4G/5G and fiber lines are highly accessible and economical.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Casablanca"
+                },
+                taxation: {
+                    framework: "Casablanca Finance City (CFC) Incentives",
+                    rules: "Standard personal brackets scale up to 38%. However, companies operating inside the CFC zone enjoy a 5-year 0% corporate tax holiday, followed by a flat 15%. Eligible international employees can opt for a flat 20% personal income tax tier for 10 years."
+                },
+                security: {
+                    level: "Good Order / High Public Stability",
+                    analysis: "Morocco possesses robust internal policing and security frameworks. Urban centers are highly active and safe, requiring only standard alertness regarding market-district pricing negotiations or aggressive street vendors."
+                }
+            },
+            {
+                name: "Namibia",
+                flag: "🇳🇦",
+                capital: "Windhoek",
+                region: "Africa",
+                costRank: 2,
+                safetyRank: 3,
+                cost: {
+                    baseline: "$1,100 - $1,600",
+                    monthlyPlatform: "$600 - $1,100/month for secure central apartments or cottages via Airbnb.",
+                    yearlyPlatform: "$5,800 - $10,000/year using structured extended platform options.",
+                    market: "Highly economical for top-tier meats and local basic ingredients. Public utilities are well-maintained.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Windhoek"
+                },
+                taxation: {
+                    framework: "Strict Territorial Tax System",
+                    rules: "Namibia maintains a pure territorial taxation framework. Local tax liabilities are strictly limited to income generated within the physical borders of Namibia. Foreign source consulting revenues, digital sales, or offshore assets face 0% domestic tax assessment."
+                },
+                security: {
+                    level: "Moderate / Generally Peaceful Landscape",
+                    analysis: "Windhoek is a quiet, sparsely populated capital with a highly stable political structure. Standard urban precautions are sufficient to handle low-level opportunistic property theft or vehicle break-ins."
+                }
+            },
+            {
+                name: "South Africa",
+                flag: "🇿🇦",
+                capital: "Cape Town",
+                region: "Africa",
+                costRank: 6,
+                safetyRank: 2,
+                cost: {
+                    baseline: "$1,350 - $2,000",
+                    monthlyPlatform: "$950 - $1,750/month for luxury secure views in Green Point or Camps Bay via Airbnb.",
+                    yearlyPlatform: "$10,000 - $19,000/year under optimized long-term platform packages.",
+                    market: "Incredible purchasing power. Fine dining, private premium healthcare, and world-class regional wines are remarkably affordable due to exchange rate dynamics.",
+                    source: "https://www.numbeo.com/cost-of-living/in/Cape-Town"
+                },
+                taxation: {
+                    framework: "New Digital Nomad Visa (0% Foreign Income)",
+                    rules: "South Africa’s new digital nomad regulations allow remote workers employed by foreign entities earning over a specific threshold to stay entirely exempt from local income tax (0% tax), avoiding standard progressive brackets up to 45%."
+                },
+                security: {
+                    level: "Low / Strict Spatial Awareness & Security Mandated",
+                    analysis: "Cape Town offers elite lifestyle infrastructure but carries significant security contrasts. Expats must live inside high-security properties equipped with active private response access, and avoid historical urban hotspots or walking alone after dark."
+                }
+            },
+            {
+                name: "Zanzibar (Tanzania)",
+                flag: "🇹🇿",
+                capital: "Stone Town",
+                region: "Africa",
+                costRank: 3,
+                safetyRank: 4,
+                cost: {
+                    baseline: "$1,200 - $1,800",
+                    monthlyPlatform: "$750 - $1,400/month for curated island villas or serviced spaces near Paje via Airbnb.",
+                    yearlyPlatform: "$7,800 - $13,500/year for long-term island packages.",
+                    market: "Affordable tropical living. Seafood and local items are highly economical; specialized international items carry logistics premiums.",
+                    source: "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Tanzania"
+                },
+                taxation: {
+                    framework: "Strategic Investment Area Expat Program",
+                    rules: "Zanzibar operates an independent economic framework. Registered strategic investments or certified digital professionals under specific corporate tracks can qualify for a flat 15% personal income tax tier, alongside complete corporate tax holidays on international source operations."
+                },
+                security: {
+                    level: "High Island Safety / Welcoming Atmosphere",
+                    analysis: "Zanzibar has a highly relaxed, tourism-driven ecosystem. Violent incidents targeting foreign professionals are extremely rare. Standard awareness regarding beach areas or unlit historic alleys at late hours is sufficient."
+                }
+            }
+        ];
+
+        function renderCards(data) {
+            const grid = document.getElementById('countryGrid');
+            grid.innerHTML = '';
+            
+            data.forEach(c => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-900/30 border border-gray-800 rounded-2xl p-6 hover:border-blue-500/40 transition-all space-y-6 backdrop-blur flex flex-col justify-between";
+                card.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="flex items-start justify-between pb-4 border-b border-gray-800/60">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-2xl">${c.flag}</span>
+                                    <h3 class="text-xl font-bold text-white tracking-tight">${c.name}</h3>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1 font-mono">Region: <span class="text-blue-400 font-medium">${c.region}</span> • Capital: <span class="text-emerald-400 font-medium">${c.capital}</span></p>
+                            </div>
+                            <div class="text-right flex flex-col items-end space-y-1">
+                                <span class="text-xs font-mono px-2 py-1 rounded bg-gray-950 text-gray-400 border border-gray-800">
+                                    Total Est: <span class="text-white font-bold">${c.cost.baseline}</span>
+                                </span>
+                                <a href="${c.cost.source}" target="_blank" class="text-[10px] text-cyan-400 hover:underline font-mono"><i class="fa-solid fa-chart-line mr-1"></i> Cost Index Source</a>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-cyan-400 font-mono flex items-center">
+                                <i class="fa-solid fa-hotel mr-2"></i> Platform Rental Projections
+                            </h4>
+                            <ul class="text-xs space-y-2 text-gray-300 bg-gray-950/40 p-3 rounded-xl border border-gray-900">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-400 font-bold font-mono">Monthly:</span>
+                                    <span>${c.cost.monthlyPlatform}</span>
+                                </li>
+                                <li class="flex items-start gap-2 border-t border-gray-900 pt-1.5 mt-1.5">
+                                    <span class="text-indigo-400 font-bold font-mono">Annualized:</span>
+                                    <span>${c.cost.yearlyPlatform}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono flex items-center">
+                                <i class="fa-solid fa-building-columns mr-2"></i> Fiscal Residency & Incentives
+                            </h4>
+                            <div class="text-xs p-3 rounded-xl bg-gray-950/40 border border-gray-900 space-y-1">
+                                <p class="font-semibold text-white">${c.taxation.framework}</p>
+                                <p class="text-gray-400 leading-relaxed">${c.taxation.rules}</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-rose-400 font-mono flex items-center">
+                                <i class="fa-solid fa-shield-halved mr-2"></i> Security & Risk Assessment
+                            </h4>
+                            <div class="text-xs p-3 rounded-xl bg-gray-950/40 border border-gray-900 space-y-1">
+                                <p class="font-semibold text-white">Security Profile: <span class="text-amber-400">${c.security.level}</span></p>
+                                <p class="text-gray-400 leading-relaxed">${c.security.analysis}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function sortData() {
+            const criteria = document.getElementById('sortBy').value;
+            let sorted = [...countryData];
+            
+            if (criteria === 'name') {
+                sorted.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (criteria === 'cost') {
+                sorted.sort((a, b) => a.costRank - b.costRank);
+            } else if (criteria === 'safety') {
+                sorted.sort((a, b) => b.safetyRank - a.safetyRank);
+            }
+            renderCards(sorted);
+        }
+
+        window.onload = () => {
+            sortData();
+        };
+    </script>
+</body>
+</html>

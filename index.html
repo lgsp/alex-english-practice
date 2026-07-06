@@ -4,129 +4,377 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Learning Path - Alexandre</title>
-    <link rel="stylesheet" href="style-session.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .month-card {
+            background: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(8px);
+        }
+    </style>
 </head>
-<body>
-    <div class="container" style="text-align: center; margin-top: 50px;">
-        <h1>My English Sessions</h1>
-        <div class="links-container" style="display: flex; flex-direction: column; gap: 20px;">
-            <a href="./lessons/01-January/monday-2026-01-19.html" class="option-item" style="text-decoration: none; color: inherit;">
-                <strong>Session 1: Diagnostic & Basics</strong><br>
-                <span class="date">Monday, Jan 19, 2026</span>
-            </a>
-            <a href="revisions/revision-2026-01-19.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of Jan 19 Session: Diagnostic & Basics</strong><br>
-                <small>Monday, Jan 19, 2026</small>
-            </a>
-            <a href="lessons/01-January/monday-2026-01-26.html" class="option-item" style="text-decoration: none; color: inherit;">
-                <strong>Session 2: Public Speaking Skills</strong><br>
-                <span class="date">Monday, Jan 26, 2026</span>
-            </a>
-            <a href="revisions/revision-2026-01-26.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of Jan 26 Session: Public Speaking Skills and Stocicism</strong><br>
-                <small>Monday, Jan 26, 2026</small>
-            </a>
-            <a href="lessons/02-February/monday-2026-02-02.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 3: Engineering Math - Functions</strong><br>
-                <small>Monday, Feb 02, 2026</small>
-            </a>
-            <a href="revisions/revision-2026-02-02.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of Feb 02 Session: Engineering Math - Functions</strong><br>
-                <small>Monday, Feb 02, 2026</small>
-            </a>
-            <a href="lessons/02-February/monday-2026-02-09.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 4: Digital Assets & Security</strong><br>
-                <small>Monday, Feb 09, 2026</small>
-            </a>
-            <a href="revisions/revision-2026-02-09.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of Feb 09 Session: Digital Assets & Security</strong><br>
-                <small>Monday, Feb 09, 2026</small>
-            </a>
-            <a href="lessons/02-February/wednesday-2026-02-18.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 5: Epstein at Dalton</strong><br>
-                <small>Wednesday, Feb 18, 2026</small>
-            </a>
-            <a href="revisions/revision-2026-02-18.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of Feb 18 Session 5: Epstein at Dalton</strong><br>
-                <small>Wednesday, Feb 18, 2026</small>
-            </a>
-            <a href="lessons/02-February/monday-2026-02-23.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 6: Psychology & Self-Improvement</strong><br>
-                <small>Monday, Feb 23, 2026</small>
-            </a>
-            <a href="revisions/revision-2026-02-23.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of Feb 23 Session 6: Psychology & Self-Improvement</strong><br>
-                <small>Monday, Feb 23, 2026</small>
-            </a>
-            <a href="lessons/03-March/monday-2026-03-02.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 7: Privilege, Power & Espionage</strong><br>
-                <small>Monday, March 02, 2026</small>
-            </a>
-            <a href="revisions/revision-2026-03-02.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of March 02 Session 7: Privilege, Power & Espionage</strong><br>
-                <small>Monday, March 02, 2026</small>
-            </a>
-            <a href="lessons/03-March/monday-2026-03-09.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 8: Global Geopolitics & Economy</strong><br>
-                <small>Monday, March 09, 2026</small>
-            </a>
-            <a href="revisions/revision-2026-03-09.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Revision of March 09 Session 8: Global Geopolitics & Economy</strong><br>
-                <small>Monday, March 09, 2026</small>
-            </a>
-            <a href="lessons/04-April/monday-2026-04-06.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 9: Epic Lyrics Analysis</strong><br>
-                <small>Monday, April 06, 2026</small>
-            </a>
-            <a href="lessons/04-April/monday-2026-04-13.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 10: AI Parody Vidoes</strong><br>
-                <small>Monday, April 13, 2026</small>
-            </a>
-            <a href="lessons/04-April/monday-2026-04-20.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 11: 3 Stories You're Missing Vidoes</strong><br>
-                <small>Monday, April 20, 2026</small>
-            </a>
-            <a href="lessons/04-April/wednesday-2026-04-29.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 12: Advanced English Mastery • Deep Learning Interface</strong><br>
-                <small>Wednesday, April 29, 2026</small>
-            </a>
-            <a href="lessons/05-May/monday-2026-05-04.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 13: Math Mastery Interface • Terence Tao Edition</strong><br>
-                <small>Monday, May 4, 2026</small>
-            </a>
-            <a href="lessons/05-May/monday-2026-05-11.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 14: Mastering the architecture of modern language understanding.</strong><br>
-                <small>Monday, May 11, 2026</small>
-            </a>
-            <a href="lessons/05-May/monday-2026-05-18.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 15: Dekosophy Lesson • Why Some People Suddenly Blow Up.</strong><br>
-                <small>Monday, May 18, 2026</small>
-            </a>
-            <a href="lessons/05-May/monday-2026-05-25.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 16: 4 Language Habits</strong><br>
-                <small>Monday, May 25, 2026</small>
-            </a>
-            <a href="lessons/06-June/monday-2026-06-01.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 17: Full Immersion English Session • Conversational Mastery</strong><br>
-                <small>Monday, June 1st, 2026</small>
-            </a>
-            <a href="lessons/06-June/monday-2026-06-08.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 18: Expatriation</strong><br>
-                <small>Monday, June 8th, 2026</small>
-            </a>
-            <a href="lessons/06-June/monday-2026-06-15.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 19: Expatriation in Latin America</strong><br>
-                <small>Monday, June 15th, 2026</small>
-            </a>
-            <a href="lessons/06-June/monday-2026-06-22.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 20: Expatriation in Asia</strong><br>
-                <small>Monday, June 22th, 2026</small>
-            </a>
-            <a href="lessons/06-June/monday-2026-06-29.html" class="option-item" style="text-decoration: none; display: block;">
-                <strong>Session 21: Expatriation in Africa and Europe</strong><br>
-                <small>Monday, June 29th, 2026</small>
-            </a>
+<body class="antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-indigo-950/20 to-gray-950">
+
+    <!-- Top Navigation Header -->
+    <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-indigo-500/10 rounded-lg border border-indigo-500/20 text-indigo-400">
+                    <i class="fa-solid fa-brain-circuit text-sm"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                    Advanced English Hub
+                </span>
+            </div>
+            <div class="flex items-center space-x-2 text-xs font-mono text-gray-400 bg-gray-900/60 border border-gray-800 px-3 py-1.5 rounded-xl">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-1"></span>
+                Student Profile: Alexandre
+            </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+        
+        <!-- Welcome & Metrics Header -->
+        <div class="space-y-4 text-center sm:text-left">
+            <h1 class="text-3xl font-bold text-white tracking-tight">
+                My English <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">Sessions Portfolio</span>
+            </h1>
+            <p class="text-gray-400 text-sm max-w-2xl">
+                Suivi de progression systémique, maîtrise linguistique avancée et archives des modules d'immersion pour l'année 2026.
+            </p>
+        </div>
+
+        <!-- Dynamic Timeline Organized by Months -->
+        <div class="space-y-10">
+
+            <!-- JANUARY 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-2">
+                    <i class="fa-regular fa-calendar text-indigo-400 text-sm"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-gray-300">Janvier 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Session 1 Block -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="./lessons/01-January/monday-2026-01-19.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 1: Diagnostic & Basics</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 19 Jan</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-01-19.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Diagnostic & Basics Overview</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Session 2 Block -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/01-January/monday-2026-01-26.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 2: Public Speaking Skills</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 26 Jan</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-01-26.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Public Speaking Skills & Stoicism</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEBRUARY 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-2">
+                    <i class="fa-regular fa-calendar text-indigo-400 text-sm"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-gray-300">Février 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Session 3 -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/02-February/monday-2026-02-02.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 3: Engineering Math - Functions</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 02 Fév</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-02-02.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Engineering Math Analysis</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Session 4 -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/02-February/monday-2026-02-09.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 4: Digital Assets & Security</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 09 Fév</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-02-09.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Digital Assets Architecture</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Session 5 -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/02-February/wednesday-2026-02-18.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 5: Epstein at Dalton</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Merc 18 Fév</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-02-18.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Narrative & Context Breakdown</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Session 6 -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/02-February/monday-2026-02-23.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 6: Psychology & Self-Improvement</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 23 Fév</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-02-23.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Behavioral Psychology Review</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MARCH 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-2">
+                    <i class="fa-regular fa-calendar text-indigo-400 text-sm"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-gray-300">Mars 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Session 7 -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/03-March/monday-2026-03-02.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 7: Privilege, Power & Espionage</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 02 Mar</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-03-02.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Geopolitical Frameworks</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Session 8 -->
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 space-y-3">
+                        <div class="flex items-start justify-between">
+                            <a href="lessons/03-March/monday-2026-03-09.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                                <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                                <span>Session 8: Global Geopolitics & Economy</span>
+                            </a>
+                            <span class="text-xs font-mono text-gray-500">Lundi 09 Mar</span>
+                        </div>
+                        <div class="pl-6 border-l border-gray-800">
+                            <a href="revisions/revision-2026-03-09.html" class="inline-flex items-center space-x-2 text-xs text-gray-400 hover:text-cyan-400 transition-colors">
+                                <i class="fa-solid fa-arrow-turn-up rotate-90 text-gray-600"></i>
+                                <span class="bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide mr-1 border border-cyan-500/10">Révision</span>
+                                <span>Macroeconomic Discourse</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- APRIL 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-2">
+                    <i class="fa-regular fa-calendar text-indigo-400 text-sm"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-gray-300">Avril 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/04-April/monday-2026-04-06.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 9: Epic Lyrics Analysis</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 06 Avr</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/04-April/monday-2026-04-13.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 10: AI Parody Videos</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 13 Avr</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/04-April/monday-2026-04-20.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 11: 3 Stories You're Missing</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 20 Avr</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/04-April/wednesday-2026-04-29.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 12: Advanced English Mastery • Deep Learning Interface</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Merc 29 Avr</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MAY 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-2">
+                    <i class="fa-regular fa-calendar text-indigo-400 text-sm"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-gray-300">Mai 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/05-May/monday-2026-05-04.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 13: Math Mastery Interface • Terence Tao Edition</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 04 Mai</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/05-May/monday-2026-05-11.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 14: Modern Language Understanding Architecture</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 11 Mai</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/05-May/monday-2026-05-18.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 15: Dekosophy Lesson • Why Some People Suddenly Blow Up</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 18 Mai</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/05-May/monday-2026-05-25.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 16: 4 Language Habits</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 25 Mai</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JUNE 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-2">
+                    <i class="fa-regular fa-calendar text-indigo-400 text-sm"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-gray-300">Juin 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/06-June/monday-2026-06-01.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 17: Full Immersion • Conversational Mastery</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 01 Juin</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/06-June/monday-2026-06-08.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 18: Expatriation Basics</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 08 Juin</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/06-June/monday-2026-06-15.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 19: Expatriation in Latin America</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 15 Juin</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/06-June/monday-2026-06-22.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 20: Expatriation in Asia</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 22 Juin</span>
+                    </div>
+                    <div class="month-card border border-gray-800/80 rounded-2xl p-4 flex items-center justify-between">
+                        <a href="lessons/06-June/monday-2026-06-29.html" class="group flex items-center space-x-3 text-sm font-semibold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 21: Expatriation in Africa and Europe</span>
+                        </a>
+                        <span class="text-xs font-mono text-gray-500">Lundi 29 Juin</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JULY 2026 -->
+            <section class="space-y-4">
+                <div class="flex items-center space-x-2 border-b border-indigo-500/40 pb-2">
+                    <i class="fa-regular fa-calendar-check text-indigo-400 text-sm animate-pulse"></i>
+                    <h2 class="text-sm font-mono font-bold uppercase tracking-wider text-indigo-400">Juillet 2026</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Current Session Highlighted -->
+                    <div class="bg-gradient-to-r from-indigo-950/40 to-slate-900/40 border border-indigo-500/30 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_15px_rgba(99,102,241,0.05)]">
+                        <a href="lessons/07-July/monday-2026-07-06.html" class="group flex items-center space-x-3 text-sm font-bold text-white hover:text-indigo-400 transition-colors">
+                            <i class="fa-solid fa-circle-play text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                            <span>Session 22: 17 Hobbies That Will Make You Unrecognizable</span>
+                        </a>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-mono px-2 py-0.5 rounded border border-indigo-500/20 uppercase font-bold tracking-wide">Latest</span>
+                            <span class="text-xs font-mono text-gray-400">Lundi 06 Juil</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="max-w-4xl mx-auto px-4 py-8 border-t border-gray-900 text-center text-xs font-mono text-gray-600">
+        &copy; 2026 - Educational Distribution Stack. All rights reserved.
+    </footer>
+
 </body>
 </html>

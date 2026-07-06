@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson: 17 Hobbies That Will Make You Unrecognizable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .quiz-option {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-indigo-950/20 to-gray-950">
+
+    <!-- Top Status Bar -->
+    <div class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <a href="#" class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-gray-400 hover:text-white bg-gray-900/60 border border-gray-800 px-3 py-2 rounded-xl transition-all">
+                    <i class="fa-solid fa-arrow-left text-indigo-400"></i>
+                    <span><a href="../../index.html">Back</a></span>
+                </a>
+                <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Video Lesson Studio</span>
+            </div>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                Limitlessvision Focus
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+        
+        <!-- Video Header & Embedding -->
+        <div class="space-y-6 text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                17 Hobbies That Will Make You <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">Unrecognizable</span>
+            </h1>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                Comprehensive listening and systemic language mastery module based on the June 19, 2026 release.
+            </p>
+            
+            <!-- Responsive Video Frame -->
+            <div class="aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-gray-950">
+                <iframe 
+                    class="w-full h-full" 
+                    src="https://www.youtube.com/embed/NMb2Z_g7vSc" 
+                    title="17 Hobbies That Will Make You Unrecognizable" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <hr class="border-gray-800">
+
+        <!-- Interactive Quiz Section -->
+        <div class="space-y-8">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-indigo-500/10 rounded-lg border border-indigo-500/20 text-indigo-400">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">Interactive Language & Comprehension Matrix</h2>
+                    <p class="text-xs text-gray-400">20 systematically selected questions divided across 4 distinct language skills.</p>
+                </div>
+            </div>
+
+            <!-- Quiz Dynamic Container -->
+            <div id="quizContainer" class="space-y-8">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+        <hr class="border-gray-800">
+
+        <!-- Core Transcription & Reformulation Section -->
+        <div class="space-y-8">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-emerald-500/10 rounded-lg border border-emerald-500/20 text-emerald-400">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">The 17 Transformed Habits & Advanced Formulations</h2>
+                    <p class="text-xs text-gray-400">Direct structural alignment alongside professional linguistic variations.</p>
+                </div>
+            </div>
+
+            <div id="habitsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+        <hr class="border-gray-800">
+
+        <!-- Practical Expressions Masterclass -->
+        <div class="space-y-8">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-cyan-500/10 rounded-lg border border-cyan-500/20 text-cyan-400">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-white">Idiomatic Expressions & Real-World Deployments</h2>
+                    <p class="text-xs text-gray-400">High-leverage structures extracted from the narrative to optimize oral fluency.</p>
+                </div>
+            </div>
+
+            <div id="expressionsContainer" class="space-y-4">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripting Engine -->
+    <script>
+        // --- DATA STRUCTURES ---
+        const quizData = [
+            // Comprehension
+            { category: "Listening Comprehension", question: "What is the primary thesis underlying the 17 habits discussed in the video?", options: ["Changing external conditions instantly yields success.", "Engaging systematically in targeted disciplines creates radical personal conversion.", "Passive tracking of lifestyle changes leads to immediate wealth.", "Eliminating all professional obligations fixes productivity issues."], correct: 1, explanation: "The video focuses on how structured, daily practices and disciplines systematically reshape an individual's mindset and capabilities over time." },
+            { category: "Listening Comprehension", question: "How does the narrator characterize the journey towards becoming 'unrecognizable'?", options: ["It requires massive public recognition from day one.", "It relies strictly on short bursts of high-intensity luck.", "It is a quiet, compound process driven by intentional routines.", "It is an automated byproduct of purely financial investments."], correct: 2, explanation: "The video repeatedly argues that true personal transfiguration occurs away from public validation, built through the quiet compounding of consistent habits." },
+            { category: "Listening Comprehension", question: "Which dimension of personal development is highlighted as the catalyst for cognitive growth?", options: ["Adhering to historical dogma without validation.", "Introducing structured intellectual novelties such as deep reading and chess.", "Relying on hyper-stimulating, short-form media networks.", "Avoiding physical exertion to protect mental processing energy."], correct: 1, explanation: "Intellectual habits like regular challenging reading or deep tactical games (like chess) are highlighted as essential modern tools for building neuroplasticity." },
+            { category: "Listening Comprehension", question: "According to the video architecture, why should physical hobbies be integrated into your lifestyle?", options: ["To completely substitute any form of professional career growth.", "To systematically optimize biological stress thresholds and cognitive endurance.", "Mainly to look impressive across public vanity metrics on social platforms.", "To restrict blood flow to creative thinking centers."], correct: 1, explanation: "Physical disciplines (martial arts, endurance training) serve a dual purpose: building biological resilience and optimizing overall neural performance." },
+            { category: "Listening Comprehension", question: "What hidden trap does the video warn against when selecting new habits?", options: ["Failing to share every step with your friends.", "Pursuing short-term cheap dopaminergic activities disguised as productive hobbies.", "Focusing too much on foundational technical skills.", "Starting with only one high-leverage change at a time."], correct: 1, explanation: "The speaker warns against low-value habits that generate high immediate dopamine without building real skills or compounding into long-term assets." },
+
+            // Pronunciation
+            { category: "Pronunciation & Phonology", question: "Identify the correct IPA phonetic transcription for the keyword 'UNRECOGNIZABLE':", options: ["/ˌʌnrekəɡˈnaɪzəb(ə)l/", "/ʌnriˈkɒɡnɪzæbl/", "/ʌnˌrekəˈnɪzəbl/", "/ˌʌnrɪˈkɒɡnɪzəb(ə)l/"], correct: 0, explanation: "/ˌʌnrekəɡˈnaɪzəb(ə)l/ captures the correct primary stress on the fifth syllable and secondary stress on the first." },
+            { category: "Pronunciation & Phonology", question: "Which of the following sounds represents the correct pronunciation of the 'ch' in 'CHAMELEON'?", options: ["/tʃ/ as in 'chair'", "/ʃ/ as in 'chef'", "/k/ as in 'character'", "/dʒ/ as in 'judge'"], correct: 2, explanation: "'Chameleon' uses a hard /k/ sound, common in words derived from Greek origins." },
+            { category: "Pronunciation & Phonology", question: "Where does the primary stress fall in the noun 'DISCIPLINE'?", options: ["On the second syllable: dis-CI-pline", "On the third syllable: dis-ci-PLINE", "On the first syllable: DIS-ci-pline", "It changes dynamically based on the tense of the sentence."], correct: 2, explanation: 'DIS-ci-pline places its primary tonic stress firmly on the very first syllable.' },
+            { category: "Pronunciation & Phonology", question: "In the word 'NEUROPLASTICITY', which syllable receives the dominant primary stress?", options: ["The third syllable: neu-ro-PLAS-tic-i-ty", "The fifth syllable: neu-ro-plas-tic-I-ty", "The second syllable: neu-RO-plas-tic-i-ty", "The fourth syllable: neu-ro-plas-TIC-i-ty"], correct: 3, explanation: "Words ending in '-ity' systematically throw their primary stress onto the antepenultimate syllable, which here is 'TIC' (/ˌnjʊəreʊplæˈstɪsəti/)." },
+            { category: "Pronunciation & Phonology", question: "The vowel sound in the stressed syllable of 'ROUTINE' is accurately matched by which IPA symbol?", options: ["/aɪ/", "/iː/", "/ɪ/", "/eɪ/"], correct: 1, explanation: "'Routine' uses the long high front unrounded vowel sound (/ruːˈtiːn/), matching words like 'machine' or 'green'." },
+
+            // Vocabulary
+            { category: "Vocabulary Mastery", question: "What does the term 'COMPOUND EFFECT' denote within this developmental framework?", options: ["A mathematical error that occurs during budget tracking.", "The phenomenon where minor, regular actions yield exponential growth over extended intervals.", "An immediate transformation visible within forty-eight hours.", "A strategy designed to minimize overall cognitive investments."], correct: 1, explanation: "The compound effect highlights how modest, sustained actions aggregate over time to yield outsized, non-linear long-term returns." },
+            { category: "Vocabulary Mastery", question: "If a hobby is described as 'HIGH-LEVERAGE', it implies that the hobby:", options: ["Demands significant legal protection from outside entities.", "Yields disproportionate structural advantages and returns relative to the energy invested.", "Can only be performed safely using specialized gym machinery.", "Is designed purely for introductory amusement and transient usage."], correct: 1, explanation: "In economic and personal development terms, leverage means a small input generates an exceptionally large output." },
+            { category: "Vocabulary Mastery", question: "What is the best contextual definition for the word 'OBSOLETE' if a habit makes your past self look that way?", options: ["Highly sophisticated and widely admired.", "No longer useful, relevant, or competitive due to outmoded design or state.", "Temporarily displaced by financial constraints.", "Perfected through rigorous academic exploration."], correct: 1, explanation: "Making your past self obsolete means your modern growth renders previous limitations completely irrelevant and outdated." },
+            { category: "Vocabulary Mastery", question: "Choose the closest synonym for 'RESILIENCE' as illustrated by intense physical hobbies:", options: ["Fragility", "Fortitude", "Indolence", "Complacency"], correct: 1, explanation: "Fortitude represents mental and emotional strength in facing difficulty, mirroring the video's definition of resilience." },
+            { category: "Vocabulary Mastery", question: "What does the word 'NEUROGENESIS' mean in relation to cognitive lifestyle habits?", options: ["The systematic destruction of older memories.", "The growth and development of brand-new nervous tissue and brain cells.", "A state of acute mental paralysis during complex games.", "The natural deterioration of executive functions due to aging."], correct: 1, explanation: "Neurogenesis refers to the process by which new neurons are formed in the brain, stimulated by novel, complex learning challenges." },
+
+            // Grammar
+            { category: "Advanced Grammar", question: "Complete the sentence correctly: 'If you ________ early morning workouts for a year, your physiology would shift completely.'", options: ["will maintain", "maintain", "maintained", "had maintained"], correct: 2, explanation: "This represents a classic second conditional sentence structure (unlikely present/future scenario): 'If + Past Simple, would + base verb'." },
+            { category: "Advanced Grammar", question: "Identify the grammatical role of 'Reading' in: 'Reading complex non-fiction recalibrates your attention span.'", options: ["Present participle acting as an auxiliary descriptor.", "Gerund functioning as the singular subject of the sentence.", "Infinitive variant working as an adverbial modifier.", "Passive verbal modifier tracking the direct object."], correct: 1, explanation: "Here, 'Reading' is a gerund (a verb form acting as a noun) that functions as the subject of the predicate 'recalibrates'." },
+            { category: "Advanced Grammar", question: "Which structural option displays flawless use of an inversion for stylistic emphasis?", options: ["Seldom have I seen a habit generate such rapid biological returns.", "Seldom I have seen a habit generate such rapid biological returns.", "I have seen seldom a habit generate such rapid biological returns.", "Seldom did I saw a habit generate such rapid biological returns."], correct: 0, explanation: "Negative or restrictive adverbs like 'seldom' placed at the start of a sentence require subject-auxiliary inversion: 'Seldom + auxiliary verb + subject + main verb'." },
+            { category: "Advanced Grammar", question: "Choose the correct prepositional pairing: 'Engaging systematically _______ chess protects your brain _______ cognitive decline.'", options: ["on / with", "at / against", "in / from", "for / off"], correct: 2, explanation: "The verb 'engage' pairs natively with 'in' ('engage in an activity'), and 'protect' systematically links with 'from' or 'against'." },
+            { category: "Advanced Grammar", question: "Identify the error structure if any: 'By the time you complete this course next winter, you will change your entire daily routine.'", options: ["No error present.", "Change 'will change' to the future perfect 'will have changed'.", "Change 'complete' to 'will complete'.", "Change 'next winter' to 'in next winter'."], correct: 1, explanation: "The time marker 'By the time...' requires the future perfect tense ('will have changed') to emphasize an action that will be completed before a specific point in the future." }
+        ];
+
+        const habitsData = [
+            { id: 1, original: "Deep Reading (Non-Fiction)", reform: "Engaging in sustained analysis of non-fiction texts systematically upgrades an individual's conceptual worldview." },
+            { id: 2, original: "Strategic Weight Training", reform: "Executing structured resistance exercises triggers essential biological adaptations and physical resilience." },
+            { id: 3, original: "Tactical Chess & Mind Games", reform: "Participating in high-level analytical gaming expands long-term spatial reasoning and tactical foresight." },
+            { id: 4, original: "Solitary Journaling & Reflection", reform: "Formulating daily internal reflections inside a journal normalizes mental clarity and process evaluation." },
+            { id: 5, original: "Martial Arts & Combat Disciplines", reform: "Practicing rigorous combative martial arts reinforces stress management thresholds and deep sensory coordination." },
+            { id: 6, original: "Targeted Public Speaking Protocols", reform: "Subjecting oneself to intentional public oration exercises strips away communicative anxiety frames." },
+            { id: 7, original: "High-Intensity Endurance Running", reform: "Pursuing rigorous, sustained cardiovascular efforts recalibrates cardiovascular limits and cognitive grit." },
+            { id: 8, original: "Creative Writing Mastery", reform: "Constructing complex narratives or poetic drafts refines syntax choices and emotional processing channels." },
+            { id: 9, original: "Coding & Algorithmic Problem-Solving", reform: "Architecting software scripts and complex automations anchors strict logical thinking frameworks within the mind." },
+            { id: 10, original: "Language Acquisition Practice", reform: "Absorbing a completely foreign linguistic architecture fundamentally re-wires neural pathways via neuroplasticity." },
+            { id: 11, original: "Calisthenics & Bodyweight Control", reform: "Mastering complex bodyweight mechanics enhances functional kinesthetic awareness and baseline core strength." },
+            { id: 12, original: "Financial Modeling & Personal Audits", reform: "Running systematic asset checks and data tracking converts passive savers into tactical wealth builders." },
+            { id: 13, original: "Culinary Precision & Nutritional Design", reform: "Treating dietary preparation as an exact scientific input optimizes metabolic outputs and daily focus baselines." },
+            { id: 14, original: "Cold Exposure Protocols (Ice Baths)", reform: "Voluntarily entering sub-ambient temperatures optimizes autonomic nervous responses and down-regulates inflammation metrics." },
+            { id: 15, original: "Meditation & Breath Regulation", reform: "Deploying intentional stillness and conscious breathing down-regulates cortisol spikes while sharpening attention spans." },
+            { id: 16, original: "Unplugged Nature Rucking", reform: "Walking long distances across rugged terrains while carrying weighted packs combines low-impact cardio with sensory decompression." },
+            { id: 17, original: "Continuous Skills Monetization (Side Hustles)", reform: "Transforming raw personal capabilities into functional digital products builds business acuity and financial sovereignty." }
+        ];
+
+        const expressionsData = [
+            { phrase: "To step up one's game", context: "To upgrade performance, quality, or structural commitment level inside a given domain.", example: "If you expect to win the contract, you will need to step up your game during tomorrow's executive presentation." },
+            { phrase: "A game-changer", context: "An event, development, or choice that completely alters an existing situation or context.", example: "Switching from unguided studying to structured daily mentorship proved to be an absolute game-changer for his fluency." },
+            { phrase: "To compound over time", context: "To aggregate continuously, where every minor increment builds exponentially upon previous baselines.", example: "Do not underestimate small morning routines; they compound over time into massive structural transformations." },
+            { phrase: "To fly under the radar", context: "To execute operations quietly without attracting public notice, scrutiny, or validation.", example: "He spent the entire winter flying under the radar, working relentlessly on his new educational startup." },
+            { phrase: "To break the mold", context: "To shatter conventional expectations or traditional systems by acting in a highly unique manner.", example: "Her innovative approach to teaching complex mathematics completely broke the mold in an outdated industry." },
+            { phrase: "To hit a wall", context: "To experience a sudden, challenging plateau where forward progress feels blocked by exhaustion or complexity.", example: "He was making excellent progress with his coding scripts until he hit a wall with the database integration step." },
+            { phrase: "To be cut out for something", context: "To possess the natural capacity, mindset, or specific traits required to excel within a precise domain.", example: "It takes an immense level of grit to finish this training program; not everyone is cut out for it." },
+            { phrase: "To keep your eyes on the prize", context: "To maintain an unyielding, laser-like focus on ultimate long-term objectives despite temporary distractions.", example: "Though the weekly metrics fluctuate wildly, the founding team keeps their eyes on the prize." },
+            { phrase: "A steep learning curve", context: "A scenario where acquiring an advanced skill requires an intensive, highly demanding upfront investment of effort.", example: "Mastering system animations via command line scripts carries a steep learning curve initially." },
+            { phrase: "To clear one's head", context: "To deliberately engage in an activity designed to disperse mental clutter, anxiety, or stress.", example: "Taking a fast twenty-minute walk in nature after deep programming blocks is the best way to clear your head." }
+        ];
+
+        // --- RENDERING ENGINES ---
+        function initQuiz() {
+            const container = document.getElementById('quizContainer');
+            quizData.forEach((q, qIndex) => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-900/40 border border-gray-800 rounded-2xl p-6 space-y-4 shadow-sm";
+                card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-gray-800/60">
+                        <span class="text-xs font-mono font-bold tracking-wider uppercase text-indigo-400">${q.category}</span>
+                        <span class="text-xs text-gray-500 font-mono">Question ${qIndex + 1}/20</span>
+                    </div>
+                    <p class="text-sm sm:text-base font-semibold text-white mt-2">${q.question}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4" id="options-box-${qIndex}">
+                        ${q.options.map((opt, oIndex) => `
+                            <button onclick="checkAnswer(${qIndex}, ${oIndex})" id="btn-${qIndex}-${oIndex}" class="quiz-option text-left text-xs sm:text-sm px-4 py-3 rounded-xl bg-gray-950 border border-gray-800 text-gray-300 hover:border-indigo-500/50 hover:bg-indigo-950/10 focus:outline-none">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${qIndex}" class="hidden p-4 rounded-xl text-xs sm:text-sm font-medium leading-relaxed"></div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.checkAnswer = function(qIndex, selectedIndex) {
+            const item = quizData[qIndex];
+            const feedbackBox = document.getElementById(`feedback-${qIndex}`);
+            
+            // Lock out further button inputs for this question block
+            const optionsBox = document.getElementById(`options-box-${qIndex}`);
+            const buttons = optionsBox.getElementsByTagName('button');
+            for (let btn of buttons) {
+                btn.disabled = true;
+            }
+
+            // Stylize the choices based on accuracy
+            if (selectedIndex === item.correct) {
+                document.getElementById(`btn-${qIndex}-${selectedIndex}`).className = "text-left text-xs sm:text-sm px-4 py-3 rounded-xl bg-emerald-950/30 border border-emerald-500 text-emerald-400 font-semibold";
+                feedbackBox.className = "p-4 rounded-xl text-xs sm:text-sm font-medium leading-relaxed bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+                feedbackBox.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i><strong>Correct!</strong> ${item.explanation}`;
+            } else {
+                document.getElementById(`btn-${qIndex}-${selectedIndex}`).className = "text-left text-xs sm:text-sm px-4 py-3 rounded-xl bg-rose-950/30 border border-rose-500 text-rose-400";
+                document.getElementById(`btn-${qIndex}-${item.correct}`).className = "text-left text-xs sm:text-sm px-4 py-3 rounded-xl bg-emerald-950/20 border border-emerald-500/50 text-emerald-400 font-semibold";
+                feedbackBox.className = "p-4 rounded-xl text-xs sm:text-sm font-medium leading-relaxed bg-rose-500/10 text-rose-400 border border-rose-500/20";
+                feedbackBox.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2"></i><strong>Incorrect.</strong> The accurate selection is option: "${item.options[item.correct]}". ${item.explanation}`;
+            }
+            feedbackBox.classList.remove('hidden');
+        };
+
+        function initHabits() {
+            const container = document.getElementById('habitsContainer');
+            habitsData.forEach(h => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-950/50 border border-gray-800 rounded-xl p-5 space-y-3 hover:border-gray-700 transition-colors";
+                card.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <span class="font-mono text-xs font-bold text-gray-500 bg-gray-900 border border-gray-800 px-2 py-0.5 rounded shadow-sm">Habit ${h.id}</span>
+                        <h3 class="text-sm font-bold text-white tracking-tight">${h.original}</h3>
+                    </div>
+                    <div class="text-xs p-3 rounded-lg bg-gray-900/40 border border-gray-900 text-gray-400 leading-relaxed">
+                        <span class="text-[10px] uppercase font-mono font-bold tracking-wider text-emerald-400 block mb-1">Advanced Formulation:</span>
+                        "${h.reform}"
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function initExpressions() {
+            const container = document.getElementById('expressionsContainer');
+            expressionsData.forEach(e => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-900/20 border border-gray-800/80 rounded-xl p-5 space-y-2 hover:border-cyan-500/20 transition-all";
+                card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h4 class="text-sm font-bold text-cyan-400 font-mono"><i class="fa-solid fa-angles-right mr-2 text-xs"></i>"${e.phrase}"</h4>
+                        <span class="text-[11px] text-gray-500 italic bg-gray-950 px-2 py-0.5 rounded border border-gray-900">${e.context}</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-300 pl-4 border-l-2 border-gray-800 mt-2 leading-relaxed">
+                        <strong class="text-gray-500">Usage Scenario:</strong> "${e.example}"
+                    </p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- LIFE CYCLE INITIALIZATION ---
+        window.onload = () => {
+            initQuiz();
+            initHabits();
+            initExpressions();
+        };
+    </script>
+</body>
+</html>
